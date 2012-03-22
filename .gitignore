@@ -1,0 +1,7 @@
+## GitIgnore File 
+
+## Ignore .o Files
+*.o
+
+## Ignore Executables
+monopoly
