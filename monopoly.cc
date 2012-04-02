@@ -11,7 +11,7 @@ using namespace std;
 main()
 {
 
-	cout << "Monopoly!" << endl;
+	cout << "Now we're playing monopoly!" << endl;
 
 }
 
