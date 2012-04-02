@@ -8,3 +8,9 @@ CC = g++
 CFLAGS = -ansi
 
 monopoly:
+
+clean:
+	rm -f *.o
+
+real_clean:
+	rm -f monopoly
