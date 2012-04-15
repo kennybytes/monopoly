@@ -24,4 +24,4 @@ class Banker
 
 	private:
 		Properties tiles;
-}
+};

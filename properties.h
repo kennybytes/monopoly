@@ -23,4 +23,4 @@ class Properties
 		Container list;
 		Position p;
 		Entry x;
-}
+};
