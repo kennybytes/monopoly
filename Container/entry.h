@@ -10,6 +10,18 @@
 #ifndef ENTRY_H
 #define ENTRY_H
 
-typedef int Entry;
+#include <string>
+
+typedef struct Entry
+{
+	string name;
+	int owner;
+	int rent;
+	int house1;
+	int house2;
+	int house3;
+	int house4;
+	int hotel;
+}
 
 #endif
