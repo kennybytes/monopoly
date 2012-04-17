@@ -5,6 +5,8 @@
  * Rev: v0.1
  */
 
+#include <string>
+
 /* Constructor & Destructor */
 Properties :: Properties()
 {
