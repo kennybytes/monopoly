@@ -15,6 +15,7 @@
 typedef struct Entry
 {
 	string name;
+	int value;
 	int owner;
 	int rent;
 	int house1;
