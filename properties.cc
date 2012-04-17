@@ -8,7 +8,6 @@
 /* Constructor & Destructor */
 Properties :: Properties()
 {
-	Entry t1;
 	const int t1.owner = 0;		// 0 is banker
 	const int t1.house = 0;		// no houses at begin
 	const bool t1.mort = false;	// no mortgages at begin
@@ -460,9 +459,59 @@ Properties :: ~Properties()
 }
 
 /* Accessor */
-Entry Properties :: getInfo(Position p);
+string Properties :: getName(Position p)
 {
+	return list.get(p).name;
+}
 
+int Properties :: getPrice(Position p)
+{
+	return list.get(p).price;
+}
+
+int Properties :: getOwner(Position p)
+{
+	return list.get(p).owner;
+}
+
+int Properties :: getColor(Position p)
+{
+	return list.get(p).color;
+}
+
+int Properties :: getRent(Position p)
+{
+	return list.get(p).rent;
+}
+
+int Properties :: getHouse1(Position p)
+{
+	return list.get(p).house1;
+}
+
+int Properties :: getHouse2(Position p)
+{
+	return list.get(p).house2;
+}
+
+int Properties :: getHouse3(Position p)
+{
+	return list.get(p).house3;
+}
+
+int Properties :: getHouse4(Position p)
+{
+	return list.get(p).house4;
+}
+
+int Properties :: getHotel(Position p)
+{
+	return list.get(p).hotel;
+}
+
+bool Properties :: getMort(Position p)
+{
+	return list.get(p).mort;
 }
 
 /* Mutator */

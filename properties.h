@@ -15,12 +15,22 @@ class Properties
 		~Properties();
 
 		/* Accessor */
-		Entry getInfo(Position p);
-
+		string getName(Position p);
+		int getPrice(Position p);
+		int getOwner(Position p);
+		int getColor(Position p);
+		int getRent(Position p);
+		int getHouse1(Position p);
+		int getHouse2(Position p);
+		int getHouse3(Position p);
+		int getHouse4(Position p);
+		int getHotel(Position p);
+		bool getMort(Position p);
+		
 		/* Mutator */
 		void changeOwner(Player p1, Position p);
 		
 	Private:
 		Container list;
-		Entry x;
+		Entry t1;
 };
