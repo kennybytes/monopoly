@@ -29,6 +29,7 @@ Entry Properties :: getInfo(Position p);
 /* Mutator */
 void Properties :: changeOwner(Player p1, Position p)
 {
-	
-	list.replace
+	Entry t1 = list.get(p);
+	t1.owner = p1;
+	list.replace(t1,p);
 }
