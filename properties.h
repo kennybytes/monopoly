@@ -15,12 +15,12 @@ class Properties
 		~Properties();
 
 		/* Accessor */
-		Entry getInfo();
+		Entry getInfo(Position p);
 
 		/* Mutator */
+		void changeOwner(Player p1, Position p);
 		
 	Private:
 		Container list;
-		Position p;
 		Entry x;
 };

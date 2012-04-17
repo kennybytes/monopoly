@@ -14,3 +14,21 @@ Properties :: Properties()
 	t1.name = "Go";
 	list.insert(t1);
 }
+
+Properties :: ~Properties()
+{
+
+}
+
+/* Accessor */
+Entry Properties :: getInfo(Position p);
+{
+
+}
+
+/* Mutator */
+void Properties :: changeOwner(Player p1, Position p)
+{
+	
+	list.replace
+}
