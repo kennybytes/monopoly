@@ -5,8 +5,11 @@
 //	Monopoly.cc 
 //	Main Driver for Final Project
 //
+<<<<<<< HEAD
 // 
 
+=======
+>>>>>>> kevinhu1
 #include <iostream>
 using namespace std;
 main()
@@ -29,14 +32,14 @@ main()
 	InitPlayers(players);
 
 	int turn = 1;
-	int flag = 0;
+	int flag = 0;	// ends game if 1
 	int option;
-	int roll;
+	int rollValue;
 	bool rollCheck;
 
 	while(!flag)
 	{
-		// Set rollCheck value
+		// Set rollCheck value per turn
 		rollCheck = 0;
 
 		// Display options
@@ -56,38 +59,55 @@ main()
 		cin >> option;
 		// Will keep doing actions until player
 		// legally chooses to end turn
-		while(option != 5 && !rollCheck)
-		if(option == 1)
-		{
+		while(option != 5 && !rollCheck){
+			if(option == 1 && !rollCheck) // Roll Dice
+			{	rollValue = roll();
+				// roll = rand()%12 + 1;   // Roll dice, values 1-12
+				rollCheck = 1;	      // Tell program user has rolled
+
+				if(turn == 1)
+				P1.movePosition(rollValue)
+				else if(turn == 2)
+				P2.movePosition(rollValue)
+				else if(turn == 3)
+				P3.movePosition(rollValue)
+				else if(turn == 4)
+				P4.movePosition(rollValue)
+			
+				// Perform action on tile
+
+				DisplayOptions();
+				cin >> option;
+			}
+
+			else if(option == 1 && rollCheck) // Already rolled
+			{	cout << "Already rolled! Choose another option" << endl;
+				DisplayOptions();
+				cin >> options;
+			}
+
+			else if(option == 2)
+			{	
 
 
-
-		DisplayOptions();
-		cin >> option;
-		}
-		else if(option == 2)
-		{	
-
-
-		DisplayOptions();
-		cin >> option;
-		}
-		else if(option == 3)
-		{
+				DisplayOptions();
+				cin >> option;
+			}
+			else if(option == 3)
+			{
 
 
-		DisplayOptions();
-		cin >> option;
-		}
-		else if(option == 4)
-		{
-
-
-		DisplayOptions();
-		cin >> option;
-		}
-		else if(option == 5)
-		{	if(!roll)
+				DisplayOptions();
+				cin >> option;
+			}
+			else if(option == 4)
+			{
+	
+	
+				DisplayOptions();
+				cin >> option;
+			}
+			else if(option == 5 && !rollCheck)
 			{	cout << "Must roll first!" << endl;
 				DisplayOptions();
 				cin >> option;
