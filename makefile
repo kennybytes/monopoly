@@ -4,6 +4,12 @@
 ## Author: Kenny Luong
 ## Rev: v0.2
 
+##
+##
+##	This is the MAIN makefile for our monopoly game
+##	
+##
+
 CCC = g++
 CCFLAGS = -ansi
 
@@ -11,6 +17,7 @@ monopoly: container.o common.o monopoly.o
 	  $(CCC) -o monopoly container.o common.o monopoly.o
 
 container.o: container.h container_inl.h listnode.h listnode_inl.h common.h entry.h
+
 
 common.o: common.h
 
