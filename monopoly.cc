@@ -6,8 +6,11 @@
 //	Main Driver for Final Project
 //
 <<<<<<< HEAD
+<<<<<<< HEAD
 // 
 
+=======
+>>>>>>> kevinhu1
 =======
 >>>>>>> kevinhu1
 #include <iostream>
@@ -75,6 +78,7 @@ main()
 				P4.movePosition(rollValue)
 			
 				// Perform action on tile
+<<<<<<< HEAD
 
 				DisplayOptions();
 				cin >> option;
@@ -86,6 +90,19 @@ main()
 				cin >> options;
 			}
 
+=======
+
+				DisplayOptions();
+				cin >> option;
+			}
+
+			else if(option == 1 && rollCheck) // Already rolled
+			{	cout << "Already rolled! Choose another option" << endl;
+				DisplayOptions();
+				cin >> options;
+			}
+
+>>>>>>> kevinhu1
 			else if(option == 2)
 			{	
 
