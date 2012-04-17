@@ -1,0 +1,2 @@
+An 'action' in monopoly can be defined as either a chance card, or a community chest card. 
+These cards do specific actions, which this class willl handle.
