@@ -21,22 +21,13 @@ container.o: container.h container_inl.h listnode.h listnode_inl.h common.h entr
 
 common.o: common.h
 
-arraycontainer:
-	rm container.h container_inl.h container.cc listnode.h listnode_inl.h
-	ln -s Container/container.h .
-	ln -s Container/container_inl.h .
-	ln -s Container/container.cc .
-	ln -s Container/listnode.h .
-	ln -s Container/listnode_inl.h .
-	touch container.h container_inl.h container.cc listnode.h listnode_inl.h
-
-listcontainer:
-	rm container.h container_inl.h container.cc listnode.h listnode_inl.h
-	ln -s Container/container.h .
-	ln -s Container/container_inl.h .
-	ln -s Container/container.cc .
-	ln -s Container/listnode.h .
-	ln -s Container/listnode_inl.h .
+container:
+	rm -f container.h container_inl.h container.cc listnode.h listnode_inl.h
+	ln -s ../Container/container.h .
+	ln -s ../Container/container_inl.h .
+	ln -s ../Container/container.cc .
+	ln -s ../Container/listnode.h .
+	ln -s ../ontainer/listnode_inl.h .
 	touch container.h container_inl.h container.cc listnode.h listnode_inl.h
 
 common:
