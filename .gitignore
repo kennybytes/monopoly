@@ -5,3 +5,12 @@
 
 ## Ignore Executables
 monopoly
+testcontainer
+
+Container/LinkedList/testcontainer
+
+## Ignore SWp
+*.swp
+~
+
+
