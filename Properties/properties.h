@@ -6,6 +6,9 @@
  */
 
 #include "entry.h"
+#include "container.h"
+typedef int CellType;
+
 
 class Properties
 {

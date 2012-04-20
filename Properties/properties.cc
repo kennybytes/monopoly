@@ -6,7 +6,7 @@
  */
 
 #include <string>
-
+#include "celltype.h"
 /* Constructor & Destructor */
 Properties :: Properties()
 {
@@ -14,6 +14,9 @@ Properties :: Properties()
 	const int t1.house = 0;		// no houses at begin
 	const bool t1.mort = false;	// no mortgages at begin
 
+	#include "celltype.h"
+
+	
 	t1.name = "Go";
 	t1.price = 0;
 	t1.color = 0;

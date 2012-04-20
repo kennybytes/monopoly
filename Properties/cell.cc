@@ -1,0 +1,13 @@
+
+
+
+Class GameSpace{
+	public:
+
+
+	
+	private:
+	
+
+}
+
