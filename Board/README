@@ -1,0 +1,16 @@
+This is the board 'class' or module.
+
+The board contains certain types of cells -- which hopefull we can 
+represent as a type in a container.
+
+Type of Cell 		Macro Number
+-----------------------------
+Chance			0
+Community Chest		1
+Utility			2
+Property		3
+Tax			4
+Free Parking 		5
+Go to Jail		6
+Jail			7
+
