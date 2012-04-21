@@ -11,20 +11,8 @@
 #define ENTRY_H
 
 #include <string>
+#include "gamespace.h"
 
-typedef struct Entry
-{
-	string name;
-	int price;
-	int owner;
-	int color;
-	int rent;
-	int house1;
-	int house2;
-	int house3;
-	int house4;
-	int hotel;
-	bool mort;
-}
+typedef GameSpace Entry;
 
 #endif

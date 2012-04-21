@@ -8,11 +8,11 @@
 #include "entry.h"
 #include "container.h"
 typedef int CellType;
-
+typedef int Player;
 
 class Properties
 {
-	Public:
+	public:
 		/* Constructor & Destructor */
 		Properties();
 		~Properties();
@@ -33,7 +33,7 @@ class Properties
 		/* Mutator */
 		void changeOwner(Player p1, Position p);
 		
-	Private:
+	private:
 		Container list;
 		Entry t1;
 };

@@ -11,8 +11,8 @@
 CCC = g++
 CCFLAGS = -ansi
 
-testproperty: testproperty.o properties.o container.o 
-	$(CCC) $(CCFLAGS) -o testproperty propertytest.o properties.o container.o
+testproperty: testproperty.o gamespace.o container.o common.o
+	$(CCC) $(CCFLAGS) -o testproperty testproperty.o gamespace.o container.o common.o
 
 container:
 	rm -f container.h container_inl.h container.cc listnode.h listnode_inl.h
