@@ -10,6 +10,9 @@
  * 
  */
 
+#ifndef COLOR_H
+#define COLOR_H
+
 
 typedef int Color;
 
@@ -33,3 +36,4 @@ static const Color YELLOW = 5;
 static const Color GREEN = 6;
 static const Color BLUE = 7;
 
+#endif
