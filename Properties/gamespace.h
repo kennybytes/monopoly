@@ -2,7 +2,6 @@
 
 #include <string>
 using namespace std;
-#include "type.h"
 #include "color.h"
 #include "celltype.h"
 
