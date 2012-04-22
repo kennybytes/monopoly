@@ -4,14 +4,17 @@
 using namespace std;
 #include "type.h"
 #include "color.h"
-
-typedef int Position;
+#include "celltype.h"
 
 #ifndef GAMESPACE
 #define GAMESPACE
 
-class GameSpace{
 
+typedef int Position;
+typedef int Price;
+typedef int Color;
+
+class GameSpace{
 
 public:
 
@@ -22,7 +25,7 @@ public:
 	/* Accessors */
 	//string getName(const Position p) const;	  
 	int getPrice() const;
-	int getOwner() const;
+	string getOwner() const;
 	int getColor() const;
 	int getRent() const;
 	int getHouse1() const;
@@ -33,7 +36,18 @@ public:
 	bool getMort() const;
 
 	/* Modifiers */
-
+	void setName(string n);
+	void setPrice(Price p);
+	void setOwner(string o);
+	void setColor(Color c);
+	void setRent(Price p);
+	void setHouse1(Price p);
+	void setHouse2(Price p);
+	void setHouse3(Price p);
+	void setHouse4(Price p);
+	void setHotel(Price p);
+	void setMortage(Price p);
+	void setType(CellType t);
 	
 	/* Operators */
 	bool operator==(const GameSpace& other) const;
@@ -47,13 +61,12 @@ private:
 	string name;	//Name of the block
 	int type;	//Type of block
 	
-
         int price;	
-        int owner;
+        string owner;
         int color;
 	
 	/* rent costs */
-        int base_rent; 
+        int rent; 
         int house1;
         int house2;
         int house3;

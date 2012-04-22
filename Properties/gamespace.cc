@@ -1,11 +1,20 @@
+/*
+ *
+ * File Name: gamespace.cc
+ * Author: Kenny Luong
+ * Date Created: 4/21/12
+ *
+ * File Description:
+ *
+ *
+ *
+ */
 
-
-
-
-
+#include <iostream>
+using namespace std;
 
 #include "gamespace.h"
-
+#include "celltype.h"
 /*
  *
  * Constructors
@@ -18,24 +27,19 @@
 
 GameSpace :: GameSpace()
 {
-	type = -1;
-	price = -1;
-	owner = -1;
-	color = -1;
-	base_rent = -1;
-	house1 = -1;
-	house2 = -1;
-	house3 = -1;
-	house4 = -1;
-	hotel = -1;
-	mortage = -1;
+	name = NON;
+	type = NON;
+	price = NON;
+	owner = NON;
+	color = NON;
+	rent = NON;
+	house1 = NON;
+	house2 = NON;
+	house3 = NON;
+	house4 = NON;
+	hotel = NON;
+	mortage = NON;
 }
-
-
-
-
-
-
 
 
 
@@ -49,7 +53,7 @@ int GameSpace::getPrice() const
 {
 	return price;
 }
-int GameSpace::getOwner() const
+string GameSpace::getOwner() const
 {
 	return owner;
 }
@@ -100,6 +104,64 @@ bool GameSpace::getMort() const
 /*
  *
  *
+ * Modifiers
+ *
+ */
+void GameSpace::setName(string n){
+	name = n;
+}
+
+
+void GameSpace::setPrice(Price p){
+	price = p;
+}
+
+void GameSpace::setOwner(string o){
+	owner = o;
+}
+
+void GameSpace::setColor(Color c){
+	color = c;
+}
+
+void GameSpace::setRent(Price p){
+	rent = p;
+}
+
+void GameSpace::setHouse1(Price p){
+	house1 = p;
+}
+
+void GameSpace::setHouse2(Price p){
+	house2 = p;
+}
+
+void GameSpace::setHouse3(Price p){
+	house3 = p;
+}
+
+void GameSpace::setHouse4(Price p){
+	house4 = p;
+}
+
+void GameSpace::setHotel(Price p){
+	hotel = p;
+}
+
+void GameSpace::setMortage(Price p){
+	mortage = p;
+}
+
+void GameSpace::setType(CellType t){
+	type = t;
+}
+
+
+
+
+/*
+ *
+ *
  * Operators
  *
  */
@@ -131,9 +193,19 @@ bool GameSpace::operator!=(const GameSpace& other) const
  */
 
 
-ostream& operator<<(ostream& s, const GameSpace &other)
+ostream& operator<<(ostream& s, const GameSpace &gs)
 {
-
+	s << "Name = " << gs.name << endl;
+	s << "Type = " << gs.type << endl;
+	s << "Price = " << gs.price << endl;
+	s << "Color = " << gs.color << endl;
+	s << "Rent = " << gs.rent << endl;
+	s << "House1 = " << gs.house1 << endl;
+	s << "House2 = " << gs.house2 << endl;
+	s << "House3 = " << gs.house3 << endl;
+	s << "House4 = " << gs.house4 << endl;
+	s << "Hotel = " << gs.hotel << endl;
+	s << "Mortage = " << gs.mortage << endl;
 
 }
 
