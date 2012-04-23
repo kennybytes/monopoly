@@ -27,7 +27,7 @@ container:
 	ln -s ../Container/container_inl.h .
 	ln -s ../Container/container.cc .
 	ln -s ../Container/listnode.h .
-	ln -s ../ontainer/listnode_inl.h .
+	ln -s ../Container/listnode_inl.h .
 	touch container.h container_inl.h container.cc listnode.h listnode_inl.h
 
 common:
