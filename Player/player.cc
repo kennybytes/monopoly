@@ -3,8 +3,17 @@
  * By: R4T5		*/
 
 #include "player.h"
+#include "container.h"
+
 #include <iostream>
 using namespace std;
+Player :: Player()
+{
+	jail = false;
+	p = 0;
+	balance = 1500;
+	prop.clear();
+}
 
 Position Player :: update_position(int dice)
 {
@@ -15,26 +24,27 @@ void Player :: update_balance(int bal)
 {
 	balance = balance + bal;
 }	
+/*
 void Player :: update_balance(Properties pr)
 {
-	balance = balance - pr.getvalue();
+	balance = balance - pr;
 }
+*/
 	
 	
-int Player :: getbalance()
+int Player :: get_balance()
 {
 	return balance;
 }
-	
-Properties Player :: sellpro()
+Position Player :: get_position()
 {
-	update_balance(int);
+	return p;
 }
+	
 		
-void Player :: buypro(Properties pr)
+void Player :: buy_prop(Properties pr)
 {
-	pro = pro + pr;	
-	update_balance(int);
+	prop.insert(pr);
 }
 		
 bool Player :: bankcrupt()
@@ -42,3 +52,13 @@ bool Player :: bankcrupt()
 	return (balance == 0);
 }
 
+void Player :: go_jail()
+{
+	jail = true;
+}
+
+
+void Player :: set_free()
+{
+	jail = false;
+}

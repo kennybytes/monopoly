@@ -1,6 +1,7 @@
 /* File: player.h 	*
  * Date: April 9th 2012	*
  * By: R4T5		*/
+#include "container.h"
 
 typedef int Position;
 
@@ -10,20 +11,24 @@ class Player
 		Player();
 		
 		Position update_position(int dice);
+
 		void update_balance(int bal);
-		void update_balance(Properties pr);
+		//void update_balance(Properties pr);
 	
-		int getbalance();
-		Position getposition();
+		int get_balance();
+		Position get_position();
 	
-		Properties sellpro();
-		void buypro(Properties pr);
+		void buy_prop(Properties pr);
 		
 		bool bankcrupt();
 
+		void go_jail();
+		void set_free();	
+
 	private:
+		bool jail;
 		Position p;
 		int balance;	
-		Properties pro; 
-	
+		Container prop;	
 };
+
