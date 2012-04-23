@@ -4,12 +4,19 @@
 *.o
 
 ## Ignore Executables
+
 monopoly
 testcontainer
 readtest
 writtest
+
+
 Container/LinkedList/testcontainer
 Properties/testgamespace
+
+
+
+
 ## Ignore SWp
 *.swp
 ~
