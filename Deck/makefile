@@ -4,17 +4,21 @@
 ## Rev: v0.2
 ##
 ##
-##	This is the makefile for the Board/Property Class
+##	This is the makefile for the deck Class
 ##	
 ##
 
 CCC = g++
 CCFLAGS = -ansi
 
-testgamespace: testgamespace.o gamespace.o container.o common.o
-	$(CCC) $(CCFLAGS) -o testgamespace testgamespace.o gamespace.o container.o common.o
+testdeck: testdeck.o deck.o container.o common.o
+	$(CCC) $(CCFLAGS) -o testdeck testdeck.o deck.o container.o common.o
 
-testgamespace.o: gamespace.h container.h
+testdesk.o: deck.h container.h
+
+
+
+
 container:
 	rm -f container.h container_inl.h container.cc listnode.h listnode_inl.h
 	ln -s ../Container/container.h .
