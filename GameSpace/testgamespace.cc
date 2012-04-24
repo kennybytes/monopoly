@@ -18,7 +18,7 @@ int main()
 	A.setName("Test 1");
 	A.setPrice(100);
 	A.setOwner("Kenny");
-	//A.setColor();
+	A.setColor(RED);
 	cout << A << endl;
 	
 	
