@@ -22,10 +22,12 @@ static const CellType NON = -1;
 static const CellType CHANCE = 0;
 static const CellType COMMUNITY_CHEST = 1;
 static const CellType UTILITY = 2;
-static const CellType PROPERTY = 3;
-static const CellType TAX = 4;
-static const CellType FREE_PARKING = 5;
-static const CellType Go_TO_JAIL = 6;
-static const CellType JAIL = 7;
+static const CellType RAILROAD = 3
+static const CellType PROPERTY = 4;
+static const CellType INCOME_TAX = 5;
+static const CellType LUXURY_TAX = 6
+static const CellType FREE_PARKING = 7;
+static const CellType Go_TO_JAIL = 8;
+static const CellType JAIL = 9;
 
 #endif
