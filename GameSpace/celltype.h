@@ -1,11 +1,9 @@
-
 /*
- *
- *
  *
  * Name: celltype.h
  * Author: Kenny Luong
  * Date Created: 4/21/12
+ * Date Modified: 4/23/12
  *
  * Description:
  *
