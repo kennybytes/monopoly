@@ -25,7 +25,8 @@ static const CellType PROPERTY = 4;
 static const CellType INCOME_TAX = 5;
 static const CellType LUXURY_TAX = 6
 static const CellType FREE_PARKING = 7;
-static const CellType Go_TO_JAIL = 8;
+static const CellType GO_TO_JAIL = 8;
 static const CellType JAIL = 9;
+static const CellType GO = 10;
 
 #endif
