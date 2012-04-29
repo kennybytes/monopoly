@@ -22,7 +22,7 @@ public:
 	GameSpace();
 
 	/* Accessors */
-	//string getName(const Position p) const;	  
+	string getName() const;	  
 	int getPrice() const;
 	string getOwner() const;
 	int getColor() const;

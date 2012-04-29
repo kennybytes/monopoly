@@ -15,6 +15,7 @@ testgamespace: testgamespace.o gamespace.o container.o common.o
 	$(CCC) $(CCFLAGS) -o testgamespace testgamespace.o gamespace.o container.o common.o
 
 testgamespace.o: gamespace.h container.h
+
 container:
 	rm -f container.h container_inl.h container.cc listnode.h listnode_inl.h
 	ln -s ../Container/container.h .
