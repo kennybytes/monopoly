@@ -1,7 +1,7 @@
 
 ## R4T5 
-## Date: 27 Apr 12
-## Rev: v0.1
+## Date: 29 Apr 12
+## Rev: v0.2
 ##
 ##
 ##	This is the makefile for the Board/Property Class
@@ -15,6 +15,19 @@ testproperties: testproperties.o properties.o container.o common.o
 	$(CCC) $(CCFLAGS) -o testproperties testproperties.o properties.o container.o common.o
 
 testproperties.o: properties.h container.h
+
+properties.o: properties.h
+
+container.o: container.h
+
+common.o: common.h
+
+gamespace:
+	rm -f celltype.h gamespace.h color.h
+	ln -s ../GameSpace/celltype.h .
+	ln -s ../GameSpace/gamespace.h .
+	ln -s ../GameSpace/color.h .
+	touch celltype.h gamespace.h color.h
 
 container:
 	rm -f container.h container_inl.h container.cc listnode.h listnode_inl.h

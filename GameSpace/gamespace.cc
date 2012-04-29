@@ -3,6 +3,8 @@
  * File Name: gamespace.cc
  * Author: Kenny Luong
  * Date Created: 4/21/12
+ * Date Modified: 4/29/12
+ * Mod: v0.2
  *
  * File Description:
  *
@@ -15,16 +17,9 @@ using namespace std;
 
 #include "gamespace.h"
 #include "celltype.h"
-/*
- *
- * Constructors
- *
- */
 
 
-
-
-
+/*	Constructor	*/
 GameSpace :: GameSpace()
 {
 	name = NON;
@@ -42,13 +37,12 @@ GameSpace :: GameSpace()
 }
 
 
+/*	Accessors	*/
+string GameSpace::getName() const
+{
+	return name;
+}
 
-/* 
- *
- * Accessors
- *
- *
- */
 int GameSpace::getPrice() const
 {
 	return price;
@@ -100,59 +94,64 @@ bool GameSpace::getMort() const
 }
 
 
-
-/*
- *
- *
- * Modifiers
- *
- */
-void GameSpace::setName(string n){
+/*	Mutators	*/
+void GameSpace::setName(string n)
+{
 	name = n;
 }
 
-
-void GameSpace::setPrice(Price p){
+void GameSpace::setPrice(Price p)
+{
 	price = p;
 }
 
-void GameSpace::setOwner(string o){
+void GameSpace::setOwner(string o)
+{
 	owner = o;
 }
 
-void GameSpace::setColor(Color c){
+void GameSpace::setColor(Color c)
+{
 	color = c;
 }
 
-void GameSpace::setRent(Price p){
+void GameSpace::setRent(Price p)
+{
 	rent = p;
 }
 
-void GameSpace::setHouse1(Price p){
+void GameSpace::setHouse1(Price p)
+{
 	house1 = p;
 }
 
-void GameSpace::setHouse2(Price p){
+void GameSpace::setHouse2(Price p)
+{
 	house2 = p;
 }
 
-void GameSpace::setHouse3(Price p){
+void GameSpace::setHouse3(Price p)
+{
 	house3 = p;
 }
 
-void GameSpace::setHouse4(Price p){
+void GameSpace::setHouse4(Price p)
+{
 	house4 = p;
 }
 
-void GameSpace::setHotel(Price p){
+void GameSpace::setHotel(Price p)
+{
 	hotel = p;
 }
 
-void GameSpace::setMortage(Price p){
+void GameSpace::setMortage(Price p)
+{
 	mortage = p;
 }
 
-void GameSpace::setType(CellType t){
+void GameSpace::setType(CellType t)
+{
 	type = t;
 }
 

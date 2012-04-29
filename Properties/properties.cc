@@ -7,9 +7,14 @@
 
 #include <string>
 #include "celltype.h"
+#include "gamespace.h"
+#include "properties.h"
+
 /* Constructor & Destructor */
 Properties :: Properties()
 {
+	GameSpace t1;
+
 	t1.setName("Go");
 	t1.setType(10);
 	list.insert(t1);
@@ -365,58 +370,58 @@ Properties :: ~Properties()
 }
 
 /* Accessor */
-string Properties :: getName(Position p)
+string Properties :: getName(Position p) const
 {
-	return list.get(p).getName;
+	return list.get(p).getName();
 }
 
-int Properties :: getPrice(Position p)
+int Properties :: getPrice(Position p) const
 {
-	return list.get(p).getPrice;
+	return list.get(p).getPrice();
 }
 
-string Properties :: getOwner(Position p)
+string Properties :: getOwner(Position p) const
 {
-	return list.get(p).getOwner;
+	return list.get(p).getOwner();
 }
 
-int Properties :: getColor(Position p)
+int Properties :: getColor(Position p) const
 {
-	return list.get(p).getColor;
+	return list.get(p).getColor();
 }
 
-int Properties :: getRent(Position p)
+int Properties :: getRent(Position p) const
 {
-	return list.get(p).getRent;
+	return list.get(p).getRent();
 }
 
-int Properties :: getHouse1(Position p)
+int Properties :: getHouse1(Position p) const
 {
-	return list.get(p).getHouse1;
+	return list.get(p).getHouse1();
 }
 
-int Properties :: getHouse2(Position p)
+int Properties :: getHouse2(Position p) const
 {
-	return list.get(p).getHouse2;
+	return list.get(p).getHouse2();
 }
 
-int Properties :: getHouse3(Position p)
+int Properties :: getHouse3(Position p) const
 {
-	return list.get(p).getHouse3;
+	return list.get(p).getHouse3();
 }
 
-int Properties :: getHouse4(Position p)
+int Properties :: getHouse4(Position p) const
 {
-	return list.get(p).getHouse4;
+	return list.get(p).getHouse4();
 }
 
-int Properties :: getHotel(Position p)
+int Properties :: getHotel(Position p) const
 {
-	return list.get(p).getHotel;
+	return list.get(p).getHotel();
 }
 
-bool Properties :: getMort(Position p)
+bool Properties :: getMort(Position p) const
 {
-	return list.get(p).getMort;
+	return list.get(p).getMort();
 }
 
