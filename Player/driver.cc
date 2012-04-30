@@ -9,6 +9,8 @@ using namespace std;
 main()
 {
    Player A;
+   cout <<"initial balance: " << A.get_balance()<<endl;
+   cout << "initial position: "<< A.get_position()<<endl;  
    A.update_balance(1000);
    A.update_balance(-100);
    A.update_position(6);
@@ -19,14 +21,6 @@ main()
    A.update_position(4);
    cout << A.get_balance()<<endl;
    cout << A.get_position()<<endl; 
-
-
-
-   
-
-
-
-
 
 
 }
