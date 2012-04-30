@@ -7,6 +7,7 @@
 
 #include <iostream>
 using namespace std;
+
 Player :: Player()
 {
 	jail = false;
@@ -15,38 +16,36 @@ Player :: Player()
 	prop.clear();
 }
 
-Position Player :: update_position(int dice)
+void Player :: update_position(int dice)
 {
-	p = p + dice; 
-	return p;
+	if(!bankcrupt())
+	{
+		p = (p + dice)%40; 
+	}
 }
 void Player :: update_balance(int bal)
 {
 	balance = balance + bal;
 }	
-/*
-void Player :: update_balance(Properties pr)
-{
-	balance = balance - pr;
-}
-*/
-	
 	
 int Player :: get_balance()
 {
 	return balance;
 }
+
 Position Player :: get_position()
 {
 	return p;
 }
 	
-		
 void Player :: buy_prop(Properties pr)
 {
+	//if(pr.value() < balance) 
 	prop.insert(pr);
+	//else cout << "Not enough money!" <<endl;
+	//update_balance(-pr.value());
 }
-		
+	
 bool Player :: bankcrupt()
 {
 	return (balance == 0);
@@ -56,7 +55,6 @@ void Player :: go_jail()
 {
 	jail = true;
 }
-
 
 void Player :: set_free()
 {
