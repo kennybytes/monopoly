@@ -196,16 +196,14 @@ ostream& operator<<(ostream& s, const GameSpace &gs)
 {
 	s << "Name = " << gs.name << endl;
 	s << "Type = " << gs.type << endl;
-	s << "Price = " << gs.price << endl;
-	s << "Color = " << gs.color << endl;
-	s << "Rent = " << gs.rent << endl;
-	s << "House1 = " << gs.house1 << endl;
-	s << "House2 = " << gs.house2 << endl;
-	s << "House3 = " << gs.house3 << endl;
-	s << "House4 = " << gs.house4 << endl;
-	s << "Hotel = " << gs.hotel << endl;
-	s << "Mortage = " << gs.mortage << endl;
-
+	if(gs.price != NON)	s << "Price = " << gs.price << endl;
+	if(gs.color != NON)	s << "Color = " << gs.color << endl;
+	if(gs.rent != NON)	s << "Rent = " << gs.rent << endl;
+	if(gs.house1 != NON)	s << "House1 = " << gs.house1 << endl;
+	if(gs.house2 != NON)	s << "House2 = " << gs.house2 << endl;
+	if(gs.house3 != NON)	s << "House3 = " << gs.house3 << endl;
+	if(gs.house4 != NON)	s << "House4 = " << gs.house4 << endl;
+	if(gs.hotel != NON)	s << "Hotel = " << gs.hotel << endl;
+	if(gs.type == 2 || gs.type == 3 || gs.type == 4)
+				s << "Mortage = " << gs.mortage << endl;
 }
-
-

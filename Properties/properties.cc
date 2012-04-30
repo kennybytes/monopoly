@@ -517,7 +517,7 @@ GameSpace Properties :: clear_gamespace(GameSpace other)
 	other.setHouse3(NON);
 	other.setHouse4(NON);
 	other.setHotel(NON);
-	other.setMortgage(0);
+	other.setMortgage(false);
 	other.setType(NON);
 
 	return other;
