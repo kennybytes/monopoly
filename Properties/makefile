@@ -1,4 +1,3 @@
-
 ## R4T5 
 ## Date: 29 Apr 12
 ## Rev: v0.2
@@ -10,8 +9,7 @@
 
 CCC = g++
 CCFLAGS = -ansi
-
-testproperties: testproperties.o properties.o gamespace.o container.o common.o
+testproperties: testproperties.o properties.o gamespace.o container.o common.o
 	$(CCC) $(CCFLAGS) -o testproperties testproperties.o properties.o gamespace.o container.o common.o
 
 testproperties.o: properties.h container.h
@@ -48,13 +46,9 @@ common:
 	ln -s ../Container/common.cc .
 	touch common.h common.cc
 
-entry:
-	rm entry.h
-	ln -s entry.h .
-	touch entry.h
-
 clean:
 	rm -f *.o
 
 real_clean:	clean
 	rm -f testproperties
+
