@@ -206,4 +206,6 @@ ostream& operator<<(ostream& s, const GameSpace &gs)
 	if(gs.hotel != NON)	s << "Hotel = " << gs.hotel << endl;
 	if(gs.type == 2 || gs.type == 3 || gs.type == 4)
 				s << "Mortage = " << gs.mortage << endl;
+
+	return s;
 }
