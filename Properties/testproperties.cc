@@ -16,6 +16,6 @@ main()
 {
 	Properties prop;
 
-//	cout << prop << endl;
+	cout << prop << endl;
 
 }

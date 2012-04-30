@@ -442,4 +442,6 @@ ostream& operator<<(ostream& s, const Properties &other)
 	{
 		s << other.getInfo(pos) << endl;
 	}
+	return s;
+
 }

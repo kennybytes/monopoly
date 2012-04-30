@@ -68,7 +68,7 @@ Entry Container :: get(Position p) const
 {
 	if( !valid_position(p,count-1) || isempty())
 	{	Warning("Container: Get to illegal position; return ERROR");
-		return ERROR;
+		// return ERROR;
 	}
 
 	ListNode *current = findpos(p);
@@ -159,7 +159,7 @@ Entry Container :: remove(Position p)
 	if( !valid_position(p,count) || isfull() )
 	{
 		Warning("Container: Attempting to remove in illegal position; return ERROR");
-		return ERROR;
+		// return ERROR;
 	}
 	
 	else
