@@ -20,7 +20,7 @@ Properties :: Properties()
 	t1.setName("Go");
 	t1.setType(10);
 	list.insert(t1);
-/*
+
 	t1.setName("Mediterranean Avenue");
 	t1.setPrice(60);
 	t1.setOwner("Banker");
@@ -31,6 +31,7 @@ Properties :: Properties()
 	t1.setHouse3(90);
 	t1.setHouse4(160);
 	t1.setHotel(250);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
 	
@@ -364,7 +365,7 @@ Properties :: Properties()
 	t1.setHotel(2000);
 	t1.setType(4);
 	list.insert(t1);
-*/
+
 }
 
 Properties :: ~Properties()
@@ -438,10 +439,11 @@ ostream& operator<<(ostream& s, const Properties &other)
 {
 	int pos = 0;
 
-	for(ContainerIterator i = other.list.Start(); i != other.list.End(); i++)
+	for(ContainerIterator i = other.list.Start(); i != other.list.End();i++)
 	{
 		s << other.getInfo(pos) << endl;
+		pos++;
 	}
-	return s;
 
+	return s;
 }

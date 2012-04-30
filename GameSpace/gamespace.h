@@ -45,7 +45,7 @@ public:
 	void setHouse3(Price p);
 	void setHouse4(Price p);
 	void setHotel(Price p);
-	void setMortage(Price p);
+	void setMortgage(Price p);
 	void setType(CellType t);
 	
 	/* Operators */

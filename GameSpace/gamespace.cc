@@ -145,7 +145,7 @@ void GameSpace::setHotel(Price p)
 	hotel = p;
 }
 
-void GameSpace::setMortage(Price p)
+void GameSpace::setMortgage(Price p)
 {
 	mortage = p;
 }
