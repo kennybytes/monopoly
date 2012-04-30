@@ -7,6 +7,10 @@
 
 #include "entry.h"
 #include "container.h"
+#include "gamespace.h"
+#include "color.h"
+#include "celltype.h"
+
 typedef int CellType;
 typedef int Player;
 
@@ -18,6 +22,7 @@ class Properties
 		~Properties();
 
 		/* Accessor */
+		Entry getInfo(Position p) const;
 		string getName(Position p) const;
 		int getPrice(Position p) const;
 		string getOwner(Position p) const;
@@ -32,6 +37,9 @@ class Properties
 		
 		/* Mutator */
 		
+		/* Operators */
+		friend ostream& operator<<(ostream& s, const Properties &other);
+
 	private:
 		Container list;
 };

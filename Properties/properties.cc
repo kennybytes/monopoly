@@ -6,9 +6,11 @@
  */
 
 #include <string>
+#include "container.h"
 #include "celltype.h"
 #include "gamespace.h"
 #include "properties.h"
+#include "color.h"
 
 /* Constructor & Destructor */
 Properties :: Properties()
@@ -370,6 +372,11 @@ Properties :: ~Properties()
 }
 
 /* Accessor */
+Entry Properties :: getInfo(Position p) const
+{
+	return list.get(p);
+}
+
 string Properties :: getName(Position p) const
 {
 	return list.get(p).getName();
@@ -425,3 +432,13 @@ bool Properties :: getMort(Position p) const
 	return list.get(p).getMort();
 }
 
+/*	Operators	*/
+ostream& operator<<(ostream& s, const Properties &other)
+{
+	int pos = 0;
+
+	for(ContainerIterator i = other.list.Start(); i != other.list.End(); i++)
+	{
+		s << other.getInfo(pos) << endl;
+	}
+}
