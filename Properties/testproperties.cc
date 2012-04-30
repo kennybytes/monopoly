@@ -17,5 +17,4 @@ main()
 	Properties prop;
 
 	cout << prop << endl;
-
 }

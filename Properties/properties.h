@@ -19,7 +19,6 @@ class Properties
 	public:
 		/* Constructor & Destructor */
 		Properties();
-		~Properties();
 
 		/* Accessor */
 		Entry getInfo(Position p) const;
@@ -42,4 +41,6 @@ class Properties
 
 	private:
 		Container list;
+
+		GameSpace clear_gamespace(GameSpace other);
 };
