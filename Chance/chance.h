@@ -2,8 +2,8 @@
  *
  *
  *	File name: 	chance.h
- *	Author: 	Kenny Luong
- *	Date: 		4/24/12
+ *	Author: 	Kevin Hu
+ *	Date: 		4/29/12
  *
  *	Description: 
  *		
@@ -11,6 +11,8 @@
  */
 
 
+#include <iostream>
+using namespace std;
 
-
+void chance(Player p);
 

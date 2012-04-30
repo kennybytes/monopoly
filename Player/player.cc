@@ -23,6 +23,13 @@ void Player :: update_position(int dice)
 		p = (p + dice)%40; 
 	}
 }
+
+Position Player :: send_to(Position newp)
+{
+	p = newp;
+	return p;
+}
+
 void Player :: update_balance(int bal)
 {
 	balance = balance + bal;
@@ -37,6 +44,7 @@ Position Player :: get_position()
 {
 	return p;
 }
+
 	
 void Player :: buy_prop(Properties pr)
 {
@@ -45,8 +53,8 @@ void Player :: buy_prop(Properties pr)
 	//else cout << "Not enough money!" <<endl;
 	//update_balance(-pr.value());
 }
-	
-bool Player :: bankcrupt()
+		
+bool Player :: bankrupt()
 {
 	return (balance == 0);
 }

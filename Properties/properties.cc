@@ -6,9 +6,11 @@
  */
 
 #include <string>
+#include "container.h"
 #include "celltype.h"
 #include "gamespace.h"
 #include "properties.h"
+#include "color.h"
 
 /* Constructor & Destructor */
 Properties :: Properties()
@@ -18,6 +20,7 @@ Properties :: Properties()
 	t1.setName("Go");
 	t1.setType(10);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Mediterranean Avenue");
 	t1.setPrice(60);
@@ -29,12 +32,15 @@ Properties :: Properties()
 	t1.setHouse3(90);
 	t1.setHouse4(160);
 	t1.setHotel(250);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 	
 	t1.setName("Community Chest");
 	t1.setType(1);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Baltic Avenue");
 	t1.setPrice(60);
@@ -45,18 +51,22 @@ Properties :: Properties()
 	t1.setHouse3(180);
 	t1.setHouse4(320);
 	t1.setHotel(450);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Income Tax");
 	t1.setType(5);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Reading Railroad");
 	t1.setPrice(200);
 	t1.setRent(25);
 	t1.setType(3);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Oriental Avenue");
 	t1.setPrice(100);
@@ -67,12 +77,15 @@ Properties :: Properties()
 	t1.setHouse3(270);
 	t1.setHouse4(400);
 	t1.setHotel(550);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Chance");
 	t1.setType(0);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Vermont Avenue");
 	t1.setPrice(100);
@@ -83,8 +96,10 @@ Properties :: Properties()
 	t1.setHouse3(270);
 	t1.setHouse4(400);
 	t1.setHotel(550);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Connecticut Avenue");
 	t1.setPrice(120);
@@ -95,12 +110,15 @@ Properties :: Properties()
 	t1.setHouse3(300);
 	t1.setHouse4(450);
 	t1.setHotel(600);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Jail/Just Visiting");
 	t1.setType(9);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("St. Charles Place");
 	t1.setPrice(140);
@@ -111,13 +129,16 @@ Properties :: Properties()
 	t1.setHouse3(450);
 	t1.setHouse4(625);
 	t1.setHotel(750);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Electrical Company");
 	t1.setPrice(150);
 	t1.setType(2);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("States Avenue");
 	t1.setPrice(140);
@@ -128,8 +149,10 @@ Properties :: Properties()
 	t1.setHouse3(450);
 	t1.setHouse4(625);
 	t1.setHotel(750);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Virginia Avenue");
 	t1.setPrice(160);
@@ -140,14 +163,17 @@ Properties :: Properties()
 	t1.setHouse3(500);
 	t1.setHouse4(700);
 	t1.setHotel(900);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Pennsylvania Railroad");
 	t1.setPrice(200);
 	t1.setRent(25);
 	t1.setType(3);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("St. James Place");
 	t1.setPrice(180);
@@ -158,12 +184,15 @@ Properties :: Properties()
 	t1.setHouse3(550);
 	t1.setHouse4(750);
 	t1.setHotel(950);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Community Chest");
 	t1.setType(1);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Tennessee Avenue");
 	t1.setPrice(180);
@@ -174,8 +203,10 @@ Properties :: Properties()
 	t1.setHouse3(550);
 	t1.setHouse4(750);
 	t1.setHotel(950);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("New York Avenue");
 	t1.setPrice(200);
@@ -186,12 +217,15 @@ Properties :: Properties()
 	t1.setHouse3(600);
 	t1.setHouse4(800);
 	t1.setHotel(1000);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Free Parking");
 	t1.setType(7);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Kentucky Avenue");
 	t1.setPrice(220);
@@ -202,12 +236,15 @@ Properties :: Properties()
 	t1.setHouse3(700);
 	t1.setHouse4(875);
 	t1.setHotel(1050);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Chance");
 	t1.setType(0);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Indiana Avenue");
 	t1.setPrice(220);
@@ -218,8 +255,10 @@ Properties :: Properties()
 	t1.setHouse3(700);
 	t1.setHouse4(875);
 	t1.setHotel(1050);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Illinois Avenue");
 	t1.setPrice(240);
@@ -230,14 +269,17 @@ Properties :: Properties()
 	t1.setHouse3(750);
 	t1.setHouse4(925);
 	t1.setHotel(1100);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("B&O Railroad");
 	t1.setPrice(200);
 	t1.setRent(25);
 	t1.setType(3);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Atlantic Avenue");
 	t1.setPrice(260);
@@ -248,8 +290,10 @@ Properties :: Properties()
 	t1.setHouse3(800);
 	t1.setHouse4(975);
 	t1.setHotel(1150);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Ventnor Avenue");
 	t1.setPrice(260);
@@ -260,13 +304,16 @@ Properties :: Properties()
 	t1.setHouse3(800);
 	t1.setHouse4(975);
 	t1.setHotel(1150);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Water Works");
 	t1.setPrice(150);
 	t1.setType(2);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Marvin Avenue");
 	t1.setPrice(280);
@@ -277,12 +324,15 @@ Properties :: Properties()
 	t1.setHouse3(850);
 	t1.setHouse4(1025);
 	t1.setHotel(1200);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Go to Jail");
 	t1.setType(8);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Pacific Avenue");
 	t1.setPrice(300);
@@ -293,8 +343,10 @@ Properties :: Properties()
 	t1.setHouse3(900);
 	t1.setHouse4(1100);
 	t1.setHotel(1275);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("North Carolina Avenue");
 	t1.setPrice(300);
@@ -305,12 +357,15 @@ Properties :: Properties()
 	t1.setHouse3(900);
 	t1.setHouse4(1100);
 	t1.setHotel(1275);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Community Chest");
 	t1.setType(1);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Pennsylvania Avenue");
 	t1.setPrice(320);
@@ -321,18 +376,22 @@ Properties :: Properties()
 	t1.setHouse3(1000);
 	t1.setHouse4(1200);
 	t1.setHotel(1400);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Short Line");
 	t1.setPrice(200);
 	t1.setRent(25);
 	t1.setType(3);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Chance");
 	t1.setType(0);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Park Place");
 	t1.setPrice(350);
@@ -343,13 +402,16 @@ Properties :: Properties()
 	t1.setHouse3(1100);
 	t1.setHouse4(1300);
 	t1.setHotel(1500);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Luxury Tax");
 	t1.setRent(75);
 	t1.setType(6);
 	list.insert(t1);
+	t1 = clear_gamespace(t1);
 
 	t1.setName("Boardwalk");
 	t1.setPrice(400);
@@ -360,16 +422,18 @@ Properties :: Properties()
 	t1.setHouse3(1400);
 	t1.setHouse4(1700);
 	t1.setHotel(2000);
+	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
-}
 
-Properties :: ~Properties()
-{
-	
 }
 
 /* Accessor */
+Entry Properties :: getInfo(Position p) const
+{
+	return list.get(p);
+}
+
 string Properties :: getName(Position p) const
 {
 	return list.get(p).getName();
@@ -425,3 +489,36 @@ bool Properties :: getMort(Position p) const
 	return list.get(p).getMort();
 }
 
+/*	Operators	*/
+ostream& operator<<(ostream& s, const Properties &other)
+{
+	int pos = 0;
+
+	for(ContainerIterator i = other.list.Start(); i != other.list.End();i++)
+	{
+		s << other.getInfo(pos) << endl;
+		pos++;
+	}
+
+	return s;
+}
+
+
+//	priavte function	//
+GameSpace Properties :: clear_gamespace(GameSpace other)
+{
+	other.setName("NON");
+	other.setPrice(NON);
+	other.setOwner("NON");
+	other.setColor(NON);
+	other.setRent(NON);
+	other.setHouse1(NON);
+	other.setHouse2(NON);
+	other.setHouse3(NON);
+	other.setHouse4(NON);
+	other.setHotel(NON);
+	other.setMortgage(false);
+	other.setType(NON);
+
+	return other;
+}
