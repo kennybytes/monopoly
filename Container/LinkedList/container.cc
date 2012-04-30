@@ -126,8 +126,7 @@ void Container :: insert(Entry x, Position p)
 	}
 
 	// create new node
-	ListNode *newnode = (ListNode *)malloc(sizeof(ListNode));
-	newnode->setdata(x);
+	ListNode *newnode = new ListNode(x); 
 
 	// if inserting at the begining of the container
 	if(p == 0)
@@ -180,7 +179,7 @@ Entry Container :: remove(Position p)
 	}
 
 	Entry x = current->getdata();
-	free(current);
+	delete current;
 	count--;
 	return x;
 	
@@ -223,7 +222,7 @@ void Container :: destroy_elements()
 	while(current)
 	{	prev = current;
 		current = prev->getnext();
-		free(prev);
+		delete current;
 	}
 }
 
