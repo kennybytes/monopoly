@@ -12,6 +12,8 @@ class Player
 		
 		Position update_position(int dice);
 
+		Position send_to(Position newp);
+
 		void update_balance(int bal);
 		//void update_balance(Properties pr);
 	
@@ -20,7 +22,7 @@ class Player
 	
 		void buy_prop(Properties pr);
 		
-		bool bankcrupt();
+		bool bankrupt();
 
 		void go_jail();
 		void set_free();	
