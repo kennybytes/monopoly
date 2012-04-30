@@ -16,9 +16,9 @@ Player :: Player()
 	prop.clear();
 }
 
-void Player :: update_position(int dice)
+Position Player :: update_position(int dice)
 {
-	if(!bankcrupt())
+	if(!bankrupt())
 	{
 		p = (p + dice)%40; 
 	}
