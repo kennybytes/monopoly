@@ -20,7 +20,7 @@ Properties :: Properties()
 	t1.setName("Go");
 	t1.setType(10);
 	list.insert(t1);
-
+/*
 	t1.setName("Mediterranean Avenue");
 	t1.setPrice(60);
 	t1.setOwner("Banker");
@@ -364,6 +364,7 @@ Properties :: Properties()
 	t1.setHotel(2000);
 	t1.setType(4);
 	list.insert(t1);
+*/
 }
 
 Properties :: ~Properties()
