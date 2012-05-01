@@ -16,6 +16,22 @@ Player :: Player()
 	prop.clear();
 }
 
+
+void Player :: create_players(Player pl[], int numberplayers)
+{
+	for(int i = 0; i < numberplayers; i++)
+	pl[i].set_alive();
+}
+
+
+bool Player :: set_alive()
+{	return alive = 1;	}
+
+bool Player :: set_dead()
+{	return alive = 0;	}
+
+
+
 Position Player :: update_position(int dice)
 {
 	if(!bankrupt())
