@@ -6,10 +6,9 @@
  */
 
 #include <string>
-#include "container.h"
-#include "celltype.h"
-#include "gamespace.h"
 #include "properties.h"
+#include "gamespace.h"
+#include "celltype.h"
 #include "color.h"
 
 /* Constructor & Destructor */

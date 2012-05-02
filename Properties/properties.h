@@ -5,7 +5,6 @@
  * Rev: v0.1
  */
 
-#include "entry.h"
 #include "container.h"
 #include "gamespace.h"
 #include "color.h"
@@ -40,7 +39,7 @@ class Properties
 		friend ostream& operator<<(ostream& s, const Properties &other);
 
 	private:
-		Container list;
+		Container<GameSpace> list;
 
 		GameSpace clear_gamespace(GameSpace other);
 };

@@ -9,14 +9,12 @@
 
 CCC = g++
 CCFLAGS = -ansi
-testproperties: testproperties.o properties.o gamespace.o container.o common.o
-	$(CCC) $(CCFLAGS) -o testproperties testproperties.o properties.o gamespace.o container.o common.o
+testproperties: testproperties.o properties.o gamespace.o common.o
+	$(CCC) $(CCFLAGS) -o testproperties testproperties.o properties.o gamespace.o common.o
 
 testproperties.o: properties.h container.h
 
 properties.o: properties.h container.h gamespace.h color.h celltype.h
-
-container.o: container.h
 
 gamespace.o: gamespace.h color.h celltype.h
 
@@ -32,18 +30,17 @@ gamespace:
 
 container:
 	rm -f container.h container_inl.h container.cc listnode.h listnode_inl.h
-	ln -s ../Container/container.h .
-	ln -s ../Container/container_inl.h .
-	ln -s ../Container/container.cc .
-	ln -s ../Container/listnode.h .
-	ln -s ../Container/listnode_inl.h .
-	ln -s ../Container/entry.h
+	ln -s ../Template/container.h .
+	ln -s ../Template/container_inl.h .
+	ln -s ../Template/container.cc .
+	ln -s ../Template/listnode.h .
+	ln -s ../Template/listnode_inl.h .
 	touch container.h container_inl.h container.cc listnode.h listnode_inl.h
 
 common:
 	rm -f common.h common.cc
-	ln -s ../Container/common.h .
-	ln -s ../Container/common.cc .
+	ln -s ../Template/common.h .
+	ln -s ../Template/common.cc .
 	touch common.h common.cc
 
 clean:

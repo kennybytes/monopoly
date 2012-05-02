@@ -11,7 +11,7 @@ common.o: common.h
 
 container.o: container.h common.h listnode.h listnode_inl.h
 
-testcontainer.o: container.h
+testcontainer.o: container.h listnode.h listnode_inl.h common.h
 
 clean:
 	rm -f *.o
