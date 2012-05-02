@@ -9,8 +9,13 @@
 #ifndef LISTNODE_H
 #define LISTNODE_H
 
+<<<<<<< HEAD
 #include <stdlib.h>
 //#include "entry.h"
+=======
+#include "entry.h"
+#include <stdlib.h>
+>>>>>>> 16cd0a32c654db6460fcf9471e198c4ce78c8488
 
 /*******************************************************************/
 /*                                                                 */

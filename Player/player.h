@@ -10,13 +10,14 @@ class Player
 {
 	public:
 		Player();
-		
+
+		static void create_players(Player pl[], int numberplayers);
+
 		Position update_position(int dice);
 
 		Position send_to(Position newp);
 		void update_balance(int bal);
 
-		void teleport(int pos);
 	
 		int get_balance();
 		Position get_position();
@@ -28,7 +29,13 @@ class Player
 		void go_jail();
 		void set_free();	
 
+		bool set_alive();
+		bool set_dead();
+
+
+
 	private:
+		bool alive;
 		bool jail;
 		Position p;
 		int balance;	

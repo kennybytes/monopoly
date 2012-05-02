@@ -8,6 +8,12 @@ using namespace std;
 
 main()
 {
+	int NumberPlayers = 3;
+	typedef Player PlayerArray[NumberPlayers];
+
+	PlayerArray PA;
+	Player::create_players(PA, NumberPlayers);
+/*
    Player A;
    cout <<"initial balance: " << A.get_balance()<<endl;
    cout << "initial position: "<< A.get_position()<<endl;  
@@ -21,8 +27,16 @@ main()
    A.update_position(4);
    cout << A.get_balance()<<endl;
    cout << A.get_position()<<endl; 
+<<<<<<< HEAD
 
    A.send_to(9001);
    cout << A.get_position()<<endl;
+=======
+*/
+	for(int i = 0; i < NumberPlayers; i++)
+	{	PA[i].update_balance(1000 + i);
+		cout << "Player " << i << " balance: " << PA[i].get_balance() << endl;
+	}
+>>>>>>> 16cd0a32c654db6460fcf9471e198c4ce78c8488
 
 }

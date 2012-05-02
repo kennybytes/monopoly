@@ -12,29 +12,34 @@ main()
 {
 
 	cout << "Now we're playing monopoly!" << endl;
-
-	cout << "How many players? (1-4)" << endl;
+	cout << "===========================" << endl;
+	cout << "How many players? " << endl;
 
 	int players;
 	cin >> players;
-	while(players < 1 || players > 4)
+	while(players < 1)
 	{	cout << "Invalid number of players" << endl;
-		cout << "How many players? (1-4)" << endl;
+		cout << "How many players? " << endl;
 		cin >> players;
 	}
 
 	// Initialize Board, players
-	InitBoard();
-	InitPlayers(players);
+	// InitBoard();
+	Player P[players];
 
-	int turn = 1;
 	int flag = 0;	// ends game if 1
 	int option;
-	int rollValue;
+	int dice;
 	bool rollCheck;
 
-	while(!flag)
+   // Infinite loop until quit
+   while(!flag)
+   {
+	// Cycle through each player once
+	for(int i = 0; i < players; i++)
 	{
+		cout << "Player " << i+1 << "'s turn!" << endl;
+
 		// Set rollCheck value per turn
 		rollCheck = 0;
 
@@ -57,18 +62,11 @@ main()
 		// legally chooses to end turn
 		while(option != 5 && !rollCheck){
 			if(option == 1 && !rollCheck) // Roll Dice
-			{	rollValue = roll();
+			{	dice = roll();
 				// roll = rand()%12 + 1;   // Roll dice, values 1-12
 				rollCheck = 1;	      // Tell program user has rolled
 
-				if(turn == 1)
-				P1.movePosition(rollValue)
-				else if(turn == 2)
-				P2.movePosition(rollValue)
-				else if(turn == 3)
-				P3.movePosition(rollValue)
-				else if(turn == 4)
-				P4.movePosition(rollValue)
+				P[i].update_position(dice);
 			
 				// Perform action on tile
 
@@ -108,22 +106,16 @@ main()
 				DisplayOptions();
 				cin >> option;
 			}
-			// else do nothing; while loop ends
-		}
 
-		// Update next turn; who will go next?
-		if(turn < players)
-		turn++
-
-		//Go from last player to first
-		else if(turn == players) 
-		turn = 1;
-		else // else invalid!
-		{	cerr << "Error!" << endl;
-			flag = 1;
+			else if(option > 5 || option < 1)
+			{ 	cout << "Invalid option!" << endl;
+				DisplayOptions();
+				cin >> option;
+			}
+			// else do nothing; switch to next player
 		}
 	}
-
+   }
 
 /*	ASM:
  * 	start
