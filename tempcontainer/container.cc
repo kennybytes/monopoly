@@ -77,7 +77,7 @@ Entry Container<Entry> :: get(Position p) const
 		return ERROR;
 	}
 
-	ListNode *current = findpos(p);
+	ListNode<Entry> *current = findpos(p);
 	return current->getdata();
 }
 
@@ -106,7 +106,7 @@ void Container<Entry> :: traverse(void(*Visit)(Entry))
 	begining at the first
  */
 {
-	ListNode *current = head;
+	ListNode<Entry> *current = head;
 	while(current)
 	{	(*Visit)(current->getdata());
 		current = current->getnext();
@@ -132,7 +132,7 @@ void Container<Entry> :: insert(Entry x, Position p)
 	}
 
 	// create new node
-	ListNode *newnode = (ListNode *)malloc(sizeof(ListNode));
+	ListNode<Entry> *newnode = (ListNode<Entry> *)malloc(sizeof(ListNode<Entry>));
 	newnode->setdata(x);
 
 	// if inserting at the begining of the container
@@ -142,7 +142,7 @@ void Container<Entry> :: insert(Entry x, Position p)
 	}
 	else  // othewise find position and insert
 	{
-		ListNode *prev = findpos(p-1);
+		ListNode<Entry> *prev = findpos(p-1);
 		newnode->setnext(prev->getnext());
 		prev->setnext(newnode);
 	}
@@ -162,7 +162,7 @@ Entry Container<Entry> :: remove(Position p)
     error: if container is shorter than p, nothing done an waring produced.
  */
 {
-	ListNode *current;
+	ListNode<Entry> *current;
 
 	if( !valid_position(p,count) || isfull() )
 	{
@@ -180,7 +180,7 @@ Entry Container<Entry> :: remove(Position p)
 
 		else
 		{
-			ListNode *prev = findpos(p-1);
+			ListNode<Entry> *prev = findpos(p-1);
 			current = (prev->getnext());
 			prev->setnext(current->getnext());
 		}
@@ -207,7 +207,7 @@ void Container<Entry> :: replace(Entry x, Position p)
 		return;
 	}
 
-	ListNode *current = findpos(p);
+	ListNode<Entry> *current = findpos(p);
 	current->setdata(x);
 
 }
@@ -228,8 +228,8 @@ void Container<Entry> :: init_to_empty()
 template <class Entry>
 void Container<Entry> :: destroy_elements()
 {
-	ListNode *current = head;
-	ListNode *prev = NULL;
+	ListNode<Entry> *current = head;
+	ListNode<Entry> *prev = NULL;
 	while(current)
 	{	prev = current;
 		current = prev->getnext();
@@ -238,7 +238,7 @@ void Container<Entry> :: destroy_elements()
 }
 
 template <class Entry>
-ListNode * Container<Entry> :: findpos(Position pos) const
+ListNode<Entry> * Container<Entry> :: findpos(Position pos) const
 /*  find the node at position pos
     pre: container has been created; pos is in bounds
     post: returns pointer to the node at pos
@@ -250,7 +250,7 @@ ListNode * Container<Entry> :: findpos(Position pos) const
 		return NULL;
 	}
 
-	ListNode *current = head;
+	ListNode<Entry> *current = head;
 	for(int i = 0; i < pos; i++)
 		current = current->getnext();
 
@@ -287,12 +287,12 @@ ContainerIterator<Entry> Container<Entry>::Start() const
 template <class Entry>
 ContainerIterator<Entry> Container<Entry>::End() const
 {
-	ContainerIterator<Entry> it((ListNode*)NULL);
+	ContainerIterator<Entry> it((ListNode<Entry>*)NULL);
 	return it;
 }
 
 template <class Entry>
-ContainerIterator<Entry> :: ContainerIterator(ListNode* a)
+ContainerIterator<Entry> :: ContainerIterator(ListNode<Entry>* a)
 {
 	next = a;
 }

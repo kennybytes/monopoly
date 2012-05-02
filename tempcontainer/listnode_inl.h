@@ -3,29 +3,33 @@
  * File for inline function for listnode
 */
 
-
-inline ListNode :: ListNode(Entry x)
+template <class Entry>
+inline ListNode<Entry> :: ListNode(Entry x)
 {
 	setdata(x);
 	setnext(NULL); 
 }
 
-inline Entry ListNode :: getdata() const
+template <class Entry>
+inline Entry ListNode<Entry> :: getdata() const
 {
 	return entry;
 }
 
-inline ListNode * ListNode :: getnext() const
+template <class Entry>
+inline ListNode<Entry> * ListNode<Entry> :: getnext() const
 {	
 	return next;
 }
 
-inline void ListNode :: setdata(Entry x)
+template <class Entry>
+inline void ListNode<Entry> :: setdata(Entry x)
 {
 	entry = x;
 }
 
-inline void ListNode :: setnext(ListNode *n)
+template <class Entry>
+inline void ListNode<Entry> :: setnext(ListNode *n)
 {
 	next = n;
 }

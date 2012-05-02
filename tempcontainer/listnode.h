@@ -10,14 +10,14 @@
 #define LISTNODE_H
 
 #include <stdlib.h>
-#include "entry.h"
+//#include "entry.h"
 
 /*******************************************************************/
 /*                                                                 */
 /*  List Declaration using linked-list implementation              */
 /*                                                                 */
 /*******************************************************************/
-
+template <class Entry>
 class ListNode
 {
 public:

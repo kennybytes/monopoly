@@ -22,5 +22,7 @@ main()
    cout << A.get_balance()<<endl;
    cout << A.get_position()<<endl; 
 
+   A.send_to(9001);
+   cout << A.get_position()<<endl;
 
 }

@@ -11,12 +11,12 @@ using namespace std;
 
 #include "container.h"
 
-void printcontainer(Entry);
+//void printcontainer(Entry);
 
 int main()
 {
    Container<int> l, m;
-   Entry a;
+   int a;
    int x;
 
 	if(l.isempty()) printf("Container is empty\n");
@@ -36,7 +36,7 @@ int main()
 	
 	l.insert(5, 1);
 
-	l.traverse(printcontainer);
+	//l.traverse(printcontainer);
 
 	a = l.remove(2);
 	printf("deleted entry %d\n", a);
@@ -110,6 +110,8 @@ int main()
 	putchar('\n');
 }
 
+/*
 void printcontainer(Entry x)
 {   printf("%d\n", x);   }
+*/
 

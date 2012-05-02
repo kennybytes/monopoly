@@ -33,7 +33,7 @@ template <class Entry>
 class ContainerIterator
 {
  public:
-	ContainerIterator<Entry>(ListNode* a);
+	ContainerIterator<Entry>(ListNode<Entry>* a);
 
 	Entry operator*() const;
 
@@ -44,7 +44,7 @@ class ContainerIterator
 	ContainerIterator<Entry> operator++(int);
 
  private:
-	ListNode *next;
+	ListNode<Entry> *next;
 
 };
 
@@ -89,11 +89,11 @@ private:
 	// private helper functions
 	void init_to_empty();
 	void destroy_elements();
-	ListNode *findpos(Position p) const;
+	ListNode<Entry> *findpos(Position p) const;
 	bool valid_position(Position p, int size) const;
 
 	int count;
-	ListNode *head;
+	ListNode<Entry> *head;
 };
 
 template <class Entry>
