@@ -74,7 +74,7 @@ Entry Container<Entry> :: get(Position p) const
 {
 	if( !valid_position(p,count-1) || isempty())
 	{	Warning("Container: Get to illegal position; return ERROR");
-		return ERROR;
+		//return ERROR;
 	}
 
 	ListNode<Entry> *current = findpos(p);

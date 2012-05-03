@@ -428,7 +428,7 @@ Properties :: Properties()
 }
 
 /* Accessor */
-Entry Properties :: getInfo(Position p) const
+GameSpace Properties :: getInfo(Position p) const
 {
 	return list.get(p);
 }
@@ -493,9 +493,10 @@ ostream& operator<<(ostream& s, const Properties &other)
 {
 	int pos = 0;
 
-	for(ContainerIterator i = other.list.Start(); i != other.list.End();i++)
+	for(ContainerIterator<GameSpace> i = other.list.Start(); i != other.list.End();i++)
 	{
-		s << other.getInfo(pos) << endl;
+		//s << other.getInfo(pos) << endl;
+		s << other.getName(pos) << endl;
 		pos++;
 	}
 

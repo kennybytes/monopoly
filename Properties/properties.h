@@ -20,7 +20,7 @@ class Properties
 		Properties();
 
 		/* Accessor */
-		Entry getInfo(Position p) const;
+		GameSpace getInfo(Position p) const;
 		string getName(Position p) const;
 		int getPrice(Position p) const;
 		string getOwner(Position p) const;

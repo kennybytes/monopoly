@@ -15,7 +15,6 @@ using namespace std;
 
 #include <stdlib.h>
 #include "common.h"
-//#include "entry.h"
 #include "listnode.h"
 
 /*******************************************************************/
