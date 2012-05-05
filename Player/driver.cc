@@ -12,7 +12,7 @@ main()
 	typedef Player PlayerArray[NumberPlayers];
 
 	PlayerArray PA;
-	Player::create_players(PA, NumberPlayers);
+
 /*
    Player A;
    cout <<"initial balance: " << A.get_balance()<<endl;
@@ -34,6 +34,7 @@ main()
 */
 	for(int i = 0; i < NumberPlayers; i++)
 	{	PA[i].update_balance(1000 + i);
-		cout << "Player " << i << " balance: " << PA[i].get_balance() << endl;
+		cout << "Player " << i << 
+		" balance: " << PA[i].get_balance() << endl;
 	}
 }
