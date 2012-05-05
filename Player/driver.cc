@@ -27,7 +27,6 @@ main()
    A.update_position(4);
    cout << A.get_balance()<<endl;
    cout << A.get_position()<<endl; 
-<<<<<<< HEAD
 
    A.send_to(9001);
    cout << A.get_position()<<endl;
@@ -37,6 +36,4 @@ main()
 	{	PA[i].update_balance(1000 + i);
 		cout << "Player " << i << " balance: " << PA[i].get_balance() << endl;
 	}
->>>>>>> 16cd0a32c654db6460fcf9471e198c4ce78c8488
-
 }
