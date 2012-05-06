@@ -14,7 +14,14 @@ using namespace std;
 
 main()
 {
-	Properties prop;
+	GameSpace t1;
+	Container<GameSpace*> list;
 
-	cout << prop << endl;
+	list.insert(t1);
+
+	cout << list.get(0) << endl;
+
+	//Properties prop;
+
+	//cout << prop << endl;
 }

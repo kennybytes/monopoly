@@ -20,7 +20,7 @@ Properties :: Properties()
 	t1.setType(10);
 	list.insert(t1);
 	t1 = clear_gamespace(t1);
-
+/*
 	t1.setName("Mediterranean Avenue");
 	t1.setPrice(60);
 	t1.setOwner("Banker");
@@ -424,7 +424,7 @@ Properties :: Properties()
 	t1.setMortgage(false);
 	t1.setType(4);
 	list.insert(t1);
-
+*/
 }
 
 /* Accessor */

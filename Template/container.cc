@@ -1,14 +1,13 @@
 
 /*  File: container.cc
  *  Date: 26 Sep 05
- *  Mod:  25 Sep 07
- *  Rev:  v1
+ *  Mod:  1 May 12
+ *  Rev:  v3
  *
  *  Container class definitions as a linked list
  */
 
 #include "common.h"
-//#include "entry.h"
 #include "container.h"
 #include "listnode.h"
 
