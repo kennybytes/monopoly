@@ -6,6 +6,7 @@
  */
 
 #include <iostream>
+#include "deed.h"
 
 using namespace std;
 
