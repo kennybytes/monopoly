@@ -27,9 +27,8 @@ public:
 	 * string getName() const;
 	 * CellType getType() const;
 	 */
-	
+
 	virtual void rent(Player P[], int PlayerNumber, int rent) = 0; 
-		// draws a random card
 
 private:
 	/* Inherited:
@@ -40,4 +39,4 @@ private:
 	// Flat price of landing on Deed space
 	int rent;
 
-};	
+};
