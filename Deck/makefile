@@ -16,32 +16,24 @@ testdeck: testdeck.o deck.o container.o common.o
 
 testdesk.o: deck.h container.h
 
-
-
-
 container:
 	rm -f container.h container_inl.h container.cc listnode.h listnode_inl.h
-	ln -s ../Container/container.h .
-	ln -s ../Container/container_inl.h .
-	ln -s ../Container/container.cc .
-	ln -s ../Container/listnode.h .
-	ln -s ../Container/listnode_inl.h .
-	ln -s ../Container/entry.h
+	ln -s ../Template/container.h .
+	ln -s ../Template/container_inl.h .
+	ln -s ../Template/container.cc .
+	ln -s ../Template/listnode.h .
+	ln -s ../Template/listnode_inl.h .
+	ln -s ../Template/entry.h
 	touch container.h container_inl.h container.cc listnode.h listnode_inl.h
 
 common:
 	rm -f common.h common.cc
-	ln -s ../Container/common.h .
-	ln -s ../Container/common.cc .
+	ln -s ../Template/common.h .
+	ln -s ../Template/common.cc .
 	touch common.h common.cc
-
-entry:
-	rm entry.h
-	ln -s entry.h .
-	touch entry.h
 
 clean:
 	rm -f *.o
 
-real_clean:
+real_clean:	clean
 	rm -f testgamespace
