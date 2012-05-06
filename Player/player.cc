@@ -14,13 +14,7 @@ Player :: Player()
 	p = 0;
 	balance = 1500;
 	prop.clear();
-}
-
-
-void Player :: create_players(Player pl[], int numberplayers)
-{
-	for(int i = 0; i < numberplayers; i++)
-	pl[i].set_alive();
+	alive = 1;
 }
 
 

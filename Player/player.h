@@ -11,8 +11,6 @@ class Player
 	public:
 		Player();
 
-		static void create_players(Player pl[], int numberplayers);
-
 		Position update_position(int dice);
 
 		Position send_to(Position newp);
