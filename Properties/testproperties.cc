@@ -15,7 +15,10 @@ using namespace std;
 main()
 {
 	GameSpace t1;
-	Container<GameSpace*> list;
+	t1.setName("IT WORKS!");	  
+	t1.setType(4);
+
+	Container<GameSpace> list;
 
 	list.insert(t1);
 
