@@ -7,7 +7,7 @@
  *
  */
 #include <iostream>
-#include <list>
+#include <vector>
 using namespace std;
 
 #include "gamespace.h"
@@ -16,7 +16,7 @@ using namespace std;
 int main()
 {
 	GameSpace * ptr;
-	list<GameSpace*> GameSpaceList;
+	vector<GameSpace*> GameSpaceList;
 
 	ptr = new GameSpace("Kenny", 1);
 	GameSpaceList.push_back(ptr);
@@ -35,7 +35,7 @@ int main()
 
 	GameSpace gs = *ptr;
 
-	for(list<GameSpace*>::iterator it = GameSpaceList.begin();
+	for(vector<GameSpace*>::iterator it = GameSpaceList.begin();
 				it!=GameSpaceList.end(); it++)
 	{
 		ptr = *it;
