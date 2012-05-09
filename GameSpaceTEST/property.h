@@ -6,13 +6,14 @@
  * Rev: v0.1
  */
 
-#ifndef GAMESPACE
-#define GAMESPACE
+#ifndef PROPERTY
+#define PROPERTY
 
 class Property : public Deed
 {
 	public:
 		Property();
+		virtual void display(ostream & out) const;
 
 	private:
 		int Price;
@@ -25,3 +26,6 @@ class Property : public Deed
 		int Hotel;
 		bool mortgage;
 };
+
+
+#endif
