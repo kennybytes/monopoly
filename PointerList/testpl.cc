@@ -33,6 +33,9 @@ int main()
 	ptr = new Deed("Kennydeed", 2, 1);
 	GameSpaceList.push_back(ptr);
 
+//	ptr = new Property("Kennydeed", 2, 1);
+//	GameSpaceList.push_back(ptr);
+
 	GameSpace gs = *ptr;
 
 	for(vector<GameSpace*>::iterator it = GameSpaceList.begin();

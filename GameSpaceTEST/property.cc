@@ -5,16 +5,24 @@
  * Rev: v0.1
  */
 
+#include <iostream>
 #include "property.h"
+#include "deed.h"
+#include "gamespace.h"
 
-Property :: Property()
-{
-}
+Property :: Property(string n, CellType t, int r, int p, string o, int c, int h1, int h2, int h3, int h4, int h, bool m)
+: Deed(n, t, r),
+ Price(p), Owner(o), Color(c), 
+ House1(h1), House2(h2), House3(h3), House4(h4),    
+ Hotel(h), Mortgage(m)
+{}
+
+
 
 void Property :: display(ostream & out) const
 {
 	Deed::display(out);
-	out << "Rent = " << rent << endl;
+	out << "Price = " << Price << endl;
 	out << "Owner = " << Owner << endl;
 	out << "Color = " << Color << endl;
 	out << "House 1 Price = " << House1 << endl;
@@ -24,13 +32,12 @@ void Property :: display(ostream & out) const
 	out << "Hotel Price = " << Hotel << endl;
 	out << "Mortage = " << Mortgage << endl;
 	
-	int Price;
-                string Owner;
-                int Color;
-                int House1;
-                int House2;
-                int House3;
-                int House4;
-                int Hotel;
-                bool mortgage;
 }
+
+
+ostream & operator<<(ostream& s, const Property &p)
+{
+	p.display(s);
+	return s;
+}
+

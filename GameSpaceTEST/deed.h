@@ -33,7 +33,7 @@ public:
 
 	// virtual void rent(PlayerArray PA, int PlayerNumber, int rent);
 
-	void display(ostream & out) const;
+	virtual void display(ostream & out) const;
 
 /*
 protected:
@@ -51,8 +51,6 @@ private:
 	// Flat price of landing on Deed space
 	int rent;
 	friend ostream& operator<<(ostream& s, const Deed &d);
-
-
 };
 
 #endif
