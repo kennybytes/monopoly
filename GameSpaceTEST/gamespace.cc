@@ -21,7 +21,7 @@ using namespace std;
 
 /*	Constructor	*/
 
-GameSpace :: GameSpace(string n, int t)
+GameSpace :: GameSpace(string n, CellType t)
  : name(n), type(t)
 {
 }

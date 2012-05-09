@@ -6,7 +6,7 @@
  * Rev: v0.2
  */
 
-#include <string>
+//#include <string>
 #include "celltype.h"
 
 #ifndef GAMESPACE
@@ -20,11 +20,11 @@ class GameSpace
 
 public:
 	/* Constructors */
-	GameSpace(string n = NON, int t = NON);
+	GameSpace(string n = " ", int t = NON );
 
 	/* Accessors */
-	virtual string getName() const = 0;  
-	virtual CellType getType() const = 0;
+	virtual string getName() const;  
+	virtual CellType getType() const;
 
 	/* Modifiers */
 	void setName(string n);

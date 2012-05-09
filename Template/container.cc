@@ -6,6 +6,8 @@
  *
  *  Container class definitions as a linked list
  */
+#ifndef CONTAINER
+#define CONTAINER
 
 #include "common.h"
 #include "container.h"
@@ -341,3 +343,5 @@ ostream & operator<<(ostream& s, const Container<Entry> &a)
 	}	
 	return s;
 }
+
+#endif
