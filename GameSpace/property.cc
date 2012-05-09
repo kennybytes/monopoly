@@ -7,8 +7,6 @@
 
 #include <iostream>
 #include "property.h"
-#include "deed.h"
-#include "gamespace.h"
 
 Property :: Property(string n, CellType t, int r, int p, string o, int c, int h1, int h2, int h3, int h4, int h, bool m)
 : Deed(n, t, r),

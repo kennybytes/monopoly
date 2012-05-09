@@ -12,6 +12,7 @@ using namespace std;
 
 #include "gamespace.h"
 #include "deed.h"
+#include "property.h"
 
 int main()
 {
@@ -33,8 +34,8 @@ int main()
 	ptr = new Deed("Kennydeed", 2, 1);
 	GameSpaceList.push_back(ptr);
 
-//	ptr = new Property("Kennydeed", 2, 1);
-//	GameSpaceList.push_back(ptr);
+	ptr = new Property("Kennydeed", 2, 1);
+	GameSpaceList.push_back(ptr);
 
 	GameSpace gs = *ptr;
 
