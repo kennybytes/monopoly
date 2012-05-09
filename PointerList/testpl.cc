@@ -33,18 +33,19 @@ int main()
 	ptr = new Deed("Kennydeed", 2, 1);
 	GameSpaceList.push_back(ptr);
 
+	GameSpace gs = *ptr;
 
 	for(list<GameSpace*>::iterator it = GameSpaceList.begin();
 				it!=GameSpaceList.end(); it++)
 	{
 		ptr = *it;
+		gs = *ptr;
 
 		cout << *ptr << endl;
+
+		cout << gs.getName() << endl; // also works for deed!
+
 	}
-
-
-	
-	
 
 
 
