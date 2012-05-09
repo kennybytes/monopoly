@@ -1,1 +1,1 @@
-../GameSpaceTEST/property.h
+../GameSpace/property.h

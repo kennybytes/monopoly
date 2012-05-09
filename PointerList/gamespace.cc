@@ -1,1 +1,1 @@
-../GameSpaceTEST/gamespace.cc
+../GameSpace/gamespace.cc

@@ -1,1 +1,1 @@
-../GameSpaceTEST/property.cc
+../GameSpace/property.cc
