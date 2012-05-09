@@ -43,13 +43,6 @@ void Deed :: setType(CellType t);
 
 ostream& operator<<(ostream& s, const Deed &d)
 {
-	// GameSpace::operator<<(s, GameSpace :: *this);
-
 	d.display(s);
-
-	//s << "Name = " << d.name << endl;
-	//s << "Type = " << d.type << endl;
-	//s << "Rent = " << d.rent << endl;
-
 	return s;
 }

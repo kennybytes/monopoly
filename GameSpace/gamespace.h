@@ -34,9 +34,9 @@ public:
 	bool operator==(const GameSpace& other) const;
 	bool operator!=(const GameSpace& other) const;
 
+	virtual void display(ostream & out) const;
 	friend ostream& operator<<(ostream& s, const GameSpace &gs);
 
-	virtual void display(ostream & out) const;
 
 private:
 	/* GameSpace data information */

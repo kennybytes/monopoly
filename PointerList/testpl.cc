@@ -34,10 +34,8 @@ int main()
 	ptr = new Deed("Kennydeed", 2, 1);
 	GameSpaceList.push_back(ptr);
 
-	ptr = new Property("Kennydeed", 2, 1);
+	ptr = new Property("Kennyprop", 2, 1);
 	GameSpaceList.push_back(ptr);
-
-	GameSpace gs = *ptr;
 
 	for(vector<GameSpace*>::iterator it = GameSpaceList.begin();
 				it!=GameSpaceList.end(); it++)
@@ -46,12 +44,7 @@ int main()
 		gs = *ptr;
 
 		cout << *ptr << endl;
-
-		cout << gs.getName() << endl; // also works for deed!
-
 	}
-
-
 
 	return 0;
 }
