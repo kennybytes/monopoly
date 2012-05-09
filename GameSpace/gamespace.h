@@ -1,78 +1,47 @@
 
+/* 
+ * File: gamespace.h
+ * Name: R4T5
+ * Date: 4 May 2012
+ * Rev: v0.2
+ */
 
-#include <string>
-using namespace std;
-#include "color.h"
+//#include <string>
 #include "celltype.h"
 
 #ifndef GAMESPACE
 #define GAMESPACE
 
-
+using namespace std;
 typedef int Position;
-typedef int Price;
-typedef int Color;
 
-class GameSpace{
+class GameSpace
+{
 
 public:
-
-	
 	/* Constructors */
-	GameSpace();
+	GameSpace(string n = " ", int t = NON );
 
 	/* Accessors */
-	string getName() const;	  
-	int getPrice() const;
-	string getOwner() const;
-	int getColor() const;
-	int getRent() const;
-	int getHouse1() const;
-	int getHouse2() const;
-	int getHouse3() const;
-	int getHouse4() const;
-	int getHotel() const;  	
-	bool getMort() const;
+	virtual string getName() const;  
+	virtual CellType getType() const;
 
 	/* Modifiers */
 	void setName(string n);
-	void setPrice(Price p);
-	void setOwner(string o);
-	void setColor(Color c);
-	void setRent(Price p);
-	void setHouse1(Price p);
-	void setHouse2(Price p);
-	void setHouse3(Price p);
-	void setHouse4(Price p);
-	void setHotel(Price p);
-	void setMortgage(Price p);
 	void setType(CellType t);
 	
 	/* Operators */
 	bool operator==(const GameSpace& other) const;
 	bool operator!=(const GameSpace& other) const;
-	friend ostream& operator<<(ostream& s, const GameSpace &other);
 
+	friend ostream& operator<<(ostream& s, const GameSpace &gs);
+
+	virtual void display(ostream & out) const;
 
 private:
-
 	/* GameSpace data information */
 	string name;	//Name of the block
-	int type;	//Type of block
-	
-        int price;	
-        string owner;
-        int color;
-	
-	/* rent costs */
-        int rent; 
-        int house1;
-        int house2;
-        int house3;
-        int house4;
-        int hotel;
-
-        bool mortage;
+	CellType type;	//Type of block
 
 };       
 

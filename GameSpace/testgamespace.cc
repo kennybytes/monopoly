@@ -25,6 +25,7 @@ int main()
 	A.setHouse3(150);
 	A.setHouse4(200);
 	A.setHotel(500);
+	A.setMortage(false);
 	A.setType(4);
 	cout << A << endl;
 	
