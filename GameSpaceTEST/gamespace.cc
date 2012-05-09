@@ -66,12 +66,19 @@ bool GameSpace::operator!=(const GameSpace& other) const
 	return 1;
 }
 
+void GameSpace :: display(ostream & out) const
+{
+	out << "Name = " << name << endl;
+	out << "Type = " << type << endl;
+}
+
 
 /*	Output operator	*/
 ostream& operator<<(ostream& s, const GameSpace &gs)
 {
-	s << "Name = " << gs.name << endl;
-	s << "Type = " << gs.type << endl;
+	gs.display(s);
+	// s << "Name = " << gs.name << endl;
+	// s << "Type = " << gs.type << endl;
 
 	return s;
 }

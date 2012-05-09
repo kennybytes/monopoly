@@ -7,14 +7,49 @@
 
 #include <iostream>
 #include "deed.h"
+#include "gamespace.h"
 
 using namespace std;
 
-Deed :: Deed(string n, int t, Container d)
-: GameSpace(n, t), deck(d)
+Deed :: Deed(string n, CellType t, int r)
+: GameSpace(n, t), rent(r)
 {}
 
-void Deed :: pay(PlayerArray PA, int PlayerNumber, int rent)
+/*
+void Deed :: rent(PlayerArray PA, int PlayerNumber, int rent)
 {
 	PA[PlayerNumber].update_balance(-1*rent);
+}
+*/
+
+void Deed :: display(ostream & out) const
+{
+	GameSpace::display(out);
+	out << "Rent = " << rent << endl;
+}
+
+/*
+void Deed :: setName(string n)
+{
+	name = n;
+}
+
+void Deed :: setType(CellType t);
+{
+	type = t;
+}
+*/
+
+
+ostream& operator<<(ostream& s, const Deed &d)
+{
+	// GameSpace::operator<<(s, GameSpace :: *this);
+
+	d.display(s);
+
+	//s << "Name = " << d.name << endl;
+	//s << "Type = " << d.type << endl;
+	//s << "Rent = " << d.rent << endl;
+
+	return s;
 }
