@@ -13,10 +13,11 @@
 CCC = g++
 CCFLAGS = -ansi
 
-monopoly: container.o common.o monopoly.o
-	  $(CCC) -o monopoly container.o common.o monopoly.o
+gameboardtest: gameboardtest.o gameboard.o container.o common.o 
+	  $(CCC) -o gameboardtest gameboardtest.o gameboard.o container.o\
+				common.o
 
-container.o: container.h container_inl.h listnode.h listnode_inl.h common.h entry.h
+container.o: container.h container_inl.h listnode.h listnode_inl.h common.h 
 
 
 common.o: common.h

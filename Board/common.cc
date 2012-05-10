@@ -1,1 +1,1 @@
-Template/common.cc
+../Template/common.cc
