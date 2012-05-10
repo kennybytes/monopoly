@@ -8,14 +8,16 @@
 CCC = g++
 CCFLAGS = -ansi
 
-testpl: testpl.o gamespace.o deed.o property.o tax.o utility.o railroad.o misc.o
-	$(CCC) $(CCFLAGS) -o testpl testpl.o gamespace.o deed.o property.o\
-				tax.o utility.o railroad.o misc.o
+monopoly: monopoly.o gamespace.o deed.o property.o tax.o utility.o railroad.o\
+		misc.o contaner.o common.o
+	$(CCC) $(CCFLAGS) -o monopoly monopoly.o gamespace.o deed.o property.o\
+				tax.o utility.o railroad.o misc.o container.o\
+				common.o
+				
 
-testpl.o: gamespace.h deed.h property.h tax.h utility.h railroad.h misc.h
-
+monopoly.o:  gamespace.h deed.h property.h tax.h utility.h railroad.h misc.h\
+		container.h common.h
 gamepspace.o: gamespace.h
-
 deed.o: deed.h
 property.o: property.h
 tax.o: tax.h
@@ -24,11 +26,12 @@ railroad.o: railroad.h
 misc.o: misc.h
 
 
-commonlinks:
-	rm -f common.h common.cc entry.h
-	ln -s Common/common.h
-	ln -s Common/common.cc
-	ln -s Common/entry.h
+links: common player gamespace container
+
+common:
+	rm -f common.h common.cc 
+	ln -s Template/common.h
+	ln -s Template/common.cc
 
 player:
 	rm -f player.h player.cc
@@ -57,8 +60,8 @@ gamespace:
 	ln -s GameSpace/misc.h
 	ln -s GameSpace/misc.cc
 
-template:
-	rm -f container.cc container.h
+container:
+	rm -f container.cc container.h common.h common.cc
 	ln -s Template/container.cc
 	ln -s Template/container.h
 
@@ -68,3 +71,9 @@ clean:
 
 real_clean: clean
 	rm -f monopoly
+	rm -f common.h common.cc entry.h
+	rm -f player.h player.cc
+	rm -f gamespace.h gamespace.cc color.h celltype.h deed.h deed.cc\
+		property.h property.cc tax.h tax.cc railroad.h railroad.cc\
+		utility.h utility.cc misc.h misc.cc
+	rm -f container.cc container.h common.h common.cc
