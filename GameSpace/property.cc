@@ -19,7 +19,10 @@ Property :: Property(string n, CellType t, int r, int p, string o, int c, int h1
 
 void Property :: display(ostream & out) const
 {
-	Deed::display(out);
+	// Deed::display(out);
+	out << "Name = " << name << endl;
+	out << "Type = " << type << endl;
+	out << "Rent = " << rent << endl;
 	out << "Price = " << Price << endl;
 	out << "Owner = " << Owner << endl;
 	out << "Color = " << Color << endl;
@@ -32,10 +35,11 @@ void Property :: display(ostream & out) const
 	
 }
 
-
+/*
 ostream & operator<<(ostream& s, const Property &p)
 {
 	p.display(s);
 	return s;
 }
 
+*/

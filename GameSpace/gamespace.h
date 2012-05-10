@@ -6,14 +6,12 @@
  * Rev: v0.2
  */
 
-//#include <string>
-#include "celltype.h"
-
 #ifndef GAMESPACE
 #define GAMESPACE
 
+#include "celltype.h"
+#include <iostream>
 using namespace std;
-typedef int Position;
 
 class GameSpace
 {
@@ -31,18 +29,20 @@ public:
 	void setType(CellType t);
 	
 	/* Operators */
-	bool operator==(const GameSpace& other) const;
-	bool operator!=(const GameSpace& other) const;
+	// bool operator==(const GameSpace& other) const;
+	// bool operator!=(const GameSpace& other) const;
 
-	virtual void display(ostream & out) const;
-	friend ostream& operator<<(ostream& s, const GameSpace &gs);
+	virtual void display(ostream & out) const = 0;
 
 
-private:
+protected:
 	/* GameSpace data information */
 	string name;	//Name of the block
 	CellType type;	//Type of block
 
 };       
+
+	inline ostream& operator<<(ostream& s, const GameSpace &gs)
+	{	gs.display(s); return s; 	}
 
 #endif

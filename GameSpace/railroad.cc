@@ -15,15 +15,18 @@ Railroad :: Railroad(string n, CellType t, int r, int p, string o)
 
 void Railroad :: display(ostream & out) const
 {
-	Deed::display(out);
+	// Deed::display(out);
+	out << "Name = " << name << endl;
+	out << "Type = " << type << endl;
+	out << "Rent = " << rent << endl;
 	out << "Price = " << Price << endl;
 	out << "Owner = " << Owner << endl;
 }
 
-
+/*
 ostream & operator<<(ostream & s, const Railroad &r)
 {
 	r.display(s);
 	return s;
 }
-
+*/

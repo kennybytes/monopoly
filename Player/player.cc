@@ -3,7 +3,6 @@
  * By: R4T5		*/
 
 #include "player.h"
-#include "container.h"
 
 #include <iostream>
 using namespace std;
@@ -13,7 +12,7 @@ Player :: Player()
 	jail = false;
 	p = 0;
 	balance = 1500;
-	prop.clear();
+	// prop.clear();
 	alive = 1;
 }
 
@@ -55,7 +54,7 @@ Position Player :: get_position()
 	return p;
 }
 
-	
+/*	
 void Player :: buy_prop(Properties pr)
 {
 	//if(pr.value() < balance) 
@@ -63,6 +62,8 @@ void Player :: buy_prop(Properties pr)
 	//else cout << "Not enough money!" <<endl;
 	//update_balance(-pr.value());
 }
+*/
+
 		
 bool Player :: bankrupt()
 {

@@ -12,19 +12,17 @@
  *
  */
 
-#include <iostream>
-using namespace std;
-
 #include "gamespace.h"
-#include "celltype.h"
 
 
 /*	Constructor	*/
+
 
 GameSpace :: GameSpace(string n, CellType t)
  : name(n), type(t)
 {
 }
+
 
 
 /*	Accessors	*/
@@ -53,6 +51,10 @@ void GameSpace::setType(CellType t)
 
 /*	Operators	*/
 
+
+
+
+/*
 bool GameSpace::operator==(const GameSpace& other) const
 {
 	//Don't need the comparison operators
@@ -73,7 +75,7 @@ void GameSpace :: display(ostream & out) const
 }
 
 
-/*	Output operator	*/
+//	Output operator	
 ostream& operator<<(ostream& s, const GameSpace &gs)
 {
 	gs.display(s);
@@ -82,3 +84,5 @@ ostream& operator<<(ostream& s, const GameSpace &gs)
 
 	return s;
 }
+
+*/

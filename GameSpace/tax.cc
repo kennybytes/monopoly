@@ -15,14 +15,17 @@ Tax :: Tax(string n, CellType t, int r, int pr)
 
 void Tax :: display(ostream & out) const
 {
-	Deed::display(out);
+	// Deed::display(out);
+	out << "Name = " << name << endl;
+	out << "Type = " << type << endl;
+	out << "Rent = " << rent << endl;
 	out << "Percent Rent Rate = " << PercentRate << endl;
 }
 
-
+/*
 ostream & operator<<(ostream & s, const Tax &t)
 {
 	t.display(s);
 	return s;
 }
-
+*/

@@ -17,7 +17,7 @@ class Utility : public Deed
 		Utility(string n = "", CellType t = NON, int r = NON, int p = NON, string o = "");
 
 		virtual void display(ostream & out) const;
-		friend ostream & operator<<(ostream & s, const Utility &u);
+		// friend ostream & operator<<(ostream & s, const Utility &u);
 
 	private:
 		int Price;

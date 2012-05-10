@@ -15,15 +15,18 @@ Utility :: Utility(string n, CellType t, int r, int p, string o)
 
 void Utility :: display(ostream & out) const
 {
-	Deed::display(out);
+	// Deed::display(out);
+	out << "Name = " << name << endl;
+	out << "Type = " << type << endl;
+	out << "Rent = " << rent << endl;
 	out << "Price = " << Price << endl;
 	out << "Owner = " << Owner << endl;
 }
 
-
+/*
 ostream & operator<<(ostream & s, const Utility &u)
 {
 	u.display(s);
 	return s;
 }
-
+*/

@@ -6,6 +6,9 @@
  * Rev: v0.1
  */
 
+
+// Abstract Class
+
 #include <string>
 #include "celltype.h"
 #include "gamespace.h"
@@ -15,10 +18,6 @@ using namespace std;
 #ifndef DEED
 #define DEED
 
-
-typedef int Position;
-typedef int Price;
-typedef int Color;
 
 class Deed : public GameSpace
 {
@@ -33,8 +32,8 @@ public:
 
 	// virtual void rent(PlayerArray PA, int PlayerNumber, int rent);
 
-	virtual void display(ostream & out) const;
-	friend ostream& operator<<(ostream& s, const Deed &d);
+	virtual void display(ostream & out) const = 0;
+	// friend ostream& operator<<(ostream& s, const Deed &d);
 
 /*
 protected:
@@ -43,7 +42,7 @@ protected:
 */
 
 
-private:
+protected:
 	/* Inherited:
  	 * 	int type;
  	 * 	string name;

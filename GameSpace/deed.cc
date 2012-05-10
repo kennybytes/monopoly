@@ -22,11 +22,15 @@ void Deed :: rent(PlayerArray PA, int PlayerNumber, int rent)
 }
 */
 
+/*
 void Deed :: display(ostream & out) const
 {
 	GameSpace::display(out);
 	out << "Rent = " << rent << endl;
 }
+
+*/
+
 
 /*
 void Deed :: setName(string n)
@@ -40,9 +44,11 @@ void Deed :: setType(CellType t);
 }
 */
 
-
+/*
 ostream& operator<<(ostream& s, const Deed &d)
 {
 	d.display(s);
 	return s;
 }
+
+*/

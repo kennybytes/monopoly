@@ -5,13 +5,22 @@
  * Rev: v0.1
  */
 
-#ifndef GAMESPACE
-#define GAMESPACE
+#ifndef MISC
+#define MISC
+
+#include "gamespace.h"
 
 class Misc : public GameSpace
 {
 	public:
+		Misc(string n ="", CellType t = NON);
+
+		virtual void display(ostream & out) const;
+		friend ostream& operator<<(ostream & s, const Misc &m);
 
 	private:
 
 };
+
+
+#endif

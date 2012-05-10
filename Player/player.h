@@ -2,8 +2,6 @@
  * Date: April 9th 2012	*
  * By: R4T5		*/
 
-#include "container.h"
-
 typedef int Position;
 
 class Player
@@ -20,7 +18,7 @@ class Player
 		int get_balance();
 		Position get_position();
 		
-		void buy_prop(Properties pr);
+		// void buy_prop(Properties pr);
 		
 		bool bankrupt();
 
@@ -37,6 +35,6 @@ class Player
 		bool jail;
 		Position p;
 		int balance;	
-		Container prop;	
+		//Container prop;	
 };
 
