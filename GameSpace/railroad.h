@@ -21,7 +21,7 @@ class Railroad : public Deed
 
 	private:
 		int Price;
-		string Owner;
+		int Owner;
 
 };
 

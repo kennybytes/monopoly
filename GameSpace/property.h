@@ -19,6 +19,7 @@ class Property : public Deed
 		virtual void display(ostream & out) const;
 
 	private:
+
 		int Price;
 		int Owner;
 		int Color;

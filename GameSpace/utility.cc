@@ -7,7 +7,7 @@
 #include <iostream>
 #include "utility.h"
 
-Utility :: Utility(string n, CellType t, int r, int p, string o)
+Utility :: Utility(string n, CellType t, int r, int p, int o)
  : Deed(n, t, r),
    Price(p), Owner(o)
 {}
@@ -21,6 +21,12 @@ void Utility :: display(ostream & out) const
 	out << "Rent = " << rent << endl;
 	out << "Price = " << Price << endl;
 	out << "Owner = " << Owner << endl;
+}
+
+void Utility :: setOwner(int player)
+{
+
+	Owner = player;
 }
 
 /*

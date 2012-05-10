@@ -14,14 +14,19 @@
 class Tax : public Deed
 {
 	public:
-		Tax(string n = "", CellType t = NON, int r = NON, int pr = NON);
+		Tax(string n = "", CellType t = T, int r = NON, int pr = NON);
 
 		virtual void display(ostream & out) const;
 		friend ostream & operator<<(ostream & s, const Tax &t);
+		
+		int getRent(const int money) const;
+		int getRent() const;
+
 
 	private:
-		int PercentRate;
-};
+		const int PercentRate;
+		const int FlatRate;
 
+};
 
 #endif
