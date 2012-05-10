@@ -9,7 +9,7 @@ CCC = g++
 CCFLAGS = -ansi
 
 monopoly: monopoly.o gamespace.o deed.o property.o tax.o utility.o railroad.o\
-		misc.o contaner.o common.o
+		misc.o container.o common.o
 	$(CCC) $(CCFLAGS) -o monopoly monopoly.o gamespace.o deed.o property.o\
 				tax.o utility.o railroad.o misc.o container.o\
 				common.o
@@ -61,10 +61,12 @@ gamespace:
 	ln -s GameSpace/misc.cc
 
 container:
-	rm -f container.cc container.h common.h common.cc
+	rm -f container.cc container.h\
+		listnode.h listnode_inl.h
 	ln -s Template/container.cc
 	ln -s Template/container.h
-
+	ln -s Template/listnode.h
+	ln -s Template/listnode_inl.h
 
 clean:
 	rm -f *.o
@@ -76,4 +78,5 @@ real_clean: clean
 	rm -f gamespace.h gamespace.cc color.h celltype.h deed.h deed.cc\
 		property.h property.cc tax.h tax.cc railroad.h railroad.cc\
 		utility.h utility.cc misc.h misc.cc
-	rm -f container.cc container.h common.h common.cc
+	rm -f container.cc container.h common.h common.cc\
+		listnode.h listnode_inl.h
