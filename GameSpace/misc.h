@@ -10,11 +10,11 @@
 #ifndef MISC
 #define MISC
 
-
 class Misc : public GameSpace
 {
 	public:
-		Misc(string n = "", CellType t = NON);
+		// Misc(string n = "", CellType t = NON);
+		Misc(string n = "");
 
 		virtual void display(ostream & out) const;
 		// friend ostream& operator<<(ostream & s, const Misc &m);

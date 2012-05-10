@@ -4,12 +4,12 @@ using namespace std;
 
 #include "gamespace.h"
 #include "deed.h"
-#include "utility.h"
+#include "railroad.h"
 
 int main()
 {	int P = 1;
 
-	Utility u;
+	Railroad u;
 
 
 	cout << u << endl;
