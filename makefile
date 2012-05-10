@@ -1,57 +1,64 @@
-## R4T5 
-## Date: 29 Apr 12
-## Rev: v0.2
-##
-##
-##	This is the makefile for the Board/Property Class
-##	
-##
+#
+#
+#	Makefile_Template
+#
+#
+#
 
 CCC = g++
 CCFLAGS = -ansi
 
-  monopoly: monopoly.o properties.o gamespace.o container.o common.o chance.o
-	$(CCC) $(CCFLAGS) -o monopoly monopoly.o properties.o gamespace.o container.o common.o chance.o
+testpl: testpl.o gamespace.o deed.o property.o tax.o utility.o railroad.o misc.o
+	$(CCC) $(CCFLAGS) -o testpl testpl.o gamespace.o deed.o property.o tax.o utility.o railroad.o misc.o
+testpl.o: gamespace.h deed.h property.h tax.h utility.h railroad.h misc.h
+gamepspace.o: gamespace.h
 
-monopoly.o: Properties/properties.h Container/container.h
+deed.o: deed.h
+property.o: property.h
+tax.o: tax.h
+utility.o: utility.h
+railroad.o: railroad.h
+misc.o: misc.h
 
-properties.o: Properties/properties.h Container/container.h GameSpace/gamespace.h GameSpace/color.h GameSpace/celltype.h
 
-chance.o: Chance/chance.h
+commonlinks:
+	rm -f common.h common.cc entry.h
+	ln -s Common/common.h
+	ln -s Common/common.cc
+	ln -s Common/entry.h
 
-container.o: container.h
-
-gamespace.o: GameSpace/gamespace.h GameSpace/color.h GameSpace/celltype.h
-
-common.o: common.h
+player:
+	rm -f player.h player.cc
+	ln -s Player/player.h
+	ln -s Player/player.cc
 
 gamespace:
-	rm -f celltype.h gamespace.h gamespace.cc color.h
-	ln -s GameSpace/celltype.h .
-	ln -s GameSpace/gamespace.h .
-	ln -s GameSpace/gamespace.cc .
-	ln -s GameSpace/color.h .
-	touch celltype.h gamespace.h gamespace.cc color.h
+	rm -f gamespace.h gamespace.cc color.h celltype.h deed.h deed.cc property.h property.cc tax.h tax.cc railroad.h railroad.cc utility.h utility.cc misc.h misc.cc
+	ln -s GameSpace/gamespace.h
+	ln -s GameSpace/gamespace.cc
+	ln -s GameSpace/color.h
+	ln -s GameSpace/celltype.h
+	ln -s GameSpace/deed.h
+	ln -s GameSpace/deed.cc
+	ln -s GameSpace/property.h	
+	ln -s GameSpace/property.cc
+	ln -s GameSpace/tax.h
+	ln -s GameSpace/tax.cc
+	ln -s GameSpace/utility.h
+	ln -s GameSpace/utility.cc
+	ln -s GameSpace/railroad.h
+	ln -s GameSpace/railroad.cc
+	ln -s GameSpace/misc.h
+	ln -s GameSpace/misc.cc
 
-container:
-	rm -f container.h container_inl.h container.cc listnode.h listnode_inl.h
-	ln -s Container/container.h .
-	ln -s Container/container_inl.h .
-	ln -s Container/container.cc .
-	ln -s Container/listnode.h .
-	ln -s Container/listnode_inl.h .
-	ln -s Container/entry.h
-	touch container.h container_inl.h container.cc listnode.h listnode_inl.h
+template:
+	rm -f container.cc container.h
+	ln -s Template/container.cc
+	ln -s Template/container.h
 
-common:
-	rm -f common.h common.cc
-	ln -s Container/common.h .
-	ln -s Container/common.cc .
-	touch common.h common.cc
 
 clean:
 	rm -f *.o
 
-real_clean:	clean
+real_clean: clean
 	rm -f monopoly
-

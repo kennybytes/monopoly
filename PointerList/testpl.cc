@@ -23,16 +23,16 @@ int main()
 	GameSpace * ptr;
 	vector<GameSpace*> GameSpaceList;
 
-	ptr = new Misc("Kenny", 1);
+	ptr = new Misc("Free Parking", 1);
 	GameSpaceList.push_back(ptr);
 	
-	ptr = new Utility("Kenny2", 2);
+	ptr = new Utility("Electricity !", 2);
 	GameSpaceList.push_back(ptr);
 
-	ptr = new Railroad("Kenny2", 2);
+	ptr = new Railroad("Kenny Railroad", 2);
 	GameSpaceList.push_back(ptr);
 
-	ptr = new Tax("TAX", 2);
+	ptr = new Tax("Yiheng Tax", 2);
 	GameSpaceList.push_back(ptr);
 
 	ptr = new Property("Tep's Office", 2, 1);
@@ -41,10 +41,9 @@ int main()
 	ptr = new Property("Mediterranean Avenue", 4, 2, 60, "ME!", BROWN, 10, 30, 90, 160, 250, false);
 	GameSpaceList.push_back(ptr);
 
-	cout << GameSpaceList[1] << endl;
+	// cout << GameSpaceList[1].getName() << endl;
 
-	cout << GameSpaceList.size() << endl;
-	// cout << ptr.getName() << endl;
+	// cout << *ptr.getName() << endl;
 
 
 

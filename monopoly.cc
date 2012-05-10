@@ -39,7 +39,7 @@ main()
 	for(int i = 0; i < players; i++)
 	{
 		cout << "Player " << i+1 << "'s turn!" << endl;
-
+		cout << player[i].getName() << " (" << i+1 << ") " << "(cash $" << player[i].get_balance() << ") on === PLACE" << endl;
 		// Set rollCheck value per turn
 		rollCheck = 0;
 
