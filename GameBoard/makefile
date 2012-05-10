@@ -22,6 +22,11 @@ container.o: container.h container_inl.h listnode.h listnode_inl.h common.h
 
 common.o: common.h
 
+gamespace:
+	rm -f gamespace.h gamespace.cc 
+
+
+
 container:
 	rm -f container.h container_inl.h container.cc listnode.h listnode_inl.h
 	ln -s ../Template/container.h 
