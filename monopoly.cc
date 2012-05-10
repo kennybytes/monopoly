@@ -11,6 +11,7 @@
  */
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 #include "common.h"
@@ -24,7 +25,7 @@ using namespace std;
 #include "railroad.h"
 #include "tax.h"
 #include "misc.h"
-#include "deck.h"
+//#include "deck.h"
 
 #include "player.h"
 
@@ -32,7 +33,42 @@ using namespace std;
 
 void DisplaySplash();
 int main()
-{
+{	
+	int players = 0;
+	int count = 0;
+	vector<Player> Players;
+
+	DisplaySplash();
+	
+	
+	
+	cout << "How many players? ";
+	cin >> players;
+
+	cout << players << " Players." << endl;
+		
+	// Add players
+	for(vector<Player>::iterator it=Players.begin(); 
+				it != Players.end() ; it ++)
+	{
+		string name;
+		count++;
+		cout << "Player " << count << "Name :";
+		cin >> name
+		Players[count].setName(name);
+		
+	}
+	
+	// Roll dice to see who goes first
+	
+
+
+	// Begin main loop
+	while(1);
+		
+	
+
+
 
 /*
 	int NumberPlayers = 3;
@@ -48,9 +84,12 @@ int main()
 	cout << PA[i] << endl;
 */
 
-	
-
-
-
 }
+
+
+void DisplaySplash(){
+
+	cout << "We're Playing Monopoly!" << endl;
+}
+
 
