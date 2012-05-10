@@ -9,7 +9,7 @@
 
 Tax :: Tax(string n, CellType t, int r, int pr)
  : Deed(n, t, r),
-   PercentRate(pr)
+   PercentRate(pr), FlatRate(r)
 {}
 
 
@@ -21,6 +21,24 @@ void Tax :: display(ostream & out) const
 	out << "Rent = " << rent << endl;
 	out << "Percent Rent Rate = " << PercentRate << endl;
 }
+
+
+int Tax :: getRent(int money) const
+{
+
+	return PercentRate * money;
+	
+
+}
+
+int Tax :: getRent() const
+{
+
+	return FlatRate;
+
+
+}
+
 
 /*
 ostream & operator<<(ostream & s, const Tax &t)

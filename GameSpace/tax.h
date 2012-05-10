@@ -18,11 +18,15 @@ class Tax : public Deed
 
 		virtual void display(ostream & out) const;
 		friend ostream & operator<<(ostream & s, const Tax &t);
+		
+		int getRent(const int money) const;
+		int getRent() const;
+
 
 	private:
-		int PercentRate;
-		
-};
+		const int PercentRate;
+		const int FlatRate;
 
+};
 
 #endif

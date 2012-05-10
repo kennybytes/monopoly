@@ -20,7 +20,12 @@ testgamespace.o: gamespace.h container.h
 testtax: testtax.o tax.o deed.o gamespace.o container.o common.o
 	$(CCC) $(CCFLAGS) -o testtax testtax.o tax.o deed.o gamespace.o\
 			container.o common.o
+testtax.o: tax.h
 
+testutility: testutility.o utility.o deed.o gamespace.o container.o common.o
+	$(CCC) $(CCFLAGS) -o testutility testutility.o utility.o deed.o\
+			gamespace.o container.o common.o
+testutility.o: utility.h
 
 container:
 	rm -f container.h container_inl.h container.cc listnode.h listnode_inl.h
