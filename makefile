@@ -28,7 +28,7 @@ player.o: player.h
 deck.o: deck.h
 
 
-links: common player deck gamespace container
+links: common player gamespace container
 
 common:
 	rm -f common.h common.cc 
