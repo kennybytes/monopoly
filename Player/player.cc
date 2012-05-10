@@ -70,3 +70,16 @@ void Player :: set_free()
 {
 	jail = false;
 }
+
+
+void Player :: display(ostream & out) const
+{
+	// Deed::display(out);
+	out << "Position = " << p << endl;
+	out << "Balance = " << balance << endl;
+	out << "In Jail? = " << jail << endl;
+	out << "Alive? = " << alive << endl;
+	out << "Get Out Of Jail Free Card? = " << jailCard << endl;
+	out << "Railroad Count = " << rrCount << endl;
+	out << "Utility Count = " << utilCount << endl;
+}

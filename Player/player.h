@@ -4,6 +4,12 @@
 
 typedef int Position;
 
+#ifndef PLAYER_H
+#define PLAYER_H
+
+#include <iostream>
+using namespace std;
+
 class Player
 {
 	public:
@@ -48,6 +54,7 @@ class Player
 		// sets alive = 0
 		bool set_dead();
 
+		virtual void display(ostream & out) const;
 
 
 	private:
@@ -60,3 +67,10 @@ class Player
 		int balance;	// Total balance
 };
 
+inline ostream& operator<<(ostream& s, const Player &p)
+{	p.display(s); return s; 	}
+
+
+
+
+#endif

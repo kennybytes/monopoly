@@ -9,14 +9,14 @@ CCC = g++
 CCFLAGS = -ansi
 
 monopoly: monopoly.o gamespace.o deed.o property.o tax.o utility.o railroad.o\
-		misc.o container.o common.o
+		misc.o container.o common.o player.o deck.o
 	$(CCC) $(CCFLAGS) -o monopoly monopoly.o gamespace.o deed.o property.o\
 				tax.o utility.o railroad.o misc.o container.o\
-				common.o
+				common.o player.o deck.o
 				
 
 monopoly.o:  gamespace.h deed.h property.h tax.h utility.h railroad.h misc.h\
-		container.h common.h
+		container.h common.h player.h deck.h
 gamepspace.o: gamespace.h
 deed.o: deed.h
 property.o: property.h
@@ -24,6 +24,8 @@ tax.o: tax.h
 utility.o: utility.h
 railroad.o: railroad.h
 misc.o: misc.h
+player.o: player.h
+deck.o: deck.h
 
 
 links: common player gamespace container
@@ -41,7 +43,7 @@ player:
 gamespace:
 	rm -f gamespace.h gamespace.cc color.h celltype.h deed.h deed.cc\
 		property.h property.cc tax.h tax.cc railroad.h railroad.cc\
-		utility.h utility.cc misc.h misc.cc
+		utility.h utility.cc misc.h misc.cc deck.h deck.cc
 
 	ln -s GameSpace/gamespace.h
 	ln -s GameSpace/gamespace.cc
@@ -49,6 +51,8 @@ gamespace:
 	ln -s GameSpace/celltype.h
 	ln -s GameSpace/deed.h
 	ln -s GameSpace/deed.cc
+	ln -s GameSpace/deck.h
+	ln -s GameSpace/deck.cc
 	ln -s GameSpace/property.h	
 	ln -s GameSpace/property.cc
 	ln -s GameSpace/tax.h

@@ -26,7 +26,7 @@ class Property : public Deed
 		int house3;	// House of third house
 		int house4;	// House of fourth house
 		int hotel;	// House of hotel
-		bool mortgage;	// Whether a mortgage is owed
+		bool mortgage;	// Whether prop is on mortgage
 };
 
 
