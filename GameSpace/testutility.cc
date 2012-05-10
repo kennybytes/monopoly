@@ -9,11 +9,12 @@
 
 int main()
 {
-	Utility u;
-	u.setName("Water Works");
-	u.setOwner(1);
-
+	Utility u("Water Works", 20, 500);
 	u.display(cout);
+
+	u.setOwner(1);
+	u.display(cout);
+
 	return 0;
 
 }
