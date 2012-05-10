@@ -9,9 +9,11 @@
 
 // Abstract Class
 
-#include <string>
+// #include "player.h"
+
 #include "celltype.h"
 #include "gamespace.h"
+
 #include <iostream>
 using namespace std;
 
@@ -23,21 +25,31 @@ class Deed : public GameSpace
 {
 public:
 
-	Deed(string n = "", CellType t = NON, int r = 0);
+	Deed(string n = "", CellType t = NON, int r = 0, int p = 0, int o = 0);
 
 	/* Inherited:
 	 * string getName() const;
 	 * CellType getType() const;
 	 */
 
+	/*	Accessors	*/
 	virtual inline int getRent() const
 	{	return rent;	}
 
+	virtual inline int getOwner() const
+	{	return owner;	}
+
+
+	/*	Mutators	*/
 	virtual inline void setRent(int r)
 	{	rent = r;	}
 
+	virtual inline void setOwner(int o)
+	{	owner = o;	}
 
 
+	// void buyDeed(Player pl, int p);
+	// void auction(Player pl, int p);
 
 	virtual void display(ostream & out) const = 0;
 	// friend ostream& operator<<(ostream& s, const Deed &d);
@@ -50,6 +62,8 @@ protected:
 
 	// Flat price of landing on Deed space
 	int rent;
+	int price;
+	int owner;
 
 };
 

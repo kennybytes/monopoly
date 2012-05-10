@@ -12,11 +12,13 @@ Player :: Player()
 	jail = false;
 	p = 0;
 	balance = 1500;
-	// prop.clear();
 	alive = 1;
+	jailCard = false;
+	rrCount = 0;
+	utilCount = 0;
 }
 
-
+// not needed due to constructor
 bool Player :: set_alive()
 {	return alive = 1;	}
 
@@ -54,20 +56,9 @@ Position Player :: get_position()
 	return p;
 }
 
-/*	
-void Player :: buy_prop(Properties pr)
-{
-	//if(pr.value() < balance) 
-	prop.insert(pr);
-	//else cout << "Not enough money!" <<endl;
-	//update_balance(-pr.value());
-}
-*/
-
-		
 bool Player :: bankrupt()
 {
-	return (balance == 0);
+	return (balance <= 0);
 }
 
 void Player :: go_jail()
@@ -78,4 +69,17 @@ void Player :: go_jail()
 void Player :: set_free()
 {
 	jail = false;
+}
+
+
+void Player :: display(ostream & out) const
+{
+	// Deed::display(out);
+	out << "Position = " << p << endl;
+	out << "Balance = " << balance << endl;
+	out << "In Jail? = " << jail << endl;
+	out << "Alive? = " << alive << endl;
+	out << "Get Out Of Jail Free Card? = " << jailCard << endl;
+	out << "Railroad Count = " << rrCount << endl;
+	out << "Utility Count = " << utilCount << endl;
 }

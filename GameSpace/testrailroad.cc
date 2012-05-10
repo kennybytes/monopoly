@@ -7,8 +7,7 @@ using namespace std;
 #include "railroad.h"
 
 int main()
-{	int P = 1;
-
+{
 	Railroad u;
 
 

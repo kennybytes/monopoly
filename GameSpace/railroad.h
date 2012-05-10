@@ -14,14 +14,11 @@
 class Railroad : public Deed
 {
 	public:
-		Railroad(string n = "", int r = NON, int p = NON);
+		Railroad(string n = "Railroad", int r = NON, int p = NON);
 
 		void display(ostream & out) const;
 
 	private:
-		int Price;
-		int Owner;
-
 };
 
 

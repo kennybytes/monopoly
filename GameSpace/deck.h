@@ -5,8 +5,8 @@
  * Rev: v0.1
  */
 
-#ifndef DECK
-#define DECK
+#ifndef DECK_H
+#define DECK_H
 
 #include "gamespace.h"
 #include "player.h"
@@ -14,7 +14,7 @@
 class Deck : public GameSpace
 {
 	public:
-		Deck(string n ="", CellType t = NON);
+		Deck(string n = "");
 
 		void chance(Player p);
 		void comchest(Player p);

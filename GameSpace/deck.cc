@@ -21,8 +21,8 @@ typedef int Position;
 
 /*	Constructor	*/
 
-Deck :: Deck(string n, CellType t)
- : GameSpace(n, t)
+Deck :: Deck(string n)
+ : GameSpace(n, DECK)
 {
 }
 
@@ -122,6 +122,7 @@ void Deck :: chance(Player p)
 		case 7:
 			cout << "Get out of Jail Free -  this card may be"
 				<< " kept until needed, or traded/sold" << endl;
+			p.setJailCard(true);
 			break;
 
 		case 8:
@@ -210,6 +211,7 @@ void Deck :: comchest(Player p)
 		case 3:
 			cout << "Get out of Jail Free -  this card may be"
 				<< " kept until needed, or traded/sold" << endl;
+			p.setJailCard(true);
 			break;
 
 		case 4:

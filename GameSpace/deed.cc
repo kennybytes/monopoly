@@ -11,49 +11,21 @@
 
 using namespace std;
 
-Deed :: Deed(string n, CellType t, int r)
-: GameSpace(n, t), rent(r)
+Deed :: Deed(string n, CellType t, int r, int p, int o)
+: GameSpace(n, t), rent(r), price(p), owner(o)
 {}
 
 /*
-int getRent();
-{	return rent;	}
+void Deed :: buyDeed(Player pl, int p)
+{	owner = p;
+	pl.update_balance(-price);
+}
 */
+
 
 /*
 void Deed :: rent(PlayerArray PA, int PlayerNumber, int rent)
 {
 	PA[PlayerNumber].update_balance(-1*rent);
 }
-*/
-
-/*
-void Deed :: display(ostream & out) const
-{
-	GameSpace::display(out);
-	out << "Rent = " << rent << endl;
-}
-
-*/
-
-
-/*
-void Deed :: setName(string n)
-{
-	name = n;
-}
-
-void Deed :: setType(CellType t);
-{
-	type = t;
-}
-*/
-
-/*
-ostream& operator<<(ostream& s, const Deed &d)
-{
-	d.display(s);
-	return s;
-}
-
 */
