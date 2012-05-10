@@ -14,9 +14,11 @@ Player :: Player()
 	balance = 1500;
 	alive = 1;
 	jailCard = false;
+	rrCount = 0;
+	utilCount = 0;
 }
 
-
+// not needed due to constructor
 bool Player :: set_alive()
 {	return alive = 1;	}
 

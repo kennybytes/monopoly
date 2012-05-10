@@ -14,7 +14,6 @@ Utility :: Utility(string n, int r, int p)
 
 void Utility :: display(ostream & out) const
 {
-	// Deed::display(out);
 	out << "Name = " << name << endl;
 	out << "Type = " << type << endl;
 	out << "Rent = " << rent << endl;

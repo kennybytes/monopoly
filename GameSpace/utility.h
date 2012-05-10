@@ -19,6 +19,8 @@ class Utility : public Deed
 		virtual void display(ostream & out) const;
 		
 	private:
+		// rent is: 4 * roll if only one owned
+		//          10 * roll if both owned
 };
 
 
