@@ -23,17 +23,17 @@ common.o: common.h
 
 container:
 	rm -f container.h container_inl.h container.cc listnode.h listnode_inl.h
-	ln -s ../Template/container.h .
-	ln -s ../Template/container_inl.h .
-	ln -s ../Template/container.cc .
-	ln -s ../Template/listnode.h .
-	ln -s ../Template/listnode_inl.h .
+	ln -s ../Template/container.h 
+	ln -s ../Template/container_inl.h 
+	ln -s ../Template/container.cc 
+	ln -s ../Template/listnode.h 
+	ln -s ../Template/listnode_inl.h 
 	touch container.h container_inl.h container.cc listnode.h listnode_inl.h
 
 common:
-	rm common.h common.cc
-	ln -s Template/common.h .
-	ln -s Template/common.cc .
+	rm -f common.h common.cc
+	ln -s ../Template/common.h 
+	ln -s ../Template/common.cc 
 	touch common.h common.cc
 
 clean:
