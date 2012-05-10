@@ -24,11 +24,11 @@ void Tax :: display(ostream & out) const
 
 int Tax :: getTax(int money) const
 {
-	return PercentRate * money;
+	return (-PercentRate * money)/100;
 }
 
 int Tax :: getTax() const
 {
-	return FlatRate;
+	return -FlatRate;
 }
 

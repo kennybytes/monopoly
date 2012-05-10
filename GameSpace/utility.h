@@ -14,19 +14,11 @@
 class Utility : public Deed
 {
 	public:
-		Utility(string n = "",int r = NON, 
-						int p = NON);
+		Utility(string n = "",int r = NON, int p = NON);
 
 		virtual void display(ostream & out) const;
-
-		void setOwner(int player);
 		
-		// friend ostream & operator<<(ostream & s, const Utility &u);
-
 	private:
-		const int Price;
-		int Owner;
-
 };
 
 

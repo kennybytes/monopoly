@@ -12,8 +12,8 @@ Player :: Player()
 	jail = false;
 	p = 0;
 	balance = 1500;
-	// prop.clear();
 	alive = 1;
+	jailCard = false;
 }
 
 
@@ -54,20 +54,9 @@ Position Player :: get_position()
 	return p;
 }
 
-/*	
-void Player :: buy_prop(Properties pr)
-{
-	//if(pr.value() < balance) 
-	prop.insert(pr);
-	//else cout << "Not enough money!" <<endl;
-	//update_balance(-pr.value());
-}
-*/
-
-		
 bool Player :: bankrupt()
 {
-	return (balance == 0);
+	return (balance <= 0);
 }
 
 void Player :: go_jail()

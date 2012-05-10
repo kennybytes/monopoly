@@ -8,11 +8,8 @@
 #include "utility.h"
 
 Utility :: Utility(string n, int r, int p)
- : Deed(n, UTIL, r),
-   Price(p), Owner(NON)
-{
-
-}
+ : Deed(n, UTIL, r, p, 0)
+{ }
 
 
 void Utility :: display(ostream & out) const
@@ -21,26 +18,7 @@ void Utility :: display(ostream & out) const
 	out << "Name = " << name << endl;
 	out << "Type = " << type << endl;
 	out << "Rent = " << rent << endl;
-	out << "Price = " << Price << endl;
-	out << "Owner = " << Owner << endl;
+	out << "Price = " << price << endl;
+	out << "Owner = " << owner << endl;
 }
 
-void Utility :: setOwner(int player)
-{
-
-	Owner = player;
-
-
-
-}
-
-
-
-
-/*
-ostream & operator<<(ostream & s, const Utility &u)
-{
-	u.display(s);
-	return s;
-}
-*/

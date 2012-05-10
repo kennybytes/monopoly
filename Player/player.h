@@ -18,7 +18,11 @@ class Player
 		int get_balance();
 		Position get_position();
 		
-		// void buy_prop(Properties pr);
+		inline void pay_rent(int rent)
+		{	balance -= rent;	}
+
+		inline void setJailCard(bool b)
+		{	jailCard = b;	}
 		
 		bool bankrupt();
 
@@ -33,8 +37,8 @@ class Player
 	private:
 		bool alive;
 		bool jail;
+		bool jailCard;
 		Position p;
 		int balance;	
-		//Container prop;	
 };
 

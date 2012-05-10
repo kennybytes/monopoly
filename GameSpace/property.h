@@ -19,16 +19,13 @@ class Property : public Deed
 		virtual void display(ostream & out) const;
 
 	private:
-
-		int Price;
-		int Owner;
-		int Color;
-		int House1;
-		int House2;
-		int House3;
-		int House4;
-		int Hotel;
-		bool Mortgage;
+		int color;
+		int house1;
+		int house2;
+		int house3;
+		int house4;
+		int hotel;
+		bool mortgage;
 };
 
 
