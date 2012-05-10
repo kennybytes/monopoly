@@ -29,7 +29,13 @@ void Utility :: setOwner(int player)
 {
 
 	Owner = player;
+
+
+
 }
+
+
+
 
 /*
 ostream & operator<<(ostream & s, const Utility &u)

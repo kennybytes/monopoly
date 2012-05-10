@@ -11,16 +11,15 @@
 
 #include "deed.h"
 
-class Tax : public Deed
+class Tax : public GameSpace
 {
 	public:
 		Tax(string n = "",int r = NON, int pr = NON);
 
-		virtual void display(ostream & out) const;
-		friend ostream & operator<<(ostream & s, const Tax &t);
+		void display(ostream & out) const;
 		
-		int getRent(const int money) const;
-		int getRent() const;
+		int getTax(const int money) const;
+		int getTax() const;
 
 
 	private:
