@@ -9,7 +9,6 @@
 #define DECK
 
 #include "gamespace.h"
-#include "player.h"
 
 class Deck : public GameSpace
 {
@@ -20,9 +19,10 @@ class Deck : public GameSpace
 		void comchest(Player p);
 
 		virtual void display(ostream & out) const;
+	 	friend ostream& operator<<(ostream & s, const Misc &m);
 
 	private:
-		// no new data
+
 };
 
 

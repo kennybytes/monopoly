@@ -30,17 +30,8 @@ public:
 	 * CellType getType() const;
 	 */
 
-	// virtual void rent(PlayerArray PA, int PlayerNumber, int rent);
-
 	virtual void display(ostream & out) const = 0;
 	// friend ostream& operator<<(ostream& s, const Deed &d);
-
-/*
-protected:
-	void setName(string n);
-	void setType(CellType t);
-*/
-
 
 protected:
 	/* Inherited:
