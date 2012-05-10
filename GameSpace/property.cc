@@ -8,9 +8,9 @@
 #include <iostream>
 #include "property.h"
 
-Property :: Property(string n, CellType t, int r, int p, int o, int c, int h1, int h2, int h3, int h4, int h, bool m)
-: Deed(n, t, r),
- Price(p), Owner(o), Color(c), 
+Property :: Property(string n, int r, int p, int c, int h1, int h2, int h3, int h4, int h, bool m)
+: Deed(n, PROP, r),
+ Price(p), Owner(NON), Color(c), 
  House1(h1), House2(h2), House3(h3), House4(h4),    
  Hotel(h), Mortgage(m)
 {}
