@@ -7,14 +7,13 @@
 #include <iostream>
 #include "railroad.h"
 
-Railroad :: Railroad(string n, CellType t, int r, int p, string o)
- 	: Deed(n, t, r), Price(p), Owner(o) {}
+Railroad :: Railroad(string n, int r, int p)
+ 	: Deed(n, RR, r), Price(p), Owner(0) {}
 
 
 
 void Railroad :: display(ostream & out) const
 {
-	// Deed::display(out);
 	out << "Name = " << name << endl;
 	out << "Type = " << type << endl;
 	out << "Rent = " << rent << endl;
@@ -22,10 +21,3 @@ void Railroad :: display(ostream & out) const
 	out << "Owner = " << Owner << endl;
 }
 
-/*
-ostream & operator<<(ostream & s, const Railroad &r)
-{
-	r.display(s);
-	return s;
-}
-*/
