@@ -16,6 +16,7 @@ Player :: Player()
 	jailCard = false;
 	rrCount = 0;
 	utilCount = 0;
+	name = "unnamed";
 }
 
 // not needed due to constructor
@@ -25,7 +26,14 @@ bool Player :: set_alive()
 bool Player :: set_dead()
 {	return alive = 0;	}
 
-
+void Player :: set_name(string n)
+{
+	name = n;
+}
+string Player :: get_name(void)
+{
+	return name;
+}
 
 Position Player :: update_position(int dice)
 {
@@ -71,6 +79,11 @@ void Player :: set_free()
 	jail = false;
 }
 
+int Player :: roll_dice(void)
+{
+	int dice = rand()%6 + 1;
+	return dice;
+}
 
 void Player :: display(ostream & out) const
 {

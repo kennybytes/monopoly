@@ -35,7 +35,6 @@ void DisplaySplash();
 int main()
 {	
 	int players = 0;
-	int count = 0;
 	vector<Player> Players;
 
 	DisplaySplash();
@@ -48,16 +47,16 @@ int main()
 	cout << players << " Players." << endl;
 		
 	// Add players
-	for(vector<Player>::iterator it=Players.begin(); 
-				it != Players.end() ; it ++)
+	for(int i = 0; i <= players-1; i++)
 	{
 		string name;
-		count++;
-		cout << "Player " << count << "Name :";
-		cin >> name
-		Players[count].setName(name);
-		
+		cout << "Player " << i << " Name :";
+		cin >> name;
+		Player a;
+		a.set_name(name);
+		Players.push_back(a);	
 	}
+	
 	
 	// Roll dice to see who goes first
 	

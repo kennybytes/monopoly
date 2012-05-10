@@ -10,10 +10,18 @@ typedef int Position;
 #include <iostream>
 using namespace std;
 
+#include <cstdlib>
+using std::rand;
+
 class Player
 {
 	public:
 		Player();
+		// set player name
+		void set_name(string n);
+
+		// return name
+		string get_name(void);
 
 		// Move DICE spaces forward based on dice roll
 		Position update_position(int dice);
@@ -53,6 +61,8 @@ class Player
 
 		// sets alive = 0
 		bool set_dead();
+		// roll dice
+		int roll_dice(void);
 
 		virtual void display(ostream & out) const;
 
@@ -65,6 +75,7 @@ class Player
 		int rrCount;	// How many railroad deeds player has
 		int utilCount;	// How many utility deeds player has
 		int balance;	// Total balance
+		string name;	// player name
 };
 
 inline ostream& operator<<(ostream& s, const Player &p)
