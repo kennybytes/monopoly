@@ -16,6 +16,11 @@ Deed :: Deed(string n, CellType t, int r)
 {}
 
 /*
+int getRent();
+{	return rent;	}
+*/
+
+/*
 void Deed :: rent(PlayerArray PA, int PlayerNumber, int rent)
 {
 	PA[PlayerNumber].update_balance(-1*rent);

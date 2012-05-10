@@ -19,14 +19,13 @@ typedef int CellType;
 static const CellType NON = -1;
 static const CellType CHANCE = 0;
 static const CellType COMMUNITY_CHEST = 1;
-//static const CellType UTILITY = 2;
-//static const CellType RAILROAD = 3;
-// static const CellType PROPERTY = 4;
-static const CellType INCOME_TAX = 5;
-static const CellType LUXURY_TAX = 6;
-static const CellType FREE_PARKING = 7;
-static const CellType GO_TO_JAIL = 8;
-static const CellType JAIL = 9;
-static const CellType GO = 10;
+static const CellType UTIL = 2;
+static const CellType RR = 3;
+static const CellType PROP = 4;
+static const CellType TAXES = 5;
+static const CellType FREE_PARKING = 6;
+static const CellType GO_TO_JAIL = 7;
+static const CellType JAIL = 8;
+static const CellType GO = 9;
 
 #endif

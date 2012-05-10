@@ -14,7 +14,21 @@ CCFLAGS = -ansi
 testgamespace: testgamespace.o gamespace.o container.o common.o
 	$(CCC) $(CCFLAGS) -o testgamespace testgamespace.o gamespace.o container.o common.o
 
+testprop: testprop.o property.o common.o deed.o gamespace.o
+	$(CCC) $(CCFLAGS) -o testprop testprop.o property.o common.o deed.o gamespace.o
+
+testutil: testutil.o utility.o common.o deed.o gamespace.o
+	$(CCC) $(CCFLAGS) -o testutil testutil.o utility.o common.o deed.o gamespace.o
+
+
+testmisc: testmisc.o misc.o common.o gamespace.o
+	$(CCC) $(CCFLAGS) -o testmisc testmisc.o misc.o common.o gamespace.o
+
 testgamespace.o: gamespace.h container.h
+
+testprop.o: gamespace.h deed.h property.h common.h
+
+
 
 container:
 	rm -f container.h container_inl.h container.cc listnode.h listnode_inl.h

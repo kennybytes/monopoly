@@ -30,6 +30,15 @@ public:
 	 * CellType getType() const;
 	 */
 
+	virtual inline int getRent() const
+	{	return rent;	}
+
+	virtual inline void setRent(int r)
+	{	rent = r;	}
+
+
+
+
 	virtual void display(ostream & out) const = 0;
 	// friend ostream& operator<<(ostream& s, const Deed &d);
 

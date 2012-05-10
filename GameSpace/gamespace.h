@@ -16,17 +16,23 @@ using namespace std;
 class GameSpace
 {
 
-public:
+   public:
 	/* Constructors */
 	GameSpace(string n = " ", int t = NON );
 
 	/* Accessors */
-	virtual string getName() const;  
-	virtual CellType getType() const;
+	inline virtual string getName() const
+	{	return name;	}  
+
+	inline virtual CellType getType() const
+	{	return type;	}  
 
 	/* Modifiers */
-	void setName(string n);
-	void setType(CellType t);
+	inline virtual void setName(string n)
+	{	name = n;	}
+
+	inline virtual void setType(CellType t)
+	{	type = t;	}
 	
 	/* Operators */
 	// bool operator==(const GameSpace& other) const;
@@ -34,12 +40,10 @@ public:
 
 	virtual void display(ostream & out) const = 0;
 
-
-protected:
+   protected:
 	/* GameSpace data information */
 	string name;	//Name of the block
 	CellType type;	//Type of block
-
 };       
 
 	inline ostream& operator<<(ostream& s, const GameSpace &gs)
