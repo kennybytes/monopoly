@@ -14,7 +14,7 @@
 class Tax : public Deed
 {
 	public:
-		Tax(string n = "", CellType t = T, int r = NON, int pr = NON);
+		Tax(string n = "",int r = NON, int pr = NON);
 
 		virtual void display(ostream & out) const;
 		friend ostream & operator<<(ostream & s, const Tax &t);

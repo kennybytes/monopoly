@@ -11,7 +11,7 @@
 
 int main()
 {
-	Tax t("Luxury Tax", T, 100, 10);
+	Tax t("Luxury Tax",100, 10);
 	t.display(cout);
 
 	return 0;
