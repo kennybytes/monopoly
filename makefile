@@ -9,7 +9,7 @@ CCC = g++
 CCFLAGS = -ansi
 
 monopoly: monopoly.o gamespace.o deed.o property.o tax.o utility.o railroad.o\
-		misc.o container.o common.o player.o deck.o
+		misc.o container.o common.o player.o 
 	$(CCC) $(CCFLAGS) -o monopoly monopoly.o gamespace.o deed.o property.o\
 				tax.o utility.o railroad.o misc.o container.o\
 				common.o player.o 
