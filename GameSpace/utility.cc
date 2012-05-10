@@ -7,10 +7,12 @@
 #include <iostream>
 #include "utility.h"
 
-Utility :: Utility(string n, CellType t, int r, int p, int o)
- : Deed(n, t, r),
-   Price(p), Owner(o)
-{}
+Utility :: Utility(string n, int r, int p)
+ : Deed(n, UTIL, r),
+   Price(p), Owner(NON)
+{
+
+}
 
 
 void Utility :: display(ostream & out) const

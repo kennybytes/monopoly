@@ -7,8 +7,8 @@
 #include <iostream>
 #include "tax.h"
 
-Tax :: Tax(string n, CellType t, int r, int pr)
- : Deed(n, t, r),
+Tax :: Tax(string n, int r, int pr)
+ : Deed(n, TAXES, r),
    PercentRate(pr), FlatRate(r)
 {}
 
