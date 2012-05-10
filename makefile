@@ -12,11 +12,11 @@ monopoly: monopoly.o gamespace.o deed.o property.o tax.o utility.o railroad.o\
 		misc.o container.o common.o player.o deck.o
 	$(CCC) $(CCFLAGS) -o monopoly monopoly.o gamespace.o deed.o property.o\
 				tax.o utility.o railroad.o misc.o container.o\
-				common.o player.o deck.o
+				common.o player.o 
 				
 
 monopoly.o:  gamespace.h deed.h property.h tax.h utility.h railroad.h misc.h\
-		container.h common.h player.h deck.h
+		container.h common.h player.h 
 gamepspace.o: gamespace.h
 deed.o: deed.h
 property.o: property.h

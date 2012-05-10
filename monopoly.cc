@@ -30,7 +30,7 @@ using namespace std;
 
 #include "container.h"
 
-void DisplaySplash()
+void DisplaySplash();
 int main()
 {
 
