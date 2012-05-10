@@ -41,6 +41,7 @@ protected:
 
 	// Flat price of landing on Deed space
 	int rent;
+
 };
 
 #endif

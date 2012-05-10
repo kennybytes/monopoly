@@ -15,12 +15,16 @@
 class Property : public Deed
 {
 	public:
-		Property(string n = "", CellType t = NON, int r = NON, int p = NON, string o = "", int c = NON, int h1 = NON, int h2 = NON, int h3 = NON, int h4 = NON, int h = NON, bool m = 0);
+		Property(string n = "", CellType t = NON, int r = NON, 
+				int p = NON, string o = "", int c = NON, 
+				int h1 = NON, int h2 = NON, int h3 = NON, 
+				int h4 = NON, int h = NON, bool m = 0);
 
 		virtual void display(ostream & out) const;
 		// friend ostream & operator<<(ostream& s, const Property &p);
 
 	private:
+
 		int Price;
 		string Owner;
 		int Color;

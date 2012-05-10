@@ -8,9 +8,8 @@
 #include "railroad.h"
 
 Railroad :: Railroad(string n, CellType t, int r, int p, string o)
- : Deed(n, t, r),
-   Price(p), Owner(o)
-{}
+ 	: Deed(n, t, r), Price(p), Owner(o) {}
+
 
 
 void Railroad :: display(ostream & out) const
