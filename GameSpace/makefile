@@ -21,6 +21,10 @@ testprop: testprop.o property.o common.o deed.o gamespace.o
 testutil: testutil.o utility.o common.o deed.o gamespace.o
 	$(CCC) $(CCFLAGS) -o testutil testutil.o utility.o common.o deed.o gamespace.o
 
+testrailroad: testrailroad.o railroad.o common.o deed.o gamespace.o
+	$(CCC) $(CCFLAGS) -o testrailroad testrailroad.o railroad.o common.o deed.o gamespace.o
+
+railroad.o: railroad.h
 
 testmisc: testmisc.o misc.o common.o gamespace.o
 	$(CCC) $(CCFLAGS) -o testmisc testmisc.o misc.o common.o gamespace.o

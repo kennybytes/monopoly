@@ -14,10 +14,9 @@
 class Railroad : public Deed
 {
 	public:
-		Railroad(string n = "", CellType t = NON, int r = NON, int p = NON, string o = "");
+		Railroad(string n = "", int r = NON, int p = NON);
 
-		virtual void display(ostream & out) const;
-		friend ostream & operator<<(ostream & s, const Railroad &r);
+		void display(ostream & out) const;
 
 	private:
 		int Price;
