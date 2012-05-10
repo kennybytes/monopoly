@@ -10,7 +10,8 @@
 using namespace std;
 main()
 {
-
+	
+	vector<GameSpace> Monopoly;
 	cout << "Now we're playing monopoly!" << endl;
 	cout << "===========================" << endl;
 	cout << "How many players? " << endl;
@@ -24,7 +25,12 @@ main()
 	}
 
 	// Initialize Board, players
-	// InitBoard();
+	// InitBoard(Monopoly);
+	
+	
+	
+
+	
 	Player P[players];
 
 	int flag = 0;	// ends game if 1
@@ -46,6 +52,7 @@ main()
 		// Display options
 
 		DisplayOptions();
+
 		/*
  		Code for DisplayOptions():
 

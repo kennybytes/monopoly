@@ -33,8 +33,8 @@ testgamespace.o: gamespace.h container.h
 
 testprop.o: gamespace.h deed.h property.h common.h
 
-testtax: testtax.o tax.o deed.o gamespace.o container.o common.o
-	$(CCC) $(CCFLAGS) -o testtax testtax.o tax.o deed.o gamespace.o\
+testtax: testtax.o tax.o gamespace.o container.o common.o
+	$(CCC) $(CCFLAGS) -o testtax testtax.o tax.o gamespace.o\
 			container.o common.o
 testtax.o: tax.h
 

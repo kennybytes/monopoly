@@ -9,8 +9,11 @@ CCC = g++
 CCFLAGS = -ansi
 
 testpl: testpl.o gamespace.o deed.o property.o tax.o utility.o railroad.o misc.o
-	$(CCC) $(CCFLAGS) -o testpl testpl.o gamespace.o deed.o property.o tax.o utility.o railroad.o misc.o
+	$(CCC) $(CCFLAGS) -o testpl testpl.o gamespace.o deed.o property.o\
+				tax.o utility.o railroad.o misc.o
+
 testpl.o: gamespace.h deed.h property.h tax.h utility.h railroad.h misc.h
+
 gamepspace.o: gamespace.h
 
 deed.o: deed.h
@@ -33,7 +36,10 @@ player:
 	ln -s Player/player.cc
 
 gamespace:
-	rm -f gamespace.h gamespace.cc color.h celltype.h deed.h deed.cc property.h property.cc tax.h tax.cc railroad.h railroad.cc utility.h utility.cc misc.h misc.cc
+	rm -f gamespace.h gamespace.cc color.h celltype.h deed.h deed.cc\
+		property.h property.cc tax.h tax.cc railroad.h railroad.cc\
+		utility.h utility.cc misc.h misc.cc
+
 	ln -s GameSpace/gamespace.h
 	ln -s GameSpace/gamespace.cc
 	ln -s GameSpace/color.h

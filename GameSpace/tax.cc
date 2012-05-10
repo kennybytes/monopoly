@@ -8,42 +8,27 @@
 #include "tax.h"
 
 Tax :: Tax(string n, int r, int pr)
- : Deed(n, TAXES, r),
+ : GameSpace(n, TAXES),
    PercentRate(pr), FlatRate(r)
 {}
 
 
 void Tax :: display(ostream & out) const
 {
-	// Deed::display(out);
 	out << "Name = " << name << endl;
 	out << "Type = " << type << endl;
-	out << "Rent = " << rent << endl;
+	out << "Tax = " << FlatRate << endl;
 	out << "Percent Rent Rate = " << PercentRate << endl;
 }
 
 
-int Tax :: getRent(int money) const
+int Tax :: getTax(int money) const
 {
-
 	return PercentRate * money;
-	
-
 }
 
-int Tax :: getRent() const
+int Tax :: getTax() const
 {
-
 	return FlatRate;
-
-
 }
 
-
-/*
-ostream & operator<<(ostream & s, const Tax &t)
-{
-	t.display(s);
-	return s;
-}
-*/
