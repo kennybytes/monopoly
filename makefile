@@ -46,7 +46,7 @@ deck:
 gamespace:
 	rm -f gamespace.h gamespace.cc color.h celltype.h deed.h deed.cc\
 		property.h property.cc tax.h tax.cc railroad.h railroad.cc\
-		utility.h utility.cc misc.h misc.cc deck.h deck.cc
+		utility.h utility.cc misc.h misc.cc 
 
 	ln -s GameSpace/gamespace.h
 	ln -s GameSpace/gamespace.cc
@@ -54,8 +54,6 @@ gamespace:
 	ln -s GameSpace/celltype.h
 	ln -s GameSpace/deed.h
 	ln -s GameSpace/deed.cc
-	ln -s GameSpace/deck.h
-	ln -s GameSpace/deck.cc
 	ln -s GameSpace/property.h	
 	ln -s GameSpace/property.cc
 	ln -s GameSpace/tax.h
@@ -87,7 +85,6 @@ real_clean: clean
 		utility.h utility.cc misc.h misc.cc
 	rm -f container.cc container.h common.h common.cc\
 		listnode.h listnode_inl.h
-	rm -f deck.h deck.cc
 
 
 
