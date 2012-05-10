@@ -13,6 +13,7 @@
 
 class Tax : public GameSpace
 {
+
 	public:
 		Tax(string n = "",int r = NON, int pr = NON);
 
