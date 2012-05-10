@@ -10,6 +10,7 @@
 #define PROPERTY
 
 #include "deed.h"
+#include "color.h"
 
 class Property : public Deed
 {
