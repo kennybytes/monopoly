@@ -28,7 +28,7 @@ player.o: player.h
 deck.o: deck.h
 
 
-links: common player gamespace container
+links: common player deck gamespace container
 
 common:
 	rm -f common.h common.cc 
@@ -39,7 +39,10 @@ player:
 	rm -f player.h player.cc
 	ln -s Player/player.h
 	ln -s Player/player.cc
-
+deck:
+	rm -f deck.h deck.cc
+	ln -s GameSpace/deck.cc
+	ln -s GameSpace/deck.h
 gamespace:
 	rm -f gamespace.h gamespace.cc color.h celltype.h deed.h deed.cc\
 		property.h property.cc tax.h tax.cc railroad.h railroad.cc\
@@ -84,3 +87,7 @@ real_clean: clean
 		utility.h utility.cc misc.h misc.cc
 	rm -f container.cc container.h common.h common.cc\
 		listnode.h listnode_inl.h
+	rm -f deck.h deck.cc
+
+
+

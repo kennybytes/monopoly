@@ -1,6 +1,12 @@
 /*
  *
  *
+ * EE 205
+ * monopoly.cc
+ *
+ * Rotation 4 Team 5
+ *
+ * Main Driver for monopoly
  *
  */
 
@@ -24,6 +30,7 @@ using namespace std;
 
 #include "container.h"
 
+void DisplaySplash()
 int main()
 {
 
@@ -36,10 +43,12 @@ int main()
 	Player A;
 
 	int i = 1;
+
 	cout << "Player " << i << ": " <<endl;
 	cout << PA[i] << endl;
 */
 
+	
 
 
 

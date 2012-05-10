@@ -11,7 +11,7 @@
  *
  *
  */
-
+#include <stdlib.h>
 #include <iostream>
 using namespace std;
 
@@ -198,7 +198,7 @@ void Deck :: comchest(Player p)
 			break;
 
 		case 1:
-			cout << "Bank error in your favor,
+			cout << "Bank error in your favor,"
 				<< " Collect $200!" << endl;
 			p.update_balance(200);	// Collect $200
 			break;
