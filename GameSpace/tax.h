@@ -6,15 +6,22 @@
  * Rev: v0.1
  */
 
-#ifndef GAMESPACE
-#define GAMESPACE
+#ifndef TAX
+#define TAX
+
+#include "deed.h"
 
 class Tax : public Deed
 {
 	public:
+		Tax(string n = "", CellType t = NON, int r = NON, int pr = NON);
+
+		virtual void display(ostream & out) const;
+		friend ostream & operator<<(ostream & s, const Tax &t);
 
 	private:
-		int Price;
-		string Owner;
-
+		int PercentRate;
 };
+
+
+#endif

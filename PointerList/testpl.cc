@@ -13,6 +13,9 @@ using namespace std;
 #include "gamespace.h"
 #include "deed.h"
 #include "property.h"
+#include "tax.h"
+#include "utility.h"
+#include "railroad.h"
 
 int main()
 {
@@ -22,26 +25,25 @@ int main()
 	ptr = new GameSpace("Kenny", 1);
 	GameSpaceList.push_back(ptr);
 	
-	ptr = new GameSpace("Kenny2", 2);
+	ptr = new Utility("Kenny2", 2);
 	GameSpaceList.push_back(ptr);
 
-	ptr = new GameSpace("Kenny2", 2);
+	ptr = new Railroad("Kenny2", 2);
 	GameSpaceList.push_back(ptr);
 
-	ptr = new GameSpace("Kenny2", 2);
+	ptr = new Tax("TAX", 2);
 	GameSpaceList.push_back(ptr);
 
-	ptr = new Deed("Kennydeed", 2, 1);
+	ptr = new Deed("DEED", 2, 1);
 	GameSpaceList.push_back(ptr);
 
-	ptr = new Property("Kennyprop", 2, 1);
+	ptr = new Property("PROPERTY", 2, 1);
 	GameSpaceList.push_back(ptr);
 
 	for(vector<GameSpace*>::iterator it = GameSpaceList.begin();
 				it!=GameSpaceList.end(); it++)
 	{
 		ptr = *it;
-		gs = *ptr;
 
 		cout << *ptr << endl;
 	}
