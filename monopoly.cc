@@ -73,9 +73,8 @@ int main()
 	}
 
 
-
-
- 	
+ 	Players[1].send_to(10);
+	Players[1].go_jail();
 
 	// Main Game Loop (Iterate through players)
 	for( int i = 0; i< players; i=(i + 1 ) %players)
@@ -187,31 +186,30 @@ int main()
 				{
 					cout << "Community Chest!" << endl;
 					D.comchest(Players[i]);
-					cout << Players[i]<< endl;
+					cout << Players[i] << endl;
 				
 				}
 				else if(current_type == TAXES)
 				{
 					cout << "You've landed on a tax!" << endl;
-					cout << "Do you want to pay 10% or $200?"
-						<< "(10 or 200) ";
+					cout << "Do you want to pay 10% or $200?";
+					cout << "(10 or 200) ";
 					int correct_input=0;
-					/*
 					while(!correct_input)
 					{
 
 						if( input == "10" ) 
 						{
-							correct_input=1;
+							correct_input = 1;
 
-							Players[i].update_balance(-(*MonopolyBoard[currentpos]).getTax(Player[i].get_balance()));
+							Players[i].update_balance( -(*MonopolyBoard[currentpos]).getTax(Players[i].get_balance() ));
 						
 						}
 						else if (input == "200")	
 						{
 							correct_input=1;
 
-							Players[i].update_balance(-(*MonopolyBoard[currentpos]).getTax()));
+							Players[i].update_balance( -1*(*MonopolyBoard[currentpos]).getTax() );
 						}
 						else
 						{
@@ -220,7 +218,6 @@ int main()
 							<< "Please Try Again.";
 						}
 					}
-					*/
 	
 				}
 				
@@ -406,8 +403,8 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 
 
 	// Position: 7
-	//ptr = new Deck("Chance", CHANCE);
-	//GameSpaceList.push_back(ptr);
+	ptr = new Deck("Chance", CHANCE);
+	GameSpaceList.push_back(ptr);
 
 
 	// Position: 8
@@ -465,8 +462,8 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 	GameSpaceList.push_back(ptr);
 
 	// Position: 17
-	//ptr = new Deck("Community Chest", COMMUNITY_CHEST);
-	//GameSpaceList.push_back(ptr);
+	ptr = new Deck("Community Chest", COMMUNITY_CHEST);
+	GameSpaceList.push_back(ptr);
 
 	// Position: 18
 	ptr = new Property("Tennessee Avenue", 14, 180, ORANGE,
@@ -492,8 +489,8 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 	GameSpaceList.push_back(ptr);
 
 	// Position: 22
-	//ptr = new Deck("Chance", CHANCE);
-	//GameSpaceList.push_back(ptr);
+	ptr = new Deck("Chance", CHANCE);
+	GameSpaceList.push_back(ptr);
 
 
 
@@ -552,8 +549,8 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 
 
 	// Position: 33
-	//ptr = new Deck("Community Chest", COMMUNITY_CHEST);
-	//GameSpaceList.push_back(ptr);
+	ptr = new Deck("Community Chest", COMMUNITY_CHEST);
+	GameSpaceList.push_back(ptr);
 
 
 	// Position: 34
@@ -566,8 +563,8 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 	GameSpaceList.push_back(ptr);
 
 	// Position: 36
-	//ptr = new Deck("Chance", CHANCE);
-	//GameSpaceList.push_back(ptr);
+	ptr = new Deck("Chance", CHANCE);
+	GameSpaceList.push_back(ptr);
 
 
 	// Position: 37
