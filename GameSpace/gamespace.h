@@ -34,12 +34,18 @@ class GameSpace
 	inline virtual void setType(CellType t)
 	{	type = t;	}
 	
+	inline virtual void setOwner(int player)
+	{		}
+
 	/* Operators */
 	// bool operator==(const GameSpace& other) const;
 	// bool operator!=(const GameSpace& other) const;
 
 	virtual void display(ostream & out) const = 0;
-
+	
+	virtual int getOwner() const = 0;
+	virtual int getPrice() const = 0;
+	
    protected:
 	/* GameSpace data information */
 	string name;	//Name of the block

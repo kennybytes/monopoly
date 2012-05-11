@@ -37,7 +37,7 @@ class Player
 		int get_balance();
 
 		// returns player's position on board
-		Position get_position();
+		int get_position();
 		
 		// Subtracts RENT from current balance
 		inline void pay_rent(int rent)
@@ -74,7 +74,7 @@ class Player
 		bool jail;	// If in jail, jail == 1
 		bool jailCard;	// Whether player has get out of jail card
 		int jailCount;	// Keep track of how many turns in jail
-		Position p;	// Position on board
+		int p;	// Position on board
 		int rrCount;	// How many railroad deeds player has
 		int utilCount;	// How many utility deeds player has
 		int balance;	// Total balance

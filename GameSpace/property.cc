@@ -10,7 +10,7 @@
 
 Property :: Property(string n, int r, int p,
 	int c, int h1, int h2, int h3, int h4, int h)
-: Deed(n, PROP, r, p, 0, 0),
+: Deed(n, PROP, r, p, NON, 0),
  color(c), house(0),
  house1(h1), house2(h2), house3(h3), house4(h4), hotel(h)
 {}

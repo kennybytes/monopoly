@@ -19,15 +19,23 @@ using namespace std;
 #include "misc.h"
 
 //prototype
+<<<<<<< HEAD
 void InitBoard(vector<GameSpace> &GameSpaceList);
 
 
+=======
+void InitBoard(vector<GameSpace*> &GameSpaceList);
+>>>>>>> 72a7f841c7d09a65d6498aaa4109b8602d001da1
 
 int main()
 {
 	// GameSpace * ptr;
 	vector<GameSpace*> GameSpaceList;
+	
+	InitBoard(GameSpaceList);
+}
 
+<<<<<<< HEAD
 	InitBoard(GameSpaceList);
 
 }
@@ -36,9 +44,11 @@ int main()
 
 
 void InitBoard(vector<GameSpace> &GameSpaceList)
+=======
+void InitBoard(vector<GameSpace*> &GameSpaceList)
+>>>>>>> 72a7f841c7d09a65d6498aaa4109b8602d001da1
 {
 	GameSpace * ptr;
-
 
 	// Position: 0
 	ptr = new Misc("GO!", GO);
@@ -262,12 +272,11 @@ void InitBoard(vector<GameSpace> &GameSpaceList)
 
 
 
-
 	int i = 0;
-
 	for(vector<GameSpace*>::iterator it = GameSpaceList.begin();
 				it!=GameSpaceList.end(); it++)
 	{
+
 		ptr = *it;
 
 		// cout << it << endl;
@@ -277,8 +286,6 @@ void InitBoard(vector<GameSpace> &GameSpaceList)
 		// *ptr << endl;
 		i++;
 	}
-
-
 }
 	
 

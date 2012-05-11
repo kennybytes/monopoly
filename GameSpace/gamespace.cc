@@ -19,6 +19,7 @@
 GameSpace :: GameSpace(string n, CellType t)
  : name(n), type(t)
 {
+
 }
 
 

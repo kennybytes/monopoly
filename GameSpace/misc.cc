@@ -27,31 +27,12 @@ Misc :: Misc(string n, CellType t)
 
 /*	Accessors	*/
 
-/*
-string Misc::getName() const
+int Misc :: getOwner() const
 {
-	return name;
 }
 
-CellType Misc::getType() const
-{	return type;
-}
-
-*/
 /*	Mutators	*/
 
-
-/*
-void Misc::setName(string n)
-{
-	name = n;
-}
-
-void Misc::setType(CellType t)
-{
-	type = t;
-}
-*/
 
 /*	Operators	*/
 /*

@@ -26,7 +26,7 @@ class Deed : public GameSpace
 public:
 
 	Deed(string n = "", CellType t = NON, int r = 0, int p = 0, 
-		int o = 0, bool m = false);
+		int o = NON, bool m = false);
 
 	/* Inherited:
 	 * string getName() const;
@@ -37,16 +37,27 @@ public:
 	virtual inline int getRent() const
 	{	return rent;	}
 
+	virtual inline int getPrice() const
+	{	return price;	}
+
 	virtual inline int getOwner() const
 	{	return owner;	}
-
 
 	/*	Mutators	*/
 	virtual inline void setRent(int r)
 	{	rent = r;	}
 
+	virtual inline void setPrice(int p)
+	{	price = p;	}
+
 	virtual inline void setOwner(int o)
 	{	owner = o;	}
+	
+	virtual inline void setMortgage(bool m)
+	{	 mortgage = m;	}
+	
+	virtual inline bool getMortgage() const
+	{	return mortgage;}
 
 
 	// void buyDeed(Player pl, int p);
