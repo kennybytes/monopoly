@@ -1,0 +1,52 @@
+
+/*
+	t1.setName("Mediterranean Avenue");
+	t1.setPrice(60);
+	t1.setOwner("Banker");
+	t1.setColor(BROWN);
+	t1.setRent(2);
+	t1.setHouse1(10);
+	t1.setHouse2(30);
+	t1.setHouse3(90);
+	t1.setHouse4(160);
+	t1.setHotel(250);
+	t1.setMortgage(false);
+	t1.setType(4);
+	list.insert(t1);
+	t1 = clear_gamespace(t1);
+	
+	t1.setName("Community Chest");
+	t1.setType(1);
+	list.insert(t1);
+	t1 = clear_gamespace(t1);
+
+	t1.setName("Baltic Avenue");
+	t1.setPrice(60);
+	t1.setColor(BROWN);
+	t1.setRent(4);
+	t1.setHouse1(20);
+	t1.setHouse2(60);
+	t1.setHouse3(180);
+	t1.setHouse4(320);
+	t1.setHotel(450);
+	t1.setMortgage(false);
+	t1.setType(4);
+	list.insert(t1);
+	t1 = clear_gamespace(t1);
+
+	t1.setName("Income Tax");
+	t1.setType(5);
+	list.insert(t1);
+	t1 = clear_gamespace(t1);
+
+	t1.setName("Reading Railroad");
+	t1.setPrice(200);
+	t1.setRent(25);
+	t1.setType(3);
+	list.insert(t1);
+	t1 = clear_gamespace(t1);
+
+	t1.setName("Oriental Avenue");
+	t1.setPrice(100);
+	t1.setColor(SKYBLUE);
+*/

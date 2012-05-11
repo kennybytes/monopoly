@@ -7,8 +7,8 @@
 #include <iostream>
 #include "utility.h"
 
-Utility :: Utility(string n, int r, int p)
- : Deed(n, UTIL, r, p, 0)
+Utility :: Utility(string n, int r, int p, int mV)
+ : Deed(n, UTIL, r, p, 0, mV, false)
 { }
 
 
@@ -19,5 +19,7 @@ void Utility :: display(ostream & out) const
 	out << "Rent = " << rent << endl;
 	out << "Price = " << price << endl;
 	out << "Owner = " << owner << endl;
+	out << "Mortgage Value = " << mortValue << endl;
+	out << "Mortgage = " << mortgage << endl;
 }
 

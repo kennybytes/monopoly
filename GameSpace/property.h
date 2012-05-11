@@ -14,7 +14,9 @@
 class Property : public Deed
 {
 	public:
-		Property(string n = "Property", int r = NON, int p = NON, int c = NON, int h1 = NON, int h2 = NON, int h3 = NON, int h4 = NON, int h = NON, bool m = 0);
+		Property(string n = "Property", int r = NON, int p = NON, 
+		int mV = NON, int c = NON, int h1 = NON, int h2 = NON, 
+		int h3 = NON, int h4 = NON, int h = NON);
 
 		virtual void display(ostream & out) const;
 
@@ -26,7 +28,6 @@ class Property : public Deed
 		int house3;	// House of third house
 		int house4;	// House of fourth house
 		int hotel;	// House of hotel
-		bool mortgage;	// Whether prop is on mortgage
 };
 
 
