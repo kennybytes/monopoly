@@ -28,7 +28,7 @@ Deck :: Deck(string n, CellType t)
 
 
 /*	Actions		*/
-void Deck :: chance(Player p)
+void Deck :: chance(Player p, vector<GameSpace*> &gs)
 {
 	int c = rand()%17;
 	Position temppos;
@@ -48,10 +48,10 @@ void Deck :: chance(Player p)
 			temppos = p.get_position();
 
 			// Send to gamespace Illinois Ave
-			p.send_to(ILLINOIS);
+			p.send_to(24);
 
 			// If passed GO, collect $200
-			if(p.get_position() < temppo)	p.update_balance(200);
+			if(p.get_position() < temppos)	p.update_balance(200);
 			break;
 
 		case 2:
@@ -78,24 +78,24 @@ void Deck :: chance(Player p)
 				<< " may buy." << endl;
 
 			// Determine which RR to go to
-			if(p.get_position() < FIRST_RR ||
-	   				p.get_position() > LAST_RR)
-				p.send_to(FIRST_UTILITY);
+			if(p.get_position() < 5 ||
+	   				p.get_position() > 35)
+				p.send_to(5);
 
-			else if(p.get_position() > FIRST_RR ||
-	   				p.get_position() < SECOND_RR)
-				p.send_to(SECOND_RR);
+			else if(p.get_position() > 5 ||
+	   				p.get_position() < 15)
+				p.send_to(15);
 
-			else if(p.get_position() > SECOND_RR ||
-	   				p.get_position() < THIRD_RR)
-				p.send_to(THIRD_RR);
+			else if(p.get_position() > 15 ||
+	   				p.get_position() < 25)
+				p.send_to(25);
 
-			else if(p.get_position() > THIRD_RR ||
-	   				p.get_position() < FOURTH_RR)
-				p.send_to(FOURTH_RR);
+			else if(p.get_position() > 25 ||
+	   				p.get_position() < 35)
+				p.send_to(35);
 
 			// Check owner, buy or pay
-			if(t1.getOwner() == "BANKER");
+			if(*gs[p.get_position()]).getOwner() == NON);
 			// ASK TO BUY;			
 			else PAY RENT;
 			break;
@@ -108,10 +108,13 @@ void Deck :: chance(Player p)
 			temppos = p.get_position();
 
 			// Send to gamespace St. Charles Place
-			p.send_to(ST CHARLES PLACE);
+			p.send_to(11);
 
 			// If passed GO, collect $200
-			if(p.get_position() < temppo)	p.update_balance(200);
+			if(p.get_position() < temppos)	
+			{	p.update_balance(200);
+				cout << "Passed GO! Collected $200!" endl;
+			}
 			break;
 
 		case 6:

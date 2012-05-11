@@ -19,17 +19,34 @@ using namespace std;
 #include "misc.h"
 
 //prototype
+<<<<<<< HEAD
+void InitBoard(vector<GameSpace> &GameSpaceList);
+
+
+=======
 void InitBoard(vector<GameSpace*> &GameSpaceList);
+>>>>>>> 72a7f841c7d09a65d6498aaa4109b8602d001da1
 
 int main()
 {
-	GameSpace * ptr;
+	// GameSpace * ptr;
 	vector<GameSpace*> GameSpaceList;
 	
 	InitBoard(GameSpaceList);
 }
 
+<<<<<<< HEAD
+	InitBoard(GameSpaceList);
+
+}
+
+
+
+
+void InitBoard(vector<GameSpace> &GameSpaceList)
+=======
 void InitBoard(vector<GameSpace*> &GameSpaceList)
+>>>>>>> 72a7f841c7d09a65d6498aaa4109b8602d001da1
 {
 	GameSpace * ptr;
 
@@ -172,7 +189,7 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 
 
 	// Position: 24
-	ptr = new Property("Illinous Avenus", 20, 240, RED,
+	ptr = new Property("Illinois Avenus", 20, 240, RED,
 				100, 300, 750, 925, 1100);
 	GameSpaceList.push_back(ptr);
 
@@ -255,7 +272,6 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 
 
 
-
 	int i = 0;
 	for(vector<GameSpace*>::iterator it = GameSpaceList.begin();
 				it!=GameSpaceList.end(); it++)
@@ -264,13 +280,12 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 		ptr = *it;
 
 		// cout << it << endl;
-		cout << (*GameSpaceList[i]).getType() << endl << endl;
+		cout << *GameSpaceList[i] << endl << endl;
 	
 
 		// *ptr << endl;
 		i++;
 	}
-
 }
 	
 
