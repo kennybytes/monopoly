@@ -82,8 +82,9 @@ int main()
 			
 		int flag = 0;
 
+		int rolled = 0;
 		while(flag==0)
-		{		
+		{	
 			flag = 0;
 			cout << "Enter Command: ";
 			
@@ -91,14 +92,18 @@ int main()
 			//DisplayMenu();
 	
 			if(input == "roll" || input == "r" )
-			{
+			{	
 				string name = Players[i].get_name();
 				int position = 0;
+				if(rolled == 0)
+				{
+
 				Players[i].roll_dice();
 				position = Players[i].update_position(Players[i].getRollValue());
 
 				cout << "Rolled: " << Players[i].getRollValue() << endl;
-
+				rolled = 1;
+			
 				cout << Players[i].get_name()
 					<< " Moved to position "
 					<< position  
@@ -110,8 +115,9 @@ int main()
 					<< (*MonopolyBoard[position]).getName()
 					<< endl;
 
-
-				if((*MonopolyBoard[position]).getType() == PROP )
+				
+				int current_type=(*MonopolyBoard[position]).getType();
+				if(current_type== PROP )
 				{
 					if((*MonopolyBoard[position]).getOwner() == -1)
 					{
@@ -142,7 +148,7 @@ int main()
 
 				}
 
-				if((*MonopolyBoard[position]).getType() == UTIL)
+				else if(current_type== UTIL)
 				{
 					if((*MonopolyBoard[position]).getOwner() == -1)
 					{
@@ -164,14 +170,46 @@ int main()
 								break;
 							}
 							cin >> input;
-							
 						
 						}
 					}
 
 
 				}
+				
+				else if(current_type == TAXES)
+				{
+					cout << "You've landed on a tax!" << endl;
+				}
+				
+				else if(current_type == FREE_PARKING)
+				{
+					cout << "Free Parking !" << endl;
+				}
+					
+				else if(current_type == GO_TO_JAIL)
+				{
+					cout << "GO to jail!" << endl;
+				}
+				
+				else if(current_type == GO)
+				{
+					cout << "GO" << endl;
+				}
+
+				else if(current_type == JAIL)
+				{
+					cout << "Jail!!!!" << endl;
+
+				}
+					
+				rolled = 1;
+				}
+				else 
+					cout << "Already Rolled! " << endl;
+			
 			}
+
 			
 			/* 	Check for user input 	*/
 
@@ -181,6 +219,7 @@ int main()
 					<< "showplayers(spl), ownedproperties(op)"
 					<< endl; 
 			}
+
 			else if(input == "show" || input == "s")
 			{
 				cout << "Displayed Properties" << endl;
