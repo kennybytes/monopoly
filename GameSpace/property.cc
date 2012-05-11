@@ -8,11 +8,11 @@
 #include <iostream>
 #include "property.h"
 
-Property :: Property(string n, int r, int p, int c, int h1, int h2, int h3, int h4, int h, bool m)
-: Deed(n, PROP, r, p, 0),
+Property :: Property(string n, int r, int p, int mV, 
+	int c, int h1, int h2, int h3, int h4, int h)
+: Deed(n, PROP, r, p, 0, mV, 0),
  color(c), house(0),
- house1(h1), house2(h2), house3(h3), house4(h4),    
- hotel(h), mortgage(m)
+ house1(h1), house2(h2), house3(h3), house4(h4), hotel(h)
 {}
 
 
@@ -32,7 +32,8 @@ void Property :: display(ostream & out) const
 	out << "House 3 Price = " << house3 << endl;
 	out << "House 4 Price = " << house4 << endl;
 	out << "Hotel Price = " << hotel << endl;
-	out << "Mortage = " << mortgage << endl;
+	out << "Mortgage = " << mortgage << endl;
+	out << "Mortgage Value = " << mortValue << endl;
 	
 }
 

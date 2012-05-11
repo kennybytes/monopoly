@@ -11,8 +11,8 @@
 
 using namespace std;
 
-Deed :: Deed(string n, CellType t, int r, int p, int o)
-: GameSpace(n, t), rent(r), price(p), owner(o)
+Deed :: Deed(string n, CellType t, int r, int p, int o, int mV, bool m)
+: GameSpace(n, t), rent(r), price(p), owner(o), mortValue(mV), mortgage(m)
 {}
 
 /*
