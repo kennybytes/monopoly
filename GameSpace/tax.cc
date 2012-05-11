@@ -28,7 +28,7 @@ int Tax :: getOwner() const
 
 int Tax :: getTax(int money) const
 {
-	return (-PercentRate * money)/100;
+	return (int)(-PercentRate * money)/100;
 }
 
 int Tax :: getTax() const

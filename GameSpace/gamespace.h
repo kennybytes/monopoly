@@ -37,6 +37,11 @@ class GameSpace
 	inline virtual void setOwner(int player)
 	{		}
 
+	inline virtual int getTax(int tax)
+	{		}
+	
+	inline virtual int getTax()
+	{		}
 	/* Operators */
 	// bool operator==(const GameSpace& other) const;
 	// bool operator!=(const GameSpace& other) const;
