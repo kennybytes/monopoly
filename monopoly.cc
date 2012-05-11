@@ -26,6 +26,7 @@ using namespace std;
 #include "tax.h"
 #include "misc.h"
 //#include "deck.h"
+#include <time.h>
 
 #include "player.h"
 
@@ -38,8 +39,7 @@ int main()
 	vector<Player> Players;
 
 	DisplaySplash();
-	
-	
+	srand(time(NULL));
 	
 	cout << "How many players? ";
 	cin >> players;
@@ -47,20 +47,81 @@ int main()
 	cout << players << " Players." << endl;
 		
 	// Add players
-	for(int i = 0; i <= players-1; i++)
+	for(int i = 0; i < players; i++)
 	{
 		string name;
-		cout << "Player " << i << " Name :";
+
+		cout << "Player " << i+1 << " Name :";
 		cin >> name;
+
 		Player a;
 		a.set_name(name);
 		Players.push_back(a);	
 	}
 	
 	
-	// Roll dice to see who goes first
+	for(int i = 0; i < players; i++)
+	{
+		cout << Players[i] << endl;
+	}
+	
+ 	
+
+	// Main Game Loop
+	for( int i = 0; i< players; i=(i + 1 )  %players)
+	{
+
+		cout << "main loop" << endl;
+		string input = "0";
+			
+		int flag = 0;
+		while(flag==0)
+		{		
+			flag = 0;
+			cout << "Enter option: ";
+			cin >> input;
+			cout << endl;
+			//DisplayMenu();
+
+	
+			if(input == "roll")
+			{	
+				//roll dice and iterate position
+				
+				Players[i].roll_dice();
+				cout << Players[i].getRollValue() 
+						<< endl;
+				Players[i].update_position
+					(Players[i].getRollValue());
+				
+				cout << Players[i].get_name()
+					<< " Moved to position "
+					<< Players[i].get_position() 
+					<< endl;
+					
+			//	DoAction(Players, Board);
+			}
+			
+			if(input ==  "n")
+			{
+
+				cout << "Next Player" << endl;
+				break;
+			}
+
+		}
+
+
+	}			
+	
+	
+	
 	
 
+	
+	
+
+	
 
 	// Begin main loop
 	while(1);
@@ -90,5 +151,13 @@ void DisplaySplash(){
 
 	cout << "We're Playing Monopoly!" << endl;
 }
+
+void DisplayOptions(){
+	
+
+
+
+}
+
 
 
