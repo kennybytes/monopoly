@@ -8,9 +8,12 @@
 CCC = g++
 CCFLAGS = -ansi
 
-testpl: testpl.o gamespace.o deed.o property.o tax.o utility.o railroad.o misc.o
-	$(CCC) $(CCFLAGS) -o testpl testpl.o gamespace.o deed.o property.o tax.o utility.o railroad.o misc.o
-testpl.o: gamespace.h deed.h property.h tax.h utility.h railroad.h misc.h
+testpl: testpl.o gamespace.o deed.o property.o tax.o utility.o \
+			railroad.o misc.o deck.o player.o
+	$(CCC) $(CCFLAGS) -o testpl testpl.o gamespace.o deed.o property.o \
+			tax.o utility.o railroad.o misc.o deck.o player.o
+testpl.o: gamespace.h deed.h property.h tax.h utility.h railroad.h \
+			misc.h deck.h player.h
 gamepspace.o: gamespace.h
 
 deed.o: deed.h
@@ -19,6 +22,8 @@ tax.o: tax.h
 utility.o: utility.h
 railroad.o: railroad.h
 misc.o: misc.h
+deck.o: deck.h
+player.o: player.h
 
 
 commonlinks:
@@ -46,6 +51,13 @@ gamespace:
 	ln -s ../GameSpace/railroad.cc
 	ln -s ../GameSpace/misc.h
 	ln -s ../GameSpace/misc.cc
+	ln -s ../GameSpace/deck.h
+	ln -s ../GameSpace/deck.cc
+
+player:
+	rm -f player.h player.cc
+	ln -s ../Player/player.h
+	ln -s ../Player/player.cc
 
 clean:
 	rm -f *.o

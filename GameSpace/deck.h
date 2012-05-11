@@ -16,8 +16,10 @@ class Deck : public GameSpace
 	public:
 		Deck(string n = "", CellType t = NON);
 
-		void chance(Player p);
-		void comchest(Player p);
+		void chance(Player &p, int i, vector<GameSpace*> &gs);
+		void comchest(Player &p);
+		inline virtual int getOwner() const {}
+		inline virtual int getPrice() const {}
 
 		virtual void display(ostream & out) const;
 

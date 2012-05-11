@@ -27,7 +27,7 @@ using namespace std;
 #include "railroad.h"
 #include "tax.h"
 #include "misc.h"
-//#include "deck.h"
+#include "deck.h"
 #include <time.h>
 
 #include "player.h"
@@ -65,6 +65,36 @@ int main()
 	}
 	
 	
+	for(int i = 0; i < players; i++)
+	{
+		cout << Players[i] << endl;
+	}
+
+
+/* COMMUNITY CHEST TEST 
+	Deck D("Community Chest",COMMUNITY_CHEST);
+	
+	cout << "enter char \n " << endl;
+	char input;
+
+	cin >> input;
+	while(input = 'y')
+	{	D.comchest(Players[1]);
+		cout << "Player Balance:" << Players[1].get_balance()  << endl;
+		cout << "Do again?" << endl;
+		cin >> input;
+	}
+
+
+
+
+*/
+
+
+
+
+
+ 	
 
 	// Main Game Loop (Iterate through players)
 	for( int i = 0; i< players; i=(i + 1 ) %players)

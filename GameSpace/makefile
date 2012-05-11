@@ -24,7 +24,12 @@ testutil: testutil.o utility.o common.o deed.o gamespace.o
 testrailroad: testrailroad.o railroad.o common.o deed.o gamespace.o
 	$(CCC) $(CCFLAGS) -o testrailroad testrailroad.o railroad.o common.o deed.o gamespace.o
 
+testdeck: testdeck.o common.o gamespace.o player.o
+	$(CCC) $(CCFLAGS) -o testdeck testdeck.o common.o player.o gamespace.o
+
+testdeck.o: gamespace.h deck.h
 railroad.o: railroad.h
+player.o: player.h
 
 testmisc: testmisc.o misc.o common.o gamespace.o
 	$(CCC) $(CCFLAGS) -o testmisc testmisc.o misc.o common.o gamespace.o
@@ -57,6 +62,12 @@ common:
 	ln -s ../Template/common.h .
 	ln -s ../Template/common.cc .
 	touch common.h common.cc
+
+player:	
+	rm -f player.h player.cc
+	ln -s ../Player/player.h
+	ln -s ../Player/player.cc
+	touch player.h player.cc
 
 clean:
 	rm -f *.o
