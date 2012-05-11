@@ -102,10 +102,11 @@ int main()
 				cout << Players[i].get_name()
 					<< " Moved to position "
 					<< position  
-					<< endl;
+					<< endl << endl << endl;
 
+				cout << "***";
 				cout << Players[i].get_name() 
-					<< " is on "
+					<< " landed on "
 					<< (*MonopolyBoard[position]).getName()
 					<< endl;
 
@@ -114,9 +115,10 @@ int main()
 				{
 					if((*MonopolyBoard[position]).getOwner() == -1)
 					{
+						cout << (*MonopolyBoard[position]);
 						cout << "Current Property Unowned, do you "
-							<< " want to buy?(Y/N)" << endl;
-						cout << (*MonopolyBoard[position]).getPrice();
+							<< "want to buy?(Y/N)" << endl;
+
 						cin >> input;
 
 					while(input !="n" && input != "N")
@@ -152,6 +154,10 @@ int main()
 			else if(input == "show" || input == "s")
 			{
 				cout << "Displayed Properties" << endl;
+			}
+			else if(input == "pinfo" || input == "pi")
+			{
+				cout << Players[i];
 			}
 			else 
 			if(input == "end" || input == "e")
