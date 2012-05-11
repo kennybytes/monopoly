@@ -56,72 +56,63 @@ int main()
 	for(int i = 0; i < players; i++)
 	{
 		string name;
-
-		cout << "Player " << i+1 << " Name :";
+		cout << "Player " << i+1 << " Name: ";
 		cin >> name;
-
 		Player a;
 		a.set_name(name);
 		Players.push_back(a);	
 	}
 	
 	
-	for(int i = 0; i < players; i++)
-	{
-		cout << Players[i] << endl;
-	}
-	
- 	
 
-	// Main Game Loop
+	// Main Game Loop (Iterate through players)
 	for( int i = 0; i< players; i=(i + 1 ) %players)
 	{
-
-		cout << "main loop" << endl;
+		int flag = 0;
+		int rolled = 0;
 		string input = "0";
 			
-		int flag = 0;
 
-		int rolled = 0;
 		while(flag==0)
 		{	
 			flag = 0;
 			cout << "Enter Command: ";
-			
 			cin >> input;
-			//DisplayMenu();
 	
+
+
 			if(input == "roll" || input == "r" )
 			{	
-				string name = Players[i].get_name();
-				int position = 0;
+				int currentpos = 0;
+				string playername = Players[i].get_name();
+
 				if(rolled == 0)
 				{
 
 				Players[i].roll_dice();
-				position = Players[i].update_position(Players[i].getRollValue());
+				currentpos = Players[i].update_position(Players[i].getRollValue());
 
 				cout << "Rolled: " << Players[i].getRollValue() << endl;
 				rolled = 1;
 			
-				cout << Players[i].get_name()
+				cout << playername
 					<< " Moved to position "
-					<< position  
+					<< currentpos  
 					<< endl << endl << endl;
 
 				cout << "***";
-				cout << Players[i].get_name() 
+				cout << playername
 					<< " landed on "
-					<< (*MonopolyBoard[position]).getName()
+					<< (*MonopolyBoard[currentpos]).getName()
 					<< endl;
 
 				
-				int current_type=(*MonopolyBoard[position]).getType();
+				int current_type=(*MonopolyBoard[currentpos]).getType();
 				if(current_type== PROP )
 				{
-					if((*MonopolyBoard[position]).getOwner() == -1)
+					if((*MonopolyBoard[currentpos]).getOwner() == -1)
 					{
-						cout << (*MonopolyBoard[position]);
+						cout << (*MonopolyBoard[currentpos]);
 						cout << "Current Property Unowned, do you "
 							<< "want to buy?(Y/N)" << endl;
 
@@ -130,11 +121,11 @@ int main()
 					{
 						if(input == "Y" || input == "y")
 						{
-							(*MonopolyBoard[position]).setOwner(i);
+							(*MonopolyBoard[currentpos]).setOwner(i);
 							Players[i].update_balance(
-								-(*MonopolyBoard[position]).getPrice() );
+								-(*MonopolyBoard[currentpos]).getPrice() );
 							
-							cout << name << " bought " << (*MonopolyBoard[position]).getName()
+							cout << playername << " bought " << (*MonopolyBoard[currentpos]).getName()
 								<< endl;
 							break;
 						}
@@ -150,9 +141,9 @@ int main()
 
 				else if(current_type== UTIL)
 				{
-					if((*MonopolyBoard[position]).getOwner() == -1)
+					if((*MonopolyBoard[currentpos]).getOwner() == -1)
 					{
-						cout << (*MonopolyBoard[position]);
+						cout << (*MonopolyBoard[currentpos]);
 						cout << "Current Utility Unowned, do you "
 							<< "want to buy?(Y/N)" << endl;
 						
@@ -161,11 +152,11 @@ int main()
 						{
 							if(input == "Y" || input == "y")
 							{
-								(*MonopolyBoard[position]).setOwner(i);
+								(*MonopolyBoard[currentpos]).setOwner(i);
 								Players[i].update_balance(
-									-(*MonopolyBoard[position]).getPrice() );
+									-(*MonopolyBoard[currentpos]).getPrice() );
 								
-								cout << name << " bought " << (*MonopolyBoard[position]).getName()
+								cout << playername << " bought " << (*MonopolyBoard[currentpos]).getName()
 									<< endl;
 								break;
 							}
@@ -294,7 +285,6 @@ void DisplayOptions(){
 
 
 }
-
 
 
 
@@ -522,7 +512,7 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 				300, 800, 1800, 2000, 2500);
 	GameSpaceList.push_back(ptr);
 
-
+	#ifdef DEBUG
 	int i = 0;
 	for(vector<GameSpace*>::iterator it = GameSpaceList.begin();
 				it!=GameSpaceList.end(); it++)
@@ -537,5 +527,6 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 		// *ptr << endl;
 		i++;
 	}
+	#endif
 
 }
