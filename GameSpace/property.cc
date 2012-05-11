@@ -20,8 +20,10 @@ Property :: Property(string n, int r, int p,
 void Property :: display(ostream & out) const
 {
 	// Deed::display(out);
+	out << "--------------------" << endl;
+	out << "Property Info" << endl;
+	out << "--------------------" << endl;
 	out << "Name = " << name << endl;
-	out << "Type = " << type << endl;
 	out << "Rent = " << rent << endl;
 	out << "Price = " << price << endl;
 	out << "Owner = " << owner << endl;
@@ -32,8 +34,11 @@ void Property :: display(ostream & out) const
 	out << "House 3 Price = " << house3 << endl;
 	out << "House 4 Price = " << house4 << endl;
 	out << "Hotel Price = " << hotel << endl;
+	out << "--------------------" << endl;
+	#ifdef DEBUG
 	out << "Mortgage = " << mortgage << endl;
-	
+	out << "Type = " << type << endl;
+	#endif
 }
 
 /*

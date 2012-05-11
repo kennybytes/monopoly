@@ -102,13 +102,20 @@ int Player:: getRollValue(void)
 void Player :: display(ostream & out) const
 {
 	// Deed::display(out);
-	out << name << endl;
-	out << "Position = " << p << endl;
-	out << "Balance = " << balance << endl;
-	out << "In Jail? = " << jail << endl;
-	out << "Alive? = " << alive << endl;
-	out << "Get Out Of Jail Free Card? = " << jailCard << endl;
+	
+	out << "--------------------" << endl;
+	out << "Player info" << endl;
+	out << "--------------------" << endl;
+	out << "Name:\t\t" << name << endl;
+	out << "Position:\t" << p << endl;
+	out << "Balance:\t" << balance << endl;
+	out << "In Jail?\t" << jail << endl;
+	out << "Alive?\t\t" << alive << endl;
+	out << "Jail Free Card?\t" << jailCard << endl;
+
+	#ifdef DEBUG
 	out << "Turn in Jail: " << jailCount << endl;
 	out << "Railroad Count = " << rrCount << endl;
 	out << "Utility Count = " << utilCount << endl;
-}
+	#endif
+}	

@@ -56,10 +56,8 @@ int main()
 	for(int i = 0; i < players; i++)
 	{
 		string name;
-
-		cout << "Player " << i+1 << " Name :";
+		cout << "Player " << i+1 << " Name: ";
 		cin >> name;
-
 		Player a;
 		a.set_name(name);
 		Players.push_back(a);	
@@ -97,88 +95,171 @@ int main()
 
  	
 
-	// Main Game Loop
+	// Main Game Loop (Iterate through players)
 	for( int i = 0; i< players; i=(i + 1 ) %players)
 	{
-
-		cout << "main loop" << endl;
+		int flag = 0;
+		int rolled = 0;
 		string input = "0";
 			
-		int flag = 0;
 
 		while(flag==0)
-		{		
+		{	
 			flag = 0;
 			cout << "Enter Command: ";
-			
 			cin >> input;
-			//DisplayMenu();
 	
+
+
 			if(input == "roll" || input == "r" )
-			{
-				string name = Players[i].get_name();
-				int position = 0;
+			{	
+				int currentpos = 0;
+				string playername = Players[i].get_name();
+
+				if(rolled == 0)
+				{
+
 				Players[i].roll_dice();
-				position = Players[i].update_position(Players[i].getRollValue());
+				currentpos = Players[i].update_position(Players[i].getRollValue());
 
 				cout << "Rolled: " << Players[i].getRollValue() << endl;
-
-				cout << Players[i].get_name()
+				rolled = 1;
+			
+				cout << playername
 					<< " Moved to position "
-					<< position  
+					<< currentpos  
+					<< endl << endl << endl;
+
+				cout << "***";
+				cout << playername
+					<< " landed on "
+					<< (*MonopolyBoard[currentpos]).getName()
 					<< endl;
 
-				cout << Players[i].get_name() 
-					<< " is on "
-					<< (*MonopolyBoard[position]).getName()
-					<< endl;
-
-				if((*MonopolyBoard[position]).getType() == PROP )
-				{
-					cout << (*MonopolyBoard[position]).getOwner() << endl;
-					cout << "DEBUG: Property" << endl;
-					if((*MonopolyBoard[position]).getOwner() == -1)
-					{
-						cout << "Current Property Unowned, do you "
-							<< " want to buy?(Y/N)" << endl;
-						cout << (*MonopolyBoard[position]).getPrice();
-						cin >> input;
 				
-					if(input == "Y" || input == "y")
+				int current_type=(*MonopolyBoard[currentpos]).getType();
+				if(current_type== PROP )
+				{
+					if((*MonopolyBoard[currentpos]).getOwner() == -1)
 					{
-						(*MonopolyBoard[position]).setOwner(i);
-						Players[i].update_balance(
-							-(*MonopolyBoard[position]).getPrice() );
+						cout << (*MonopolyBoard[currentpos]);
+						cout << "Current Property Unowned, do you "
+							<< "want to buy?(Y/N)" << endl;
+
+						cin >> input; 
+					while(input !="n" && input != "N")
+					{
+						if(input == "Y" || input == "y")
+						{
+							(*MonopolyBoard[currentpos]).setOwner(i);
+							Players[i].update_balance(
+								-(*MonopolyBoard[currentpos]).getPrice() );
+							
+							cout << playername << " bought " << (*MonopolyBoard[currentpos]).getName()
+								<< endl;
+							break;
+						}
+						cin >> input;
 						
-						cout << name << " bought " << (*MonopolyBoard[position]).getName()
-							<< endl;
-					}
-					else if(input == "N" || input == "n")
-					{
-						break;
-					}
-					else
-					{
-						cout << "Incorrect Input" << endl;
+					
 					}
 					
+					}
+				
+
+				}
+
+				else if(current_type== UTIL)
+				{
+					if((*MonopolyBoard[currentpos]).getOwner() == -1)
+					{
+						cout << (*MonopolyBoard[currentpos]);
+						cout << "Current Utility Unowned, do you "
+							<< "want to buy?(Y/N)" << endl;
+						
+						cin >> input; 
+						while(input !="n" && input != "N")
+						{
+							if(input == "Y" || input == "y")
+							{
+								(*MonopolyBoard[currentpos]).setOwner(i);
+								Players[i].update_balance(
+									-(*MonopolyBoard[currentpos]).getPrice() );
+								
+								cout << playername << " bought " << (*MonopolyBoard[currentpos]).getName()
+									<< endl;
+								break;
+							}
+							cin >> input;
+						
+						}
 					}
 
 
 				}
 				
+				else if(current_type == TAXES)
+				{
+					cout << "You've landed on a tax!" << endl;
+				}
+				
+				else if(current_type == FREE_PARKING)
+				{
+					cout << "Free Parking !" << endl;
+				}
+					
+				else if(current_type == GO_TO_JAIL)
+				{
+					cout << "GO to jail!" << endl;
+				}
+				
+				else if(current_type == GO)
+				{
+					cout << "GO" << endl;
+				}
 
+				else if(current_type == JAIL)
+				{
+					cout << "Jail!!!!" << endl;
+
+				}
+					
+				rolled = 1;
+				}
+				else 
+					cout << "Already Rolled! " << endl;
+			
 			}
+
+			
+			/* 	Check for user input 	*/
 
 			else if(input == "?")
 			{
 				cout << "roll(r), end(e), showproperties(sp), " 
-					<< "showplayers(spl)"
+					<< "showplayers(spl), ownedproperties(op)"
 					<< endl; 
 			}
+
 			else if(input == "show" || input == "s")
 			{
 				cout << "Displayed Properties" << endl;
+			}
+			else if(input == "pinfo" || input == "pi")
+			{
+				cout << Players[i];
+			}
+			else if(input == "ownedproperties" || input == "op")
+			{
+						
+				for(int j = 0; j < MonopolyBoard.size(); j++)
+				{
+
+					if((*MonopolyBoard[j]).getOwner() == i) 
+					cout << (*MonopolyBoard[j])<< endl << endl;
+				}
+
+
 			}
 			else 
 			if(input == "end" || input == "e")
@@ -208,10 +289,8 @@ int main()
 			cout << "Invalid input, please try again."
 					<< endl;
 			}
-			
 
 		}
-
 
 
 
@@ -236,7 +315,6 @@ void DisplayOptions(){
 
 
 }
-
 
 
 
@@ -464,7 +542,7 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 				300, 800, 1800, 2000, 2500);
 	GameSpaceList.push_back(ptr);
 
-
+	#ifdef DEBUG
 	int i = 0;
 	for(vector<GameSpace*>::iterator it = GameSpaceList.begin();
 				it!=GameSpaceList.end(); it++)
@@ -479,5 +557,6 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 		// *ptr << endl;
 		i++;
 	}
+	#endif
 
 }
