@@ -33,7 +33,10 @@ main()
 */
 	for(int i = 0; i < NumberPlayers; i++)
 	{	PA[i].update_balance(1000 + i);
-		cout << "Player " << i << 
-		" balance: " << PA[i].get_balance() << endl;
+
+		cout << PA[i] << endl;
+
+		//cout << "Player " << i << PA[i] << 
+		//" balance: " << PA[i].get_balance() << endl;
 	}
 }
