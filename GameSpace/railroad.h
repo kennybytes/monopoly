@@ -14,7 +14,7 @@
 class Railroad : public Deed
 {
 	public:
-		Railroad(string n = "Railroad", int r = NON, int p = NON, int mV = NON);
+		Railroad(string n = "Railroad", int r = NON, int p = NON);
 
 		void display(ostream & out) const;
 

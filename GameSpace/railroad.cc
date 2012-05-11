@@ -7,8 +7,8 @@
 #include <iostream>
 #include "railroad.h"
 
-Railroad :: Railroad(string n, int r, int p, int mV)
- : Deed(n, UTIL, r, p, 0, mV, false) {}
+Railroad :: Railroad(string n, int r, int p)
+ : Deed(n, UTIL, r, p, 0, false) {}
 
 void Railroad :: display(ostream & out) const
 {
@@ -17,7 +17,6 @@ void Railroad :: display(ostream & out) const
 	out << "Rent = " << rent << endl;
 	out << "Price = " << price << endl;
 	out << "Owner = " << owner << endl;
-	out << "Mortgage Value= " << mortValue << endl;
 	out << "Mortgage = " << mortgage << endl;
 }
 

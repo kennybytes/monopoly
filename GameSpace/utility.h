@@ -14,7 +14,7 @@
 class Utility : public Deed
 {
 	public:
-		Utility(string n = "",int r = NON, int p = NON, int mV = NON);
+		Utility(string n = "",int r = NON, int p = NON);
 
 		virtual void display(ostream & out) const;
 		

@@ -17,7 +17,8 @@
 typedef int CellType;
 
 static const CellType NON = -1;
-static const CellType DECK = 0;
+static const CellType COMMUNITY_CHEST = 0;
+static const CellType CHANCE = 1;
 static const CellType UTIL = 2;
 static const CellType RR = 3;
 static const CellType PROP = 4;
