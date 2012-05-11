@@ -1,5 +1,3 @@
-:q
-
 /*
  * File: deed.h
  * Name: R4T5
