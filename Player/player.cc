@@ -7,6 +7,7 @@
 #include <iostream>
 using namespace std;
 
+// Constructor
 Player :: Player()
 {
 	jail = false;
@@ -20,6 +21,8 @@ Player :: Player()
 	name = "unnamed";
 }
 
+
+// Move DICE spaces forward based on dice roll
 Position Player :: update_position(int dice)
 {
 	if(!bankrupt())
@@ -30,7 +33,7 @@ Position Player :: update_position(int dice)
 }
 
 		
-
+// Subtracts RENT from current balance
 void Player :: pay_rent(int rent, Player &pl)
 {
 	balance -= rent;
@@ -38,7 +41,7 @@ void Player :: pay_rent(int rent, Player &pl)
 }
 
 
-
+// Roll two dice
 int Player :: roll_dice(void)
 {
 	dice[0] = (rand()%6) + 1;
@@ -51,13 +54,15 @@ int Player :: roll_dice(void)
 	
 	return dice[2];
 }
+
+// Get sum of two dice
 int Player:: getRollValue(void)
 {
 
 	return dice[0] + dice[1];
 }
 
-
+// Used to display all of Player by overloading <<
 void Player :: display(ostream & out) const
 {
 	// Deed::display(out);
