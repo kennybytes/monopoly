@@ -12,6 +12,8 @@
 
 #include <iostream>
 #include <vector>
+#include <cctype>
+#include <algorithm>
 using namespace std;
 
 #include "common.h"
@@ -75,16 +77,16 @@ int main()
 		string input = "0";
 			
 		int flag = 0;
+
 		while(flag==0)
 		{		
 			flag = 0;
 			cout << "Enter option: ";
 			cin >> input;
-			cout << endl;
 			//DisplayMenu();
 
 	
-			if(input == "roll")
+			if(input == "roll" || input == "r" )
 			{	
 				//roll dice and iterate position
 				
@@ -98,18 +100,27 @@ int main()
 					<< " Moved to position "
 					<< Players[i].get_position() 
 					<< endl;
-					
-			//	DoAction(Players, Board);
-			}
 			
-			if(input ==  "n")
+			}
+			else 
+			if(input == "end" || input == "e")
 			{
-
 				cout << "Next Player" << endl;
 				break;
 			}
+			else
+			{
+
+			cout << "Invalid input, please try again."
+					<< endl;
+			}
+			
 
 		}
+
+
+
+
 
 
 	}			

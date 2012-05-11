@@ -84,11 +84,10 @@ int Player :: roll_dice(void)
 	dice[0] = (rand()%6) + 1;
 	dice[1] = (rand()%6) + 1;
 
-	if( dice[0] = dice[1] )
+	if( dice[0] == dice[1] )
 		dice[2] = 1;
 	else
 		dice[2] = 0;
-	
 	
 	return dice[2];
 }
