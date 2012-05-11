@@ -1,1 +1,0 @@
-../Properties/properties.cc
