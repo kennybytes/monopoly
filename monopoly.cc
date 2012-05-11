@@ -119,8 +119,7 @@ int main()
 						cout << "Current Property Unowned, do you "
 							<< "want to buy?(Y/N)" << endl;
 
-						cin >> input;
-
+						cin >> input; 
 					while(input !="n" && input != "N")
 					{
 						if(input == "Y" || input == "y")
@@ -137,18 +136,49 @@ int main()
 						
 					
 					}
+					
+					}
+				
+
+				}
+
+				if((*MonopolyBoard[position]).getType() == UTIL)
+				{
+					if((*MonopolyBoard[position]).getOwner() == -1)
+					{
+						cout << (*MonopolyBoard[position]);
+						cout << "Current Utility Unowned, do you "
+							<< "want to buy?(Y/N)" << endl;
+						
+						cin >> input; 
+						while(input !="n" && input != "N")
+						{
+							if(input == "Y" || input == "y")
+							{
+								(*MonopolyBoard[position]).setOwner(i);
+								Players[i].update_balance(
+									-(*MonopolyBoard[position]).getPrice() );
+								
+								cout << name << " bought " << (*MonopolyBoard[position]).getName()
+									<< endl;
+								break;
+							}
+							cin >> input;
+							
+						
+						}
 					}
 
 
 				}
-				
-
 			}
+			
+			/* 	Check for user input 	*/
 
 			else if(input == "?")
 			{
 				cout << "roll(r), end(e), showproperties(sp), " 
-					<< "showplayers(spl)"
+					<< "showplayers(spl), ownedproperties(op)"
 					<< endl; 
 			}
 			else if(input == "show" || input == "s")
@@ -158,6 +188,18 @@ int main()
 			else if(input == "pinfo" || input == "pi")
 			{
 				cout << Players[i];
+			}
+			else if(input == "ownedproperties" || input == "op")
+			{
+						
+				for(int j = 0; j < MonopolyBoard.size(); j++)
+				{
+
+					if((*MonopolyBoard[j]).getOwner() == i) 
+					cout << (*MonopolyBoard[j])<< endl << endl;
+				}
+
+
 			}
 			else 
 			if(input == "end" || input == "e")
@@ -187,10 +229,8 @@ int main()
 			cout << "Invalid input, please try again."
 					<< endl;
 			}
-			
 
 		}
-
 
 
 
@@ -200,33 +240,6 @@ int main()
 	
 	
 	
-	
-
-	
-	
-
-	
-
-	// Begin main loop
-	while(1);
-		
-	
-
-
-
-/*
-	int NumberPlayers = 3;
-	typedef Player PlayerArray[NumberPlayers];
-
-	PlayerArray PA;
-
-	Player A;
-
-	int i = 1;
-
-	cout << "Player " << i << ": " <<endl;
-	cout << PA[i] << endl;
-*/
 
 }
 
