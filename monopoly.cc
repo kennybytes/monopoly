@@ -46,6 +46,8 @@ int main()
 	InitBoard(MonopolyBoard);
 	DisplaySplash();
 
+	Deck D("Community Chest",COMMUNITY_CHEST);
+
 	srand(time(NULL));
 	
 	cout << "How many players? ";
@@ -71,27 +73,6 @@ int main()
 	}
 
 
-/* COMMUNITY CHEST TEST 
-	Deck D("Community Chest",COMMUNITY_CHEST);
-	
-	cout << "enter char \n " << endl;
-	char input;
-
-	cin >> input;
-	while(input = 'y')
-	{	D.comchest(Players[1]);
-		cout << "Player Balance:" << Players[1].get_balance()  << endl;
-		cout << "Do again?" << endl;
-		cin >> input;
-	}
-
-
-
-
-*/
-
-
-
 
 
  	
@@ -115,16 +96,18 @@ int main()
 			{	
 				int currentpos = 0;
 				string playername = Players[i].get_name();
-				string spacename  = (*MonopolyBoard[currentpos]).getName();
 				if(rolled == 0)
 				{
 
 				Players[i].roll_dice();
-				currentpos = Players[i].update_position(Players[i].getRollValue());
+				currentpos = Players[i].update_position(2);
+				//currentpos = Players[i].update_position(Players[i].getRollValue());
 
 				cout << "Rolled: " << Players[i].getRollValue() << endl;
 				rolled = 1;
 			
+				string spacename  = (*MonopolyBoard[currentpos]).getName();
+
 				cout << playername
 					<< " Moved to position "
 					<< currentpos  
@@ -199,10 +182,46 @@ int main()
 
 
 				}
+				else if(current_type == COMMUNITY_CHEST ||
+					current_type == CHANCE)
+				{
+					cout << "Community Chest!" << endl;
+					D.comchest(Players[i]);
+					cout << Players[i]<< endl;
 				
+				}
 				else if(current_type == TAXES)
 				{
 					cout << "You've landed on a tax!" << endl;
+					cout << "Do you want to pay 10% or $200?"
+						<< "(10 or 200) ";
+					int correct_input=0;
+					/*
+					while(!correct_input)
+					{
+
+						if( input == "10" ) 
+						{
+							correct_input=1;
+
+							Players[i].update_balance(-(*MonopolyBoard[currentpos]).getTax(Player[i].get_balance()));
+						
+						}
+						else if (input == "200")	
+						{
+							correct_input=1;
+
+							Players[i].update_balance(-(*MonopolyBoard[currentpos]).getTax()));
+						}
+						else
+						{
+							cout << 
+							"Incorrect Input."
+							<< "Please Try Again.";
+						}
+					}
+					*/
+	
 				}
 				
 				else if(current_type == FREE_PARKING)
@@ -213,6 +232,8 @@ int main()
 				else if(current_type == GO_TO_JAIL)
 				{
 					cout << "GO to jail!" << endl;
+					Players[i].send_to(10);
+					Players[i].go_jail();
 				}
 				
 				else if(current_type == GO)
@@ -223,10 +244,10 @@ int main()
 				else if(current_type == JAIL)
 				{
 					cout << "Jail!!!!" << endl;
-
 				}
 					
 				rolled = 1;
+				
 				}
 				else 
 					cout << "Already Rolled! " << endl;
@@ -263,12 +284,27 @@ int main()
 
 
 			}
+				
+			else if(input == "where" || input == "w")
+			{
+				}
 			else if(input == "displayall" || input == "da")
 			{
 				for(int j = 0; j < MonopolyBoard.size(); j++)
 				{
-					cout << (*MonopolyBoard[j]).getName()
+					cout <<(*MonopolyBoard[j]).getName()
+						<< "\t\t"
+						<< (*MonopolyBoard[j]).getOwner()
 						<< endl;
+				}
+			}
+			
+			else if(input == "displayall--long")
+			{
+			
+				for(int j = 0; j < MonopolyBoard.size(); j++)
+				{
+					cout << (*MonopolyBoard[j]) << endl;
 				}
 			}
 
@@ -301,8 +337,6 @@ int main()
 			}
 
 		}
-
-
 
 
 
@@ -345,8 +379,8 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 
 
 	// Position: 2
-	//ptr = new Deck("Community Chest", COMMUNITY_CHEST);
-	//GameSpaceList.push_back(ptr);
+	ptr = new Deck("Community Chest", COMMUNITY_CHEST);
+	GameSpaceList.push_back(ptr);
 
 
 	// Position: 3
