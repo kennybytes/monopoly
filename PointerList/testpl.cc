@@ -18,16 +18,20 @@ using namespace std;
 #include "railroad.h"
 #include "misc.h"
 
-/*
-int main()
-{
-	GameSpace * ptr;
-	vector<GameSpace*> GameSpaceList;
-
-*/
-
 //prototype
 void InitBoard(vector<GameSpace> &GameSpaceList);
+
+
+
+int main()
+{
+	// GameSpace * ptr;
+	vector<GameSpace*> GameSpaceList;
+
+	InitBoard(GameSpaceList);
+
+}
+
 
 
 
@@ -175,7 +179,7 @@ void InitBoard(vector<GameSpace> &GameSpaceList)
 
 
 	// Position: 24
-	ptr = new Property("Illinous Avenus", 20, 240, RED,
+	ptr = new Property("Illinois Avenus", 20, 240, RED,
 				100, 300, 750, 925, 1100);
 	GameSpaceList.push_back(ptr);
 
@@ -258,7 +262,7 @@ void InitBoard(vector<GameSpace> &GameSpaceList)
 
 
 
-/*
+
 	int i = 0;
 
 	for(vector<GameSpace*>::iterator it = GameSpaceList.begin();
@@ -267,13 +271,13 @@ void InitBoard(vector<GameSpace> &GameSpaceList)
 		ptr = *it;
 
 		// cout << it << endl;
-		cout << (*GameSpaceList[i]).getType() << endl << endl;
+		cout << *GameSpaceList[i] << endl << endl;
 	
 
 		// *ptr << endl;
 		i++;
 	}
-*/
+
 
 }
 	
