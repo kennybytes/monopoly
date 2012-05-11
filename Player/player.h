@@ -18,30 +18,61 @@ class Player
 {
 	public:
 		Player();
-		// set player name
-		void set_name(string n);
 
+
+		/* ~~~~~~~~~~ Accessors ~~~~~~~~~~ */
 		// return name
-		string get_name(void);
+		inline string get_name(void)
+		{	return name;	}
+
+		// returns player's balance
+		inline int get_balance()
+		{	return balance;		}
+
+
+		// returns player's position on board
+		inline int get_position()
+		{	return p;	}
+
+
+		/* ~~~~~~~~~~ Mutators ~~~~~~~~~~ */
+		// set player name
+		inline void set_name(string n)
+		{	name = n;	}
+
+		// Adds BAL to current balance
+		inline void update_balance(int bal)
+		{	balance += bal;	}
+
+
+		// Sends the player to a specific position on the board
+		inline Position send_to(Position newp)
+		{	return p = newp;	}
+
+		// sets jail = 1
+		inline void go_jail()
+		{	jail = true;	}
+
+		// sets jail = 0
+		inline void set_free()	
+		{	jail = false;	}
 
 		// Move DICE spaces forward based on dice roll
 		Position update_position(int dice);
 
-		// Sends the player to a specific position on the board
-		Position send_to(Position newp);
-
-		// Adds BAL to current balance
-		void update_balance(int bal);
-
-		// returns player's balance
-		int get_balance();
-
-		// returns player's position on board
-		int get_position();
-		
 		// Subtracts RENT from current balance
-		inline void pay_rent(int rent)
-		{	balance -= rent;	}
+		void pay_rent(int rent, Player &p);
+
+
+		/* ~~~~~~~~~~~~ Boolean Operators ~~~~~~~~~ */
+
+		// sets alive = 1
+		inline bool set_alive()
+		{	return alive = true;	}
+
+		// sets alive = 0
+		inline bool set_dead()
+		{	return alive = false;	}
 
 		// determines whether player gains or loses
 		// a Get Out of Jail Free card
@@ -49,23 +80,15 @@ class Player
 		{	jailCard = b;	}
 		
 		// indicates whether player is bankrupt	
-		bool bankrupt();
+		inline bool bankrupt()
+		{	return (balance <= 0);	}
 
-		// sets jail = 1
-		void go_jail();
 
-		// sets jail = 0
-		void set_free();	
 
-		// sets alive = 1
-		bool set_alive();
+		/* ~~~~~~~~~~~~~ Actions ~~~~~~~~~~~~~ */
+		int roll_dice(void);	// Roll two dice
+		int getRollValue(void); // Get the sum of two dice
 
-		// sets alive = 0
-		bool set_dead();
-
-		// roll dice
-		int roll_dice(void);
-		int getRollValue(void);
 		virtual void display(ostream & out) const;
 
 
@@ -74,7 +97,7 @@ class Player
 		bool jail;	// If in jail, jail == 1
 		bool jailCard;	// Whether player has get out of jail card
 		int jailCount;	// Keep track of how many turns in jail
-		int p;	// Position on board
+		int p;		// Position on board
 		int rrCount;	// How many railroad deeds player has
 		int utilCount;	// How many utility deeds player has
 		int balance;	// Total balance

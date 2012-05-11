@@ -19,21 +19,6 @@ Player :: Player()
 	utilCount = 0;
 	name = "unnamed";
 }
-// not needed due to constructor
-bool Player :: set_alive()
-{	return alive = 1;	}
-
-bool Player :: set_dead()
-{	return alive = 0;	}
-
-void Player :: set_name(string n)
-{
-	name = n;
-}
-string Player :: get_name(void)
-{
-	return name;
-}
 
 Position Player :: update_position(int dice)
 {
@@ -44,41 +29,15 @@ Position Player :: update_position(int dice)
 	return p;
 }
 
-Position Player :: send_to(Position newp)
+		
+
+void Player :: pay_rent(int rent, Player &pl)
 {
-	p = newp;
-	return p;
+	balance -= rent;
+	pl.update_balance(rent);
 }
 
-void Player :: update_balance(int bal)
-{
-	balance = balance + bal;
-}	
-	
-int Player :: get_balance()
-{
-	return balance;
-}
 
-int Player :: get_position()
-{
-	return p;
-}
-
-bool Player :: bankrupt()
-{
-	return (balance <= 0);
-}
-
-void Player :: go_jail()
-{
-	jail = true;
-}
-
-void Player :: set_free()
-{
-	jail = false;
-}
 
 int Player :: roll_dice(void)
 {
