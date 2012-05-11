@@ -1,3 +1,4 @@
+:q
 
 /*
  * File: deed.h
@@ -7,7 +8,12 @@
  */
 
 
-// Abstract Class
+/* ~~~~~~~~~~~~~~~~~~~~
+ * Another abstract class, derived from GameSpace.
+ * This derived base class holds Property, 
+ * Utility, and Railroad, all which have a 
+ * price and rental fee.
+ * ~~~~~~~~~~~~~~~~~~~ */
 
 // #include "player.h"
 
@@ -43,6 +49,10 @@ public:
 	virtual inline int getOwner() const
 	{	return owner;	}
 
+	virtual inline bool getMortgage() const
+	{	return mortgage;}
+
+
 	/*	Mutators	*/
 	virtual inline void setRent(int r)
 	{	rent = r;	}
@@ -56,12 +66,9 @@ public:
 	virtual inline void setMortgage(bool m)
 	{	 mortgage = m;	}
 	
-	virtual inline bool getMortgage() const
-	{	return mortgage;}
 
-
-	// void buyDeed(Player pl, int p);
-	// void auction(Player pl, int p);
+	// void buyDeed(Player &pl, int p);
+	// void auction(Player &pl, int p);
 
 	virtual void display(ostream & out) const = 0;
 	// friend ostream& operator<<(ostream& s, const Deed &d);

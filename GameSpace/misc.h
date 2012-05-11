@@ -5,6 +5,13 @@
  * Rev: v0.1
  */
 
+
+/* ~~~~~~~~~~~~~~~~~~~ *
+ * MISC gamespaces do not hold any more functions than GameSpace functions.
+ * They are derived simply for the case of keeping the GameSpace class
+ * abstract. Examples are JAIL and FREE PARKING
+ * ~~~~~~~~~~~~~~~~~~~ */
+
 #include "gamespace.h"
 
 #ifndef MISC

@@ -7,9 +7,12 @@
 #include <iostream>
 #include "railroad.h"
 
+/*	Constructor	*/
+// Using Deed(Name, Type, Rent, Price, Owner, Mortgage)
 Railroad :: Railroad(string n, int r, int p)
  : Deed(n, UTIL, r, p, NON, false) {}
 
+/*	Display Operator	*/
 void Railroad :: display(ostream & out) const
 {
 	out << "Name = " << name << endl;

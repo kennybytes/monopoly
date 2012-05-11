@@ -29,11 +29,22 @@ Deck :: Deck(string n, CellType t)
 
 
 /*	Actions		*/
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * Does an action from CHANCE (pseudo) stack
+ * by simply doing an action based on a random number.
+ * Does not keep track of what has been drawn like 
+ * a real card stack.
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 void Deck :: chance(Player &p, int i, vector<GameSpace*> &gs)
 {
-	int c = rand()%17;
-	string input;
-	Position temppos;
+	
+	int c = rand()%17;  // Card based on a random draw
+	string input;	    // Used to receive user response for several cards
+	Position temppos;   // Stores temppos, usually to determine whether
+		            // passed GO!
+
+	// Does an action based on a random number c
 	switch(c)
 	{	
 		case 0:
@@ -249,6 +260,9 @@ void Deck :: chance(Player &p, int i, vector<GameSpace*> &gs)
 	}
 }
 
+
+
+// Does an action based on the Community Chest stack, similarly to Chance 
 void Deck :: comchest(Player &p)
 {
 	int c = rand()%17;
@@ -357,10 +371,9 @@ void Deck :: comchest(Player &p)
 	}
 }
 
+/*	Display Operator	*/
 void Deck :: display(ostream & out) const
 {
 	out << "Name = " << name << endl;
 	out << "Type = " << type << endl;
 }
-
-

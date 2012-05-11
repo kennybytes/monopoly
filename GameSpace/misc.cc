@@ -24,41 +24,10 @@ Misc :: Misc(string n, CellType t)
 {
 }
 
-
-/*	Accessors	*/
-
-/*	Mutators	*/
-
-
-/*	Operators	*/
-/*
-bool Misc::operator==(const Misc& other) const
-{
-	//Don't need the comparison operators
-	return 1;
-}
-
-
-bool Misc::operator!=(const Misc& other) const
-{
-	//Don't need the comparison operators
-	return 1;
-}
-*/
-
-
+/*	Display Operator	*/
 void Misc :: display(ostream & out) const
 {
 	out << "Name = " << name << endl;
 	out << "Type = " << type << endl;
 }
 
-
-/*	Output operator	*/
-/*
-ostream& operator<<(ostream& s, const Misc &m)
-{
-	m.display(s);
-	return s;
-}
-*/

@@ -6,6 +6,13 @@
  * Rev: v0.1
  */
 
+/* ~~~~~~~~~~~~~~~~~~
+ * Tax class is derived straight from GameSpace. 
+ * It has two more member fields, which deduct the play's balance
+ * either by a flat rate or a percent rate.
+ * ~~~~~~~~~~~~~~~~~~ */
+
+
 #ifndef TAX
 #define TAX
 
@@ -19,10 +26,9 @@ class Tax : public GameSpace
 
 		void display(ostream & out) const;
 		
-		int getTax(const int money) const; // Deducts MONEY flat rate
-		int getTax() const;  // Does a mathematical operation
-				     // using PercentRate to deduct
-		
+		int getTax() const;  // Deducts MONEY flat rate
+		int getTax(const int money) const;  // Does a mathematical operation
+				     		    // using PercentRate to deduct
 	private:
 		const int PercentRate;
  		const int FlatRate;

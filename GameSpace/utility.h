@@ -6,6 +6,14 @@
  * Rev: v0.1
  */
 
+/* ~~~~~~~~~~~~~~~~~~ *
+ * Utility is a derived class from Deed.
+ * Its rent is based off the player's roll.
+ * The only utilities are one of Electricity Works
+ * and Water Works.
+ * ~~~~~~~~~~~~~~~~~~ */
+
+
 #ifndef UTILITY
 #define UTILITY
 

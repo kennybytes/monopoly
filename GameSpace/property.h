@@ -5,6 +5,12 @@
 * Rev: v0.1
 */
 
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ *
+ * Property deeds (GameSpaces) are the basic streets
+ * of Monopoly, allowing an owner, rent prices, houses, etc.
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 #ifndef PROPERTY
 #define PROPERTY
 

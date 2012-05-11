@@ -8,6 +8,9 @@
 #include <iostream>
 #include "property.h"
 
+/*	Constructor	*/
+// Using Deed(Name, Type, Rent, Price, Owner, Mortgage)
+
 Property :: Property(string n, int r, int p,
 	int c, int h1, int h2, int h3, int h4, int h)
 : Deed(n, PROP, r, p, NON, 0),
@@ -17,6 +20,7 @@ Property :: Property(string n, int r, int p,
 
 
 
+/*	Display Operator	*/
 void Property :: display(ostream & out) const
 {
 	// Deed::display(out);
@@ -41,11 +45,3 @@ void Property :: display(ostream & out) const
 	#endif
 }
 
-/*
-ostream & operator<<(ostream& s, const Property &p)
-{
-	p.display(s);
-	return s;
-}
-
-*/

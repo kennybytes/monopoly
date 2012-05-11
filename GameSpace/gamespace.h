@@ -6,6 +6,12 @@
  * Rev: v0.2
  */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+ * GameSpace is an abstract base class.
+ * It is used to derive all classes, which are
+ * types of block across the game board
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 #ifndef GAMESPACE
 #define GAMESPACE
 
@@ -33,7 +39,11 @@ class GameSpace
 
 	inline virtual void setType(CellType t)
 	{	type = t;	}
-	
+
+	/*	Derived functions	*/
+	virtual int getOwner() const
+	{}
+
 	inline virtual void setOwner(int player)
 	{}
 
@@ -47,15 +57,8 @@ class GameSpace
 	{}
 
 	/* Operators */
-	// bool operator==(const GameSpace& other) const;
-	// bool operator!=(const GameSpace& other) const;
-
 	virtual void display(ostream & out) const = 0;
 	
-	virtual int getOwner() const
-	{}
-	virtual int getPrice() const
-	{}
 	
    protected:
 	/* GameSpace data information */
@@ -63,6 +66,8 @@ class GameSpace
 	CellType type;	//Type of block
 };       
 
+	/* Operator used depending on which derived class of
+	 * GameSpace is used, thanks to virtual keyword */
 	inline ostream& operator<<(ostream& s, const GameSpace &gs)
 	{	gs.display(s); return s; 	}
 

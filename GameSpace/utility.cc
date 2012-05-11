@@ -7,11 +7,14 @@
 #include <iostream>
 #include "utility.h"
 
+/*	Constructor	*/
+// Using Deed(Name, Type, Rent, Price, Owner, Mortgage)
 Utility :: Utility(string n, int r, int p)
  : Deed(n, UTIL, r, p, NON, false)
 { }
 
 
+/*	Display Operator	*/
 void Utility :: display(ostream & out) const
 {
 	out << "Name = " << name << endl;

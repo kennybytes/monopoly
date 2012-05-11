@@ -6,6 +6,10 @@
  * Rev: v0.1
  */
 
+/* ~~~~~~~~~~~~~~~ *
+ * Railroad is a derived class from Deed
+ * ~~~~~~~~~~~~~~~ */
+
 #ifndef RAILROAD
 #define RAILROAD
 
