@@ -99,9 +99,8 @@ int main()
 				{
 
 				Players[i].roll_dice();
-				currentpos = Players[i].update_position(2);
-				//currentpos = Players[i].update_position(Players[i].getRollValue());
-
+				currentpos = Players[i].update_position(Players[i].getRollValue());
+				currentpos = Players[i].getRollValue();
 				cout << "Rolled: " << Players[i].getRollValue() << endl;
 				rolled = 1;
 			
@@ -120,9 +119,12 @@ int main()
 
 				
 				int current_type=(*MonopolyBoard[currentpos]).getType();
+				cout <<current_type<<endl;
 
-				if(current_type== PROP )
+				if(current_type == PROP )
 				{
+					cout << "test" << endl;
+					cout << (*MonopolyBoard[currentpos]).getOwner() << endl;
 					if((*MonopolyBoard[currentpos]).getOwner() == -1)
 					{
 						cout << (*MonopolyBoard[currentpos]);
@@ -588,9 +590,7 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 	for(vector<GameSpace*>::iterator it = GameSpaceList.begin();
 				it!=GameSpaceList.end(); it++)
 	{
-
 		ptr = *it;
-
 		// cout << it << endl;
 		cout << (*GameSpaceList[i]).getType() << endl << endl;
 		cout << "Owner: " << (*GameSpaceList[i]).getOwner() << endl;
