@@ -109,35 +109,32 @@ int main()
 					<< (*MonopolyBoard[position]).getName()
 					<< endl;
 
+
 				if((*MonopolyBoard[position]).getType() == PROP )
 				{
-					cout << (*MonopolyBoard[position]).getOwner() << endl;
-					cout << "DEBUG: Property" << endl;
 					if((*MonopolyBoard[position]).getOwner() == -1)
 					{
 						cout << "Current Property Unowned, do you "
 							<< " want to buy?(Y/N)" << endl;
 						cout << (*MonopolyBoard[position]).getPrice();
 						cin >> input;
-				
-					if(input == "Y" || input == "y")
+
+					while(input !="n" && input != "N")
 					{
-						(*MonopolyBoard[position]).setOwner(i);
-						Players[i].update_balance(
-							-(*MonopolyBoard[position]).getPrice() );
+						if(input == "Y" || input == "y")
+						{
+							(*MonopolyBoard[position]).setOwner(i);
+							Players[i].update_balance(
+								-(*MonopolyBoard[position]).getPrice() );
+							
+							cout << name << " bought " << (*MonopolyBoard[position]).getName()
+								<< endl;
+							break;
+						}
+						cin >> input;
 						
-						cout << name << " bought " << (*MonopolyBoard[position]).getName()
-							<< endl;
-					}
-					else if(input == "N" || input == "n")
-					{
-						break;
-					}
-					else
-					{
-						cout << "Incorrect Input" << endl;
-					}
 					
+					}
 					}
 
 
