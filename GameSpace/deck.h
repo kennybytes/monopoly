@@ -14,7 +14,7 @@
 class Deck : public GameSpace
 {
 	public:
-		Deck(string n = "");
+		Deck(string n = "", CellType t = NON);
 
 		void chance(Player p);
 		void comchest(Player p);

@@ -26,7 +26,7 @@ class Deed : public GameSpace
 public:
 
 	Deed(string n = "", CellType t = NON, int r = 0, int p = 0, 
-		int o = 0, int mV = 0, bool m = false);
+		int o = 0, bool m = false);
 
 	/* Inherited:
 	 * string getName() const;
@@ -65,7 +65,6 @@ protected:
 	int rent;
 	int price;
 	int owner;
-	int mortValue;
 	bool mortgage;
 
 };

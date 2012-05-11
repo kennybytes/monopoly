@@ -14,10 +14,10 @@ Player :: Player()
 	balance = 1500;
 	alive = 1;
 	jailCard = false;
+	jailCount = 0;
 	rrCount = 0;
 	utilCount = 0;
 	name = "unnamed";
-
 }
 // not needed due to constructor
 bool Player :: set_alive()
@@ -107,6 +107,7 @@ void Player :: display(ostream & out) const
 	out << "In Jail? = " << jail << endl;
 	out << "Alive? = " << alive << endl;
 	out << "Get Out Of Jail Free Card? = " << jailCard << endl;
+	out << "Turn in Jail: " << jailCount << endl;
 	out << "Railroad Count = " << rrCount << endl;
 	out << "Utility Count = " << utilCount << endl;
 }

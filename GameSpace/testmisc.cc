@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {	int P = 1;
 
-	Misc m;
+	Misc m("hi",GO);
 
 
 	cout << m << endl;

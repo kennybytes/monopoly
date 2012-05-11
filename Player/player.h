@@ -73,6 +73,7 @@ class Player
 		bool alive;	// If bankrupt, alive == 0
 		bool jail;	// If in jail, jail == 1
 		bool jailCard;	// Whether player has get out of jail card
+		int jailCount;	// Keep track of how many turns in jail
 		Position p;	// Position on board
 		int rrCount;	// How many railroad deeds player has
 		int utilCount;	// How many utility deeds player has

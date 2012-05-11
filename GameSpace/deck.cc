@@ -21,8 +21,8 @@ typedef int Position;
 
 /*	Constructor	*/
 
-Deck :: Deck(string n)
- : GameSpace(n, DECK)
+Deck :: Deck(string n, CellType t)
+ : GameSpace(n, t)
 {
 }
 

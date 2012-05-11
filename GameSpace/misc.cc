@@ -19,8 +19,8 @@ using namespace std;
 
 
 /*	Constructor	*/
-Misc :: Misc(string n)
- : GameSpace(n, NON)
+Misc :: Misc(string n, CellType t)
+ : GameSpace(n, t)
 {
 }
 

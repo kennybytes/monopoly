@@ -15,7 +15,7 @@ class Property : public Deed
 {
 	public:
 		Property(string n = "Property", int r = NON, int p = NON, 
-		int mV = NON, int c = NON, int h1 = NON, int h2 = NON, 
+		int c = NON, int h1 = NON, int h2 = NON, 
 		int h3 = NON, int h4 = NON, int h = NON);
 
 		virtual void display(ostream & out) const;
