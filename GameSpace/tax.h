@@ -19,13 +19,10 @@ class Tax : public GameSpace
 
 		void display(ostream & out) const;
 		
-		int getTax(const int money) const;
-		int getTax() const;
+		int getTax(const int money) const; // Deducts MONEY flat rate
+		int getTax() const;  // Does a mathematical operation
+				     // using PercentRate to deduct
 		
-		virtual int getOwner() const;
-
-		inline int getPrice() const
-		{}
 	private:
 		const int PercentRate;
  		const int FlatRate;

@@ -27,10 +27,6 @@ Misc :: Misc(string n, CellType t)
 
 /*	Accessors	*/
 
-int Misc :: getOwner() const
-{
-}
-
 /*	Mutators	*/
 
 

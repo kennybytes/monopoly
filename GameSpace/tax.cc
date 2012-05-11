@@ -21,11 +21,6 @@ void Tax :: display(ostream & out) const
 	out << "Percent Rent Rate = " << PercentRate << endl;
 }
 
-int Tax :: getOwner() const
-{
-
-}
-
 int Tax :: getTax(int money) const
 {
 	return (int)(-PercentRate * money)/100;

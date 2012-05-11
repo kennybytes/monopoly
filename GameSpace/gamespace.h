@@ -35,21 +35,27 @@ class GameSpace
 	{	type = t;	}
 	
 	inline virtual void setOwner(int player)
-	{		}
+	{}
 
 	inline virtual int getTax(int tax)
-	{		}
+	{}
 	
 	inline virtual int getTax()
-	{		}
+	{}
+
+	inline virtual int getPrice()
+	{}
+
 	/* Operators */
 	// bool operator==(const GameSpace& other) const;
 	// bool operator!=(const GameSpace& other) const;
 
 	virtual void display(ostream & out) const = 0;
 	
-	virtual int getOwner() const = 0;
-	virtual int getPrice() const = 0;
+	virtual int getOwner() const
+	{}
+	virtual int getPrice() const
+	{}
 	
    protected:
 	/* GameSpace data information */
