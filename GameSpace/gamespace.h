@@ -34,6 +34,9 @@ class GameSpace
 	inline virtual void setType(CellType t)
 	{	type = t;	}
 	
+	inline virtual void setOwner(int player)
+	{		}
+
 	/* Operators */
 	// bool operator==(const GameSpace& other) const;
 	// bool operator!=(const GameSpace& other) const;

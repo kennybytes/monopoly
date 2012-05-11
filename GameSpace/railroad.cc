@@ -8,7 +8,7 @@
 #include "railroad.h"
 
 Railroad :: Railroad(string n, int r, int p)
- : Deed(n, UTIL, r, p, 0, false) {}
+ : Deed(n, UTIL, r, p, NON, false) {}
 
 void Railroad :: display(ostream & out) const
 {

@@ -8,7 +8,7 @@
 #include "utility.h"
 
 Utility :: Utility(string n, int r, int p)
- : Deed(n, UTIL, r, p, 0, false)
+ : Deed(n, UTIL, r, p, NON, false)
 { }
 
 

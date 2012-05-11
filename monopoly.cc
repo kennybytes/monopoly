@@ -97,7 +97,7 @@ int main()
 				Players[i].roll_dice();
 				position = Players[i].update_position(Players[i].getRollValue());
 
-				cout << Players[i].getRollValue() << endl;
+				cout << "Rolled: " << Players[i].getRollValue() << endl;
 
 				cout << Players[i].get_name()
 					<< " Moved to position "
@@ -111,14 +111,35 @@ int main()
 
 				if((*MonopolyBoard[position]).getType() == PROP )
 				{
+					cout << (*MonopolyBoard[position]).getOwner() << endl;
 					cout << "DEBUG: Property" << endl;
-
 					if((*MonopolyBoard[position]).getOwner() == -1)
 					{
 						cout << "Current Property Unowned, do you "
 							<< " want to buy?(Y/N)" << endl;
 						cout << (*MonopolyBoard[position]).getPrice();
+						cin >> input;
+				
+					if(input == "Y" || input == "y")
+					{
+						(*MonopolyBoard[position]).setOwner(i);
+						Players[i].update_balance(
+							-(*MonopolyBoard[position]).getPrice() );
+						
+						cout << name << " bought " << (*MonopolyBoard[position]).getName()
+							<< endl;
 					}
+					else if(input == "N" || input == "n")
+					{
+						break;
+					}
+					else
+					{
+						cout << "Incorrect Input" << endl;
+					}
+					
+					}
+
 
 				}
 				
@@ -456,8 +477,8 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 
 		// cout << it << endl;
 		cout << (*GameSpaceList[i]).getType() << endl << endl;
-	
-
+		cout << "Owner: " << (*GameSpaceList[i]).getOwner() << endl;
+		cout << "Name: " << (*GameSpaceList[i]).getName() << endl;
 		// *ptr << endl;
 		i++;
 	}
