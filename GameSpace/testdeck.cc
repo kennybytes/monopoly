@@ -1,40 +1,39 @@
 
-
-/*
- *
- * PoGameSpaceer List test
- *
- *
- */
-#include <iostream>
 #include <vector>
+#include <iostream>
 using namespace std;
 
 #include "gamespace.h"
 #include "deed.h"
 #include "property.h"
-#include "tax.h"
 #include "utility.h"
 #include "railroad.h"
+#include "tax.h"
 #include "misc.h"
 #include "deck.h"
+#include "player.h"
 
-//prototype
 void InitBoard(vector<GameSpace*> &GameSpaceList);
-
 
 int main()
 {
-	// GameSpace * ptr;
-	vector<GameSpace*> GameSpaceList;
-	
-	InitBoard(GameSpaceList);
+	vector<GameSpace*> GS;
+	InitBoard(GS);
+	Player P;
+	int i = 1;	
+
+	// Deck D("Community Chest",COMMUNITY_CHEST);
+
+	//cout << D << endl;
+
+
 }
 
 
 void InitBoard(vector<GameSpace*> &GameSpaceList)
 {
 	GameSpace * ptr;
+
 
 	// Position: 0
 	ptr = new Misc("GO!", GO);
@@ -47,9 +46,9 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 	GameSpaceList.push_back(ptr);
 
 
-	//Position: 2
-	ptr = new Deck("Community Chest", COMMUNITY_CHEST);
-	GameSpaceList.push_back(ptr);
+	// Position: 2
+	//ptr = new Deck("Community Chest", COMMUNITY_CHEST);
+	//GameSpaceList.push_back(ptr);
 
 
 	// Position: 3
@@ -75,8 +74,8 @@ void InitBoard(vector<GameSpace*> &GameSpaceList)
 
 
 	// Position: 7
-	ptr = new Deck("Chance", CHANCE);
-	GameSpaceList.push_back(ptr);
+	//ptr = new Deck("Chance", CHANCE);
+	//GameSpaceList.push_back(ptr);
 
 
 	// Position: 8
