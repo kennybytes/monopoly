@@ -10,6 +10,7 @@ typedef int Position;
 #include <iostream>
 using namespace std;
 
+#include <time.h>
 #include <cstdlib>
 using std::rand;
 
@@ -61,9 +62,10 @@ class Player
 
 		// sets alive = 0
 		bool set_dead();
+
 		// roll dice
 		int roll_dice(void);
-
+		int getRollValue(void);
 		virtual void display(ostream & out) const;
 
 
@@ -76,7 +78,9 @@ class Player
 		int utilCount;	// How many utility deeds player has
 		int balance;	// Total balance
 		string name;	// player name
+		int dice[2];	// Two dice values
 };
+	
 
 inline ostream& operator<<(ostream& s, const Player &p)
 {	p.display(s); return s; 	}

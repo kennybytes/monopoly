@@ -17,8 +17,8 @@ Player :: Player()
 	rrCount = 0;
 	utilCount = 0;
 	name = "unnamed";
-}
 
+}
 // not needed due to constructor
 bool Player :: set_alive()
 {	return alive = 1;	}
@@ -39,7 +39,7 @@ Position Player :: update_position(int dice)
 {
 	if(!bankrupt())
 	{
-		p = (p + dice)%40; 
+		p = (p + dice) % 40; 
 	}
 }
 
@@ -81,13 +81,28 @@ void Player :: set_free()
 
 int Player :: roll_dice(void)
 {
-	int dice = rand()%6 + 1;
-	return dice;
+	dice[0] = (rand()%6) + 1;
+	dice[1] = (rand()%6) + 1;
+
+	if( dice[0] = dice[1] )
+		dice[2] = 1;
+	else
+		dice[2] = 0;
+	
+	
+	return dice[2];
 }
+int Player:: getRollValue(void)
+{
+
+	return dice[0] + dice[1];
+}
+
 
 void Player :: display(ostream & out) const
 {
 	// Deed::display(out);
+	out << name << endl;
 	out << "Position = " << p << endl;
 	out << "Balance = " << balance << endl;
 	out << "In Jail? = " << jail << endl;
