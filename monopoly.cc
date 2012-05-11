@@ -19,7 +19,7 @@ using namespace std;
 #include "common.h"
 #include "celltype.h"
 #include "color.h"
-
+#include <unistd.h>
 #include "gamespace.h"
 #include "deed.h"
 #include "property.h"
@@ -38,6 +38,7 @@ void DisplaySplash();
 void InitBoard(vector<GameSpace*> &GameSpaceList);
 int main()
 {	
+	system("clear");	
 	int players = 0;
 	vector<Player> Players;
 	vector<GameSpace*> MonopolyBoard;
@@ -80,12 +81,11 @@ int main()
 			cin >> input;
 	
 
-
 			if(input == "roll" || input == "r" )
 			{	
 				int currentpos = 0;
 				string playername = Players[i].get_name();
-
+				string spacename  = (*MonopolyBoard[currentpos]).getName();
 				if(rolled == 0)
 				{
 
@@ -103,11 +103,12 @@ int main()
 				cout << "***";
 				cout << playername
 					<< " landed on "
-					<< (*MonopolyBoard[currentpos]).getName()
+					<< spacename
 					<< endl;
 
 				
 				int current_type=(*MonopolyBoard[currentpos]).getType();
+
 				if(current_type== PROP )
 				{
 					if((*MonopolyBoard[currentpos]).getOwner() == -1)
@@ -117,22 +118,22 @@ int main()
 							<< "want to buy?(Y/N)" << endl;
 
 						cin >> input; 
-					while(input !="n" && input != "N")
-					{
-						if(input == "Y" || input == "y")
+
+						while(input !="n" && input != "N")
 						{
-							(*MonopolyBoard[currentpos]).setOwner(i);
-							Players[i].update_balance(
-								-(*MonopolyBoard[currentpos]).getPrice() );
-							
-							cout << playername << " bought " << (*MonopolyBoard[currentpos]).getName()
-								<< endl;
-							break;
-						}
-						cin >> input;
+							if(input == "Y" || input == "y")
+							{
+								(*MonopolyBoard[currentpos]).setOwner(i);
+								Players[i].update_balance(
+									-(*MonopolyBoard[currentpos]).getPrice() );
+								
+								cout << playername << " bought " << (*MonopolyBoard[currentpos]).getName()
+									<< endl;
+								break;
+							}
+							cin >> input;
 						
-					
-					}
+						}
 					
 					}
 				
@@ -148,6 +149,7 @@ int main()
 							<< "want to buy?(Y/N)" << endl;
 						
 						cin >> input; 
+
 						while(input !="n" && input != "N")
 						{
 							if(input == "Y" || input == "y")
@@ -226,13 +228,22 @@ int main()
 				{
 
 					if((*MonopolyBoard[j]).getOwner() == i) 
-					cout << (*MonopolyBoard[j])<< endl << endl;
+					cout << (*MonopolyBoard[j]).getName()<< endl << endl;
 				}
 
 
 			}
-			else 
-			if(input == "end" || input == "e")
+			else if(input == "displayall" || input == "da")
+			{
+				for(int j = 0; j < MonopolyBoard.size(); j++)
+				{
+					cout << (*MonopolyBoard[j]).getName()
+						<< endl;
+				}
+			}
+
+
+			else if(input == "end" || input == "e")
 			{
 				cout << "Next Player" << endl;
 				break;
@@ -255,7 +266,6 @@ int main()
 
 			else
 			{
-
 			cout << "Invalid input, please try again."
 					<< endl;
 			}
