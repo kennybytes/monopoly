@@ -7,6 +7,7 @@
 #include <iostream>
 using namespace std;
 
+// Constructor
 Player :: Player()
 {
 	jail = false;
@@ -19,22 +20,9 @@ Player :: Player()
 	utilCount = 0;
 	name = "unnamed";
 }
-// not needed due to constructor
-bool Player :: set_alive()
-{	return alive = 1;	}
 
-bool Player :: set_dead()
-{	return alive = 0;	}
 
-void Player :: set_name(string n)
-{
-	name = n;
-}
-string Player :: get_name(void)
-{
-	return name;
-}
-
+// Move DICE spaces forward based on dice roll
 Position Player :: update_position(int dice)
 {
 	if(!bankrupt())
@@ -44,42 +32,16 @@ Position Player :: update_position(int dice)
 	return p;
 }
 
-Position Player :: send_to(Position newp)
+		
+// Subtracts RENT from current balance
+void Player :: pay_rent(int rent, Player &pl)
 {
-	p = newp;
-	return p;
+	balance -= rent;
+	pl.update_balance(rent);
 }
 
-void Player :: update_balance(int bal)
-{
-	balance = balance + bal;
-}	
-	
-int Player :: get_balance()
-{
-	return balance;
-}
 
-int Player :: get_position()
-{
-	return p;
-}
-
-bool Player :: bankrupt()
-{
-	return (balance <= 0);
-}
-
-void Player :: go_jail()
-{
-	jail = true;
-}
-
-void Player :: set_free()
-{
-	jail = false;
-}
-
+// Roll two dice
 int Player :: roll_dice(void)
 {
 	dice[0] = (rand()%6) + 1;
@@ -92,13 +54,15 @@ int Player :: roll_dice(void)
 	
 	return dice[2];
 }
+
+// Get sum of two dice
 int Player:: getRollValue(void)
 {
 
 	return dice[0] + dice[1];
 }
 
-
+// Used to display all of Player by overloading <<
 void Player :: display(ostream & out) const
 {
 	// Deed::display(out);

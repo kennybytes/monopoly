@@ -29,8 +29,9 @@ main()
 
    A.send_to(9001);
    cout << A.get_position()<<endl;
-=======
 */
+
+	// Initialize NUMBERPLAYERS players
 	for(int i = 0; i < NumberPlayers; i++)
 	{	PA[i].update_balance(1000 + i);
 
