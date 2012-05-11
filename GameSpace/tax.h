@@ -21,8 +21,11 @@ class Tax : public GameSpace
 		
 		int getTax(const int money) const;
 		int getTax() const;
+		
+		virtual int getOwner() const;
 
-
+		inline int getPrice() const
+		{}
 	private:
 		const int PercentRate;
  		const int FlatRate;

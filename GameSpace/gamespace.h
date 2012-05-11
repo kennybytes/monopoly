@@ -39,7 +39,10 @@ class GameSpace
 	// bool operator!=(const GameSpace& other) const;
 
 	virtual void display(ostream & out) const = 0;
-
+	
+	virtual int getOwner() const = 0;
+	virtual int getPrice() const = 0;
+	
    protected:
 	/* GameSpace data information */
 	string name;	//Name of the block

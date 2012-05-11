@@ -39,8 +39,9 @@ Position Player :: update_position(int dice)
 {
 	if(!bankrupt())
 	{
-		p = (p + dice) % 40; 
+		p = (p + dice) % 20; 
 	}
+	return p;
 }
 
 Position Player :: send_to(Position newp)
@@ -59,7 +60,7 @@ int Player :: get_balance()
 	return balance;
 }
 
-Position Player :: get_position()
+int Player :: get_position()
 {
 	return p;
 }

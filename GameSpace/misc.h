@@ -17,7 +17,11 @@ class Misc : public GameSpace
 
 		virtual void display(ostream & out) const;
 		// friend ostream& operator<<(ostream & s, const Misc &m);
+		
+		virtual int getOwner() const;
 
+		inline int getPrice() const
+		{}
 	private:
 
 };
